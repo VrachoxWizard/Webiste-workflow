@@ -41,7 +41,7 @@ export function Navbar() {
 
       <form
         action="/kategorija/sve"
-        className="hidden xl:flex w-full max-w-sm items-center gap-2 rounded-sm border bg-background px-3 py-1.5"
+        className="hidden xl:flex w-full max-w-sm items-center gap-2 rounded-sm border border-border/60 bg-muted/30 px-3 py-1.5 transition-all hover:border-primary/40 focus-within:border-primary focus-within:bg-background focus-within:shadow-sm"
         role="search"
       >
         <Search className="size-4 text-muted-foreground" aria-hidden="true" />
@@ -50,17 +50,17 @@ export function Navbar() {
           type="search"
           aria-label="Pretraži proizvode"
           placeholder="Pretraži proizvode, brend ili šifru"
-          className="h-8 border-0 px-0 shadow-none focus-visible:ring-0"
+          className="h-8 border-0 px-0 shadow-none focus-visible:ring-0 text-sm"
         />
       </form>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center gap-1">
+      <nav className="hidden lg:flex items-center gap-0.5">
         {NAVIGATION_DATA.map((item) => (
           <div key={item.title} className="group relative">
             <Link 
               href={item.href}
-              className="px-4 py-2 text-sm font-semibold tracking-tight hover:text-primary transition-colors flex items-center gap-1"
+              className="px-3.5 py-2 text-[13px] font-semibold tracking-tight hover:text-primary transition-colors flex items-center gap-1 rounded-sm hover:bg-muted/50"
             >
               {item.title}
               <span className="size-1 rounded-full bg-primary scale-0 group-hover:scale-100 transition-transform origin-center" />
@@ -70,7 +70,7 @@ export function Navbar() {
         ))}
         <Link 
           href="/kategorija/akcija"
-          className="px-4 py-2 text-sm font-bold tracking-tight text-destructive hover:bg-destructive/5 rounded-md transition-colors"
+          className="ml-1 px-3.5 py-2 text-[13px] font-bold tracking-tight text-destructive hover:bg-destructive/5 rounded-sm transition-colors"
         >
           Akcija
         </Link>

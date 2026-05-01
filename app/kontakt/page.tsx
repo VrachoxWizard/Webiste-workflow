@@ -56,7 +56,7 @@ export default function ContactPage() {
                     <Mail className="size-6 text-primary shrink-0" />
                     <div className="space-y-1">
                       <p className="text-xs font-bold uppercase tracking-widest opacity-60">Email</p>
-                      <p className="text-lg font-bold">info@pointershop.hr</p>
+                      <p className="text-lg font-bold">info@terralov.hr</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -98,8 +98,8 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <h2 className="text-3xl font-bold tracking-tight">Pošaljite nam poruku</h2>
                   <p className="text-muted-foreground font-medium">
-                    Naš tim stručnjaka odgovoriti će na Vaš upit u najkraćem mogućem roku. 
-                    Za hitne upite o dostupnosti oružja preporučamo telefonski poziv.
+                    Naš tim stručnjaka odgovorit će na Vaš upit u najkraćem mogućem roku. 
+                    Za hitne upite o dostupnosti oružja preporučujemo telefonski poziv.
                   </p>
                 </div>
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <p className="text-sm font-bold">Stručne konzultacije</p>
                   <p className="text-xs text-muted-foreground font-medium leading-relaxed">
-                    Za kupnju oružja i specijalizirane optike preporučamo dogovaranje termina za osobnu prezentaciju u našoj trgovini kako bismo Vam osigurali maksimalnu posvećenost.
+                    Za kupnju oružja i specijalizirane optike preporučujemo dogovaranje termina za osobnu prezentaciju u našoj trgovini kako bismo Vam osigurali maksimalnu posvećenost.
                   </p>
                 </div>
               </div>

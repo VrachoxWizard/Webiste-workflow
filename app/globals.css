@@ -38,10 +38,10 @@
   --font-heading: var(--font-heading);
 
   --radius-sm: 0.125rem;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.5rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.125rem;
   
-  --shadow-premium: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.02);
+  --shadow-premium: 0 8px 30px -4px rgba(0, 0, 0, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
 }
 
 :root {
@@ -79,7 +79,7 @@
   --input: oklch(0.9 0.005 60);
   --ring: oklch(0.35 0.03 150);
   
-  --radius: 0.25rem;
+  --radius: 0.125rem;
 }
 
 .dark {
@@ -108,8 +108,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/30;
+    @apply border-border;
   }
+  
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  
   body {
     @apply bg-background text-foreground selection:bg-accent/30;
     font-feature-settings: "ss01", "ss02", "cv01", "cv11";

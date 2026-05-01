@@ -1,76 +1,67 @@
 "use client"
 
-import * as React from "react"
 import Image from "next/image"
-import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Search, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react"
 import Link from "next/link"
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
-}
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-8 pb-24 lg:pt-20 lg:pb-40">
+    <section className="relative overflow-hidden bg-background pt-8 pb-16 lg:pt-20 lg:pb-32 border-b">
       <Container className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Content Area */}
-          <div 
-            className="flex flex-col space-y-10"
-          >
+          <div className="flex flex-col space-y-10 lg:col-span-7 xl:col-span-6">
             <div className="space-y-6">
-              <Badge variant="secondary" className="px-4 py-1 text-[11px] font-bold tracking-[0.2em] uppercase bg-primary/5 text-primary border-primary/20">
-                Specijalizirana trgovina
+              <Badge variant="secondary" className="px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase bg-primary/5 text-primary border-primary/20">
+                Lovačka i outdoor oprema
               </Badge>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight text-balance">
-                Oprema za <br />
-                <span className="text-primary italic font-medium">najzahtjevnije</span> uvjete.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-balance">
+                Oprema za teren.<br />
+                <span className="text-muted-foreground font-medium">Odgovorno i provjereno.</span>
               </h1>
               <p className="max-w-xl text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
-                Pronađite selektirani asortiman oružja, streljiva i vrhunske outdoor opreme. 
-                Sigurna kupnja, stručna podrška i provjerena kvaliteta za lovce i sportaše.
+                Specijalizirana trgovina za lovce, sportaše i outdoor entuzijaste.
+                Pronađite selektirani asortiman uz stručnu podršku i sigurnu kupnju.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="h-14 px-8 text-base font-bold tracking-tight rounded-sm" asChild>
-                <Link href="/kategorija/sve">
-                  Istraži ponudu <ArrowRight className="ml-2 size-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold tracking-tight rounded-sm" asChild>
-                <Link href="/kontakt">
-                  Kontaktiraj trgovinu
-                </Link>
-              </Button>
-            </div>
-
-            {/* Category Quick Links */}
-            <div className="space-y-4 pt-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                Popularne kategorije
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Lovački karabini", "Optički ciljnici", "Sačmeno streljivo", "Outdoor odjeća"].map((cat) => (
+            {/* Ecommerce Search Bar */}
+            <div className="max-w-md space-y-4">
+              <form 
+                action="/kategorija/sve"
+                role="search"
+                className="flex items-center gap-2"
+              >
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" aria-hidden="true" />
+                  <Input 
+                    type="search" 
+                    name="q"
+                    aria-label="Pretraži katalog"
+                    placeholder="Pretražite oružje, optike, streljivo..." 
+                    className="pl-9 h-12 bg-background border-border text-base rounded-sm shadow-sm"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="h-12 px-6 rounded-sm text-sm tracking-widest uppercase font-bold">
+                  Traži
+                </Button>
+              </form>
+              
+              {/* Category Quick Links */}
+              <div className="flex flex-wrap items-center gap-x-1 gap-y-1 pt-1">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground px-1">
+                  Brzi linkovi:
+                </span>
+                {["Karabini", "Termalni uređaji", "Streljivo", "Čizme"].map((cat) => (
                   <Link 
                     key={cat} 
                     href={`/kategorija/sve?q=${encodeURIComponent(cat)}`} 
-                    className="text-xs font-semibold px-3 py-2 bg-muted hover:bg-primary/10 hover:text-primary border transition-all rounded-sm"
+                    className="inline-flex items-center px-2 py-2 font-medium text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-4 decoration-transparent hover:decoration-primary/30 min-h-[44px]"
                   >
                     {cat}
                   </Link>
@@ -79,59 +70,46 @@ export function Hero() {
             </div>
 
             {/* Trust Signals */}
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-muted">
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="size-5 text-primary shrink-0" />
-                <div>
-                  <p className="text-sm font-bold leading-tight">Provjerena kvaliteta</p>
-                  <p className="text-xs text-muted-foreground mt-1">Svi proizvodi prolaze stručnu provjeru.</p>
+            <div className="flex flex-col sm:flex-row gap-6 pt-6 border-t">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="size-5 text-primary shrink-0" aria-hidden="true" />
+                <div className="space-y-0.5">
+                  <p className="text-sm font-bold leading-tight text-foreground">Stručna podrška</p>
+                  <p className="text-xs text-muted-foreground">Provjera prije kupnje.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="size-5 text-primary shrink-0" />
-                <div>
-                  <p className="text-sm font-bold leading-tight">Dostupnost potvrđena</p>
-                  <p className="text-xs text-muted-foreground mt-1">Status zaliha potvrđujemo prije isporuke.</p>
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="size-5 text-primary shrink-0" aria-hidden="true" />
+                <div className="space-y-0.5">
+                  <p className="text-sm font-bold leading-tight text-foreground">Sigurna kupnja</p>
+                  <p className="text-xs text-muted-foreground">U skladu sa zakonima.</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Visual Composition */}
-          <div 
-            className="relative lg:h-[700px] flex items-center justify-center"
-          >
-            <div className="relative w-full aspect-[4/5] max-w-[500px] bg-muted/30 border-2 border-muted overflow-hidden rounded-sm shadow-premium group">
+          <div className="relative lg:col-span-5 xl:col-span-6 lg:h-[650px] w-full flex items-center justify-end">
+            <div className="relative w-full aspect-square lg:aspect-auto lg:h-full lg:w-[110%] xl:w-[120%] bg-muted/20 overflow-hidden rounded-sm lg:rounded-l-sm lg:rounded-r-none lg:-mr-8 border lg:border-r-0 shadow-premium">
               <Image
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=85&w=1100"
-                alt="Terenska oprema pripremljena za boravak u prirodi"
+                src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=85&w=1200"
+                alt="Detalj vrhunske outdoor opreme"
                 fill
                 priority
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               
-              {/* Floating Product Tag (Realistic UI) */}
-              <div className="absolute bottom-8 right-8 bg-background border p-4 shadow-premium rounded-sm animate-bounce-slow">
-                <div className="flex items-center gap-3">
-                  <div className="size-10 bg-muted rounded-sm" />
-                  <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Provjera dostupnosti</p>
-                    <p className="text-xs font-bold">Optika i terenska oprema</p>
-                  </div>
+              {/* Subtle Overlay Action (Commerce Focus) */}
+              <div className="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 lg:right-auto">
+                <div className="bg-background/95 backdrop-blur-md border p-4 shadow-lg rounded-sm max-w-[280px]">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-1">Istražite</p>
+                  <p className="text-sm font-bold leading-tight text-foreground mb-3">Nova kolekcija terenske odjeće i obuće.</p>
+                  <Link href="/kategorija/odjeca-i-obuca" className="inline-flex items-center text-xs font-bold text-primary group">
+                    Saznaj više <ArrowRight className="ml-1 size-3 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Additional floating accent */}
-            <div className="absolute -top-12 right-0 hidden lg:block">
-              <div className="bg-foreground text-background p-6 space-y-2 rounded-sm shadow-2xl">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Novo u ponudi</p>
-                <p className="text-lg font-bold leading-tight">Vrhunska selekcija <br />za sezonu 2026.</p>
-                <Link href="/kategorija/sve" className="text-xs font-bold border-b border-accent text-accent inline-block mt-2 hover:border-transparent transition-all">
-                  Pregledaj katalog
-                </Link>
               </div>
             </div>
           </div>

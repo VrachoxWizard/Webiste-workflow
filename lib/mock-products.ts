@@ -1,5 +1,18 @@
 import { Product } from "@/types/product"
 
+const PRODUCT_IMAGES = {
+  rifleForest: "https://images.unsplash.com/photo-1683580366058-26f0afb5a21f?auto=format&fit=crop&q=85&w=900",
+  rifleDetail: "https://images.unsplash.com/photo-1669904953900-6174e90890bf?auto=format&fit=crop&q=85&w=900",
+  binocularsStudio: "https://images.unsplash.com/photo-1601283719887-a2b285d53877?auto=format&fit=crop&q=85&w=900",
+  opticForest: "https://images.unsplash.com/photo-1453563391321-df71955e9289?auto=format&fit=crop&q=85&w=900",
+  ammoBrass: "https://images.unsplash.com/photo-1552257127-151dd9bcc678?auto=format&fit=crop&q=85&w=900",
+  ammoPistol: "https://images.unsplash.com/photo-1545270812-b631d7f05548?auto=format&fit=crop&q=85&w=900",
+  boots: "https://images.unsplash.com/photo-1575987116913-e96e7d490b8a?auto=format&fit=crop&q=85&w=900",
+  apparel: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=85&w=900",
+  backpackTrail: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=85&w=900",
+  fieldGear: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=85&w=900",
+}
+
 export const MOCK_PRODUCTS: Product[] = [
   {
     id: "1",
@@ -10,8 +23,17 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 1450.00,
     status: "new",
     isRegulated: true,
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Kalibar", value: ".308 Win" }, { label: "Cijev", value: "510 mm" }]
+    image: PRODUCT_IMAGES.rifleForest,
+    galleryImages: [PRODUCT_IMAGES.rifleForest, PRODUCT_IMAGES.rifleDetail, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Lagan lovački karabin s provjerenom ergonomijom, namijenjen kupcima koji ispunjavaju zakonske uvjete.",
+    availabilityLabel: "Provjera dokumentacije",
+    purchaseNote: "Kupnja isključivo u poslovnici uz važeću dokumentaciju.",
+    metadata: [
+      { label: "Kalibar", value: ".308 Win" },
+      { label: "Cijev", value: "510 mm" },
+      { label: "Težina", value: "2.8 kg" },
+      { label: "Okidanje", value: "Podesivo (1-2 kg)" },
+    ],
   },
   {
     id: "2",
@@ -23,8 +45,16 @@ export const MOCK_PRODUCTS: Product[] = [
     salePrice: 599.00,
     status: "sale",
     isRegulated: false,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Povećanje", value: "5-25x" }, { label: "Promjer", value: "56 mm" }]
+    image: PRODUCT_IMAGES.binocularsStudio,
+    galleryImages: [PRODUCT_IMAGES.binocularsStudio, PRODUCT_IMAGES.opticForest, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Optika za precizno promatranje s jasnom slikom, čvrstim kućištem i podrškom pri odabiru montaže.",
+    availabilityLabel: "Na zalihi",
+    metadata: [
+      { label: "Povećanje", value: "5-25x" },
+      { label: "Promjer leće", value: "56 mm" },
+      { label: "Tubus", value: "34 mm" },
+      { label: "Končanica", value: "EBR-7C (MRAD)" },
+    ],
   },
   {
     id: "3",
@@ -35,8 +65,16 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 2100.00,
     status: "in_stock",
     isRegulated: true,
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Kalibar", value: "12/76" }]
+    image: PRODUCT_IMAGES.rifleDetail,
+    galleryImages: [PRODUCT_IMAGES.rifleDetail, PRODUCT_IMAGES.rifleForest, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Klasična sačmarica s naglaskom na pouzdanu izradu i kupnju uz prethodnu provjeru uvjeta.",
+    availabilityLabel: "Provjera dokumentacije",
+    purchaseNote: "Preuzimanje nakon potvrde dokumentacije u poslovnici.",
+    metadata: [
+      { label: "Kalibar", value: "12/76" },
+      { label: "Cijev", value: "71 cm" },
+      { label: "Čokovi", value: "5 Optima-Choke HP" },
+    ],
   },
   {
     id: "4",
@@ -47,8 +85,15 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 3450.00,
     status: "new",
     isRegulated: false,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Senzor", value: "640x480" }, { label: "Domet", value: "2300m" }]
+    image: PRODUCT_IMAGES.opticForest,
+    galleryImages: [PRODUCT_IMAGES.opticForest, PRODUCT_IMAGES.binocularsStudio, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Termalni uređaj za promatranje terena s visokim dometom detekcije i stručnom podrškom pri odabiru.",
+    availabilityLabel: "Na zalihi",
+    metadata: [
+      { label: "Senzor", value: "640x480 @ 12 µm" },
+      { label: "Domet", value: "2300 m" },
+      { label: "Zaslon", value: "AMOLED FHD" },
+    ],
   },
   {
     id: "5",
@@ -59,8 +104,16 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 85.00,
     status: "in_stock",
     isRegulated: true,
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Kalibar", value: "30-06" }, { label: "Težina", value: "11.7g" }]
+    image: PRODUCT_IMAGES.ammoBrass,
+    galleryImages: [PRODUCT_IMAGES.ammoBrass, PRODUCT_IMAGES.ammoPistol, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Streljivo za registrirane kupce, dostupno isključivo uz provjeru zakonskih uvjeta.",
+    availabilityLabel: "Provjera dokumentacije",
+    purchaseNote: "Prodaja samo uz važeće isprave i potvrdu trgovine.",
+    metadata: [
+      { label: "Kalibar", value: "30-06 Sprg" },
+      { label: "Težina", value: "11.7g / 180gr" },
+      { label: "Tip zrna", value: "ID Classic" },
+    ],
   },
   {
     id: "6",
@@ -72,7 +125,91 @@ export const MOCK_PRODUCTS: Product[] = [
     status: "sale",
     salePrice: 15.90,
     isRegulated: true,
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800",
-    metadata: [{ label: "Kalibar", value: "9mm" }, { label: "Pakiranje", value: "50 kom" }]
-  }
+    image: PRODUCT_IMAGES.ammoPistol,
+    galleryImages: [PRODUCT_IMAGES.ammoPistol, PRODUCT_IMAGES.ammoBrass, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Pakiranje streljiva za kupce koji mogu predočiti propisanu dokumentaciju.",
+    availabilityLabel: "Provjera dokumentacije",
+    purchaseNote: "Kupnja se dovršava u trgovini nakon provjere dokumentacije.",
+    metadata: [
+      { label: "Kalibar", value: "9x19mm" },
+      { label: "Tip zrna", value: "FMJ (Full Metal Jacket)" },
+      { label: "Pakiranje", value: "50 kom" },
+    ],
+  },
+  {
+    id: "7",
+    name: "Härkila Pro Hunter Move Jakna",
+    brand: "Härkila",
+    category: "Jakne",
+    sku: "HAR-PHM-JKT",
+    price: 429.00,
+    status: "new",
+    isRegulated: false,
+    image: PRODUCT_IMAGES.apparel,
+    galleryImages: [PRODUCT_IMAGES.apparel, PRODUCT_IMAGES.backpackTrail, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Robusna terenska jakna s tihom vanjskom tkaninom i krojem za višeslojno nošenje.",
+    availabilityLabel: "Na zalihi",
+    metadata: [
+      { label: "Materijal", value: "Vodoodbojna membrana" },
+      { label: "Kroj", value: "Regular fit" },
+      { label: "Namjena", value: "Lov i outdoor" },
+    ],
+  },
+  {
+    id: "8",
+    name: "Meindl Dovre Extreme GTX",
+    brand: "Meindl",
+    category: "Čizme",
+    sku: "MEI-DOV-GTX",
+    price: 369.00,
+    status: "in_stock",
+    isRegulated: false,
+    image: PRODUCT_IMAGES.boots,
+    galleryImages: [PRODUCT_IMAGES.boots, PRODUCT_IMAGES.backpackTrail, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Visoke kožne čizme za zahtjevan teren, s čvrstom potporom i zaštitnom membranom.",
+    availabilityLabel: "Na zalihi",
+    metadata: [
+      { label: "Membrana", value: "Gore-Tex" },
+      { label: "Potplat", value: "Vibram" },
+      { label: "Visina", value: "Visoka čizma" },
+    ],
+  },
+  {
+    id: "9",
+    name: "Ledlenser MT14 Terenska svjetiljka",
+    brand: "Ledlenser",
+    category: "Svjetiljke",
+    sku: "LED-MT14",
+    price: 119.00,
+    status: "on_order",
+    isRegulated: false,
+    image: PRODUCT_IMAGES.fieldGear,
+    galleryImages: [PRODUCT_IMAGES.fieldGear, PRODUCT_IMAGES.backpackTrail, PRODUCT_IMAGES.apparel],
+    shortDescription: "Pouzdana punjiva svjetiljka za kamp, izlete i rad na otvorenom.",
+    availabilityLabel: "Po narudžbi",
+    metadata: [
+      { label: "Svjetlosni tok", value: "Do 1000 lm" },
+      { label: "Baterija", value: "Punjiva" },
+      { label: "Kućište", value: "Aluminij" },
+    ],
+  },
+  {
+    id: "10",
+    name: "Fjällräven Lappland Hike Pack 45",
+    brand: "Fjällräven",
+    category: "Ruksaci i torbe",
+    sku: "FJR-LAP-45",
+    price: 249.00,
+    status: "in_stock",
+    isRegulated: false,
+    image: PRODUCT_IMAGES.backpackTrail,
+    galleryImages: [PRODUCT_IMAGES.backpackTrail, PRODUCT_IMAGES.apparel, PRODUCT_IMAGES.fieldGear],
+    shortDescription: "Prostran ruksak za višednevni teren, s organizacijom za odjeću, optiku i osnovnu opremu.",
+    availabilityLabel: "Na zalihi",
+    metadata: [
+      { label: "Volumen", value: "45 l" },
+      { label: "Materijal", value: "G-1000 HeavyDuty" },
+      { label: "Leđa", value: "Podesivi sustav" },
+    ],
+  },
 ]

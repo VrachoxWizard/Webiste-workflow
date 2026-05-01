@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { ArrowUpRight } from "lucide-react"
@@ -13,35 +12,35 @@ const CATEGORIES = [
     title: "Oružje",
     description: "Regulirani artikli uz provjeru propisane dokumentacije.",
     href: "/kategorija/oruzje",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&q=80&w=1000", // Rugged outdoor landscape (forest/mountain)
     size: "large",
   },
   {
     title: "Optike",
     description: "Optički uređaji, montaže i dodatna oprema.",
     href: "/kategorija/optike",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=900",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=900", // Distant horizon / vista
     size: "medium",
   },
   {
     title: "Streljivo",
     description: "Prodaja uz zakonsku provjeru kupca.",
     href: "/kategorija/streljivo",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=900",
+    image: "https://images.unsplash.com/photo-1552257127-151dd9bcc678?auto=format&fit=crop&q=80&w=900",
     size: "medium",
   },
   {
     title: "Termalni uređaji",
     description: "Uređaji za promatranje i orijentaciju na terenu.",
     href: "/kategorija/termalni-uredaji",
-    image: "https://images.unsplash.com/photo-1533577116850-9cc66cad8a9b?auto=format&fit=crop&q=80&w=900",
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=900", // Night sky / cool abstract nature
     size: "small",
   },
   {
     title: "Outdoor odjeća",
     description: "Slojevita oprema za boravak na otvorenom.",
     href: "/kategorija/odjeca-i-obuca",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=1000", // Trekking / snowy environment
     size: "wide",
   },
 ]
@@ -59,7 +58,7 @@ export function CategoryMosaic() {
         </div>
 
         <div className="grid h-[1200px] grid-cols-1 gap-4 md:h-[700px] md:grid-cols-4 md:grid-rows-2">
-          {CATEGORIES.map((cat, idx) => (
+          {CATEGORIES.map((cat) => (
             <article
               key={cat.title}
               className={cn(

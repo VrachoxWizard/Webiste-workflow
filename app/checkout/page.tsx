@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { ShieldCheck, Truck, CreditCard, Lock, ChevronLeft, AlertTriangle, Landmark } from "lucide-react"
+import { ShieldCheck, Truck, CreditCard, Lock, ChevronLeft, Landmark } from "lucide-react"
 import Link from "next/link"
 
 const paymentMethods = [
@@ -131,10 +131,10 @@ export default function CheckoutPage() {
                         type="button"
                         aria-pressed={paymentMethod === method.id}
                         onClick={() => setPaymentMethod(method.id)}
-                        className="group flex flex-col items-center gap-3 rounded-sm border p-4 transition-all hover:border-primary data-[active=true]:border-primary data-[active=true]:bg-primary/5"
+                        className="group flex flex-col items-center gap-3 rounded-sm border p-4 transition-all hover:border-primary/50 data-[active=true]:border-primary data-[active=true]:bg-primary/5 data-[active=true]:ring-1 data-[active=true]:ring-primary"
                         data-active={paymentMethod === method.id}
                       >
-                        <method.icon className="size-6 text-muted-foreground transition-colors group-hover:text-primary" aria-hidden="true" />
+                        <method.icon className="size-6 text-muted-foreground transition-colors group-hover:text-primary group-data-[active=true]:text-primary" aria-hidden="true" />
                         <span className="text-xs font-bold uppercase tracking-widest">{method.label}</span>
                       </button>
                     ))}
@@ -151,28 +151,39 @@ export default function CheckoutPage() {
                       className="mt-1"
                       required
                     />
-                    <Label htmlFor="terms" className="text-xs font-medium leading-relaxed">
+                    <Label htmlFor="terms" className="text-xs font-semibold leading-relaxed cursor-pointer">
                       Pročitao sam i prihvaćam <Link href="/opci-uvjeti" className="font-bold text-primary hover:underline">Opće uvjete poslovanja</Link> i <Link href="/privatnost" className="font-bold text-primary hover:underline">pravila privatnosti</Link>.
                     </Label>
                   </div>
                   {isRegulatedInCart && (
-                    <div className="flex gap-3 rounded-sm border border-primary/20 bg-primary/5 p-4">
-                      <Checkbox
-                        id="legal-confirm"
-                        checked={legalAccepted}
-                        onChange={(event) => setLegalAccepted(event.currentTarget.checked)}
-                        className="mt-1 border-primary"
-                        required
-                      />
-                      <Label htmlFor="legal-confirm" className="text-xs font-bold leading-relaxed text-primary">
-                        Potvrđujem da sam upoznat sa zakonskim uvjetima za kupnju reguliranih artikala i da ću prije preuzimanja predočiti propisanu dokumentaciju.
-                      </Label>
+                    <div className="flex gap-4 rounded-sm border border-primary/20 bg-primary/5 p-5 shadow-sm">
+                      <ShieldCheck className="size-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <div className="space-y-3">
+                        <div className="space-y-1">
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Zakonska obveza</p>
+                          <p className="text-xs font-medium leading-relaxed text-muted-foreground">
+                            Ova narudžba sadrži regulirane artikle. Procesuiranje je moguće tek nakon provjere propisane dokumentacije.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <Checkbox
+                            id="legal-confirm"
+                            checked={legalAccepted}
+                            onChange={(event) => setLegalAccepted(event.currentTarget.checked)}
+                            className="mt-0.5 border-primary"
+                            required
+                          />
+                          <Label htmlFor="legal-confirm" className="text-xs font-bold leading-relaxed text-foreground cursor-pointer">
+                            Potvrđujem da sam upoznat sa zakonskim uvjetima za kupnju reguliranih artikala i da ću prije preuzimanja predočiti propisanu dokumentaciju.
+                          </Label>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </section>
               </div>
 
-              <aside className="space-y-8 lg:sticky lg:top-32 lg:col-span-5" aria-label="Pregled narudžbe">
+              <aside className="space-y-8 lg:sticky lg:top-28 lg:col-span-5" aria-label="Pregled narudžbe">
                 <div className="space-y-6 rounded-sm border bg-secondary/10 p-8">
                   <h2 className="text-lg font-bold tracking-tight">Pregled narudžbe</h2>
 
@@ -191,9 +202,9 @@ export default function CheckoutPage() {
                   </div>
 
                   {isRegulatedInCart && (
-                    <div className="flex gap-3 rounded-sm border border-primary/20 bg-primary/5 p-4">
-                      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                      <p className="text-[11px] font-medium leading-relaxed">
+                    <div className="flex gap-3 rounded-sm border border-primary/20 bg-primary/5 p-4 shadow-sm">
+                      <ShieldCheck className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                      <p className="text-[11px] font-medium leading-relaxed text-muted-foreground">
                         Regulirani artikli zahtijevaju provjeru dokumentacije prije obrade ili preuzimanja.
                       </p>
                     </div>

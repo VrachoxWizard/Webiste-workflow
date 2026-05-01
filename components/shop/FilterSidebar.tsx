@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
 import { ProductFilters } from "@/types/filters"
 
-const BRANDS = ["Tikka", "Beretta", "Vortex", "Pulsar", "Geco", "RWS"]
 const STATUSES = [
   { id: "in_stock", label: "Dostupno odmah" },
   { id: "on_order", label: "Po narudžbi" },
@@ -14,6 +13,7 @@ const STATUSES = [
 ]
 
 interface FilterSidebarProps {
+  brands: string[]
   filters: ProductFilters
   onChange: (filters: Partial<ProductFilters>) => void
   onReset: () => void
@@ -23,7 +23,7 @@ const toggleValue = (values: string[], value: string) => {
   return values.includes(value) ? values.filter((item) => item !== value) : [...values, value]
 }
 
-export function FilterSidebar({ filters, onChange, onReset }: FilterSidebarProps) {
+export function FilterSidebar({ brands, filters, onChange, onReset }: FilterSidebarProps) {
   return (
     <aside className="hidden w-64 shrink-0 flex-col gap-8 lg:flex" aria-label="Filteri proizvoda">
       <div className="space-y-3">
@@ -91,7 +91,7 @@ export function FilterSidebar({ filters, onChange, onReset }: FilterSidebarProps
       <fieldset className="space-y-4">
         <legend className="text-xs font-bold uppercase tracking-widest text-primary/60">Proizvođač</legend>
         <div className="space-y-2.5">
-          {BRANDS.map((brand) => (
+          {brands.map((brand) => (
             <div key={brand} className="flex items-center gap-2 group">
               <Checkbox
                 id={`brand-${brand}`}

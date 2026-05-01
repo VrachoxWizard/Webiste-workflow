@@ -15,9 +15,7 @@ export function ExpertHelpCTA() {
                 Trebate stručnu pomoć <br />pri odabiru opreme?
               </h2>
               <p className="text-lg opacity-80 font-medium max-w-xl">
-                Naši stručnjaci sa dugogodišnjim iskustvom pomoći će vam pronaći 
-                savršeno rješenje za vaše potrebe, bez obzira radi li se o lovu, 
-                sportskom streljaštvu ili outdoor opremi.
+                Naši stručnjaci pomažu odabrati opremu prema terenu, veličini, kompatibilnosti i zakonskim uvjetima kupnje.
               </p>
             </div>
             
@@ -27,7 +25,7 @@ export function ExpertHelpCTA() {
                   Pošalji upit <MessageSquare className="ml-2 size-5 group-hover:scale-110 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-16 px-8 w-full sm:w-auto text-base font-bold border-primary-foreground/30 hover:bg-primary-foreground hover:text-primary transition-all group" asChild>
+              <Button size="lg" variant="outline" className="h-16 px-8 w-full bg-transparent text-primary-foreground sm:w-auto text-base font-bold border-primary-foreground/40 hover:bg-primary-foreground hover:text-primary transition-all group" asChild>
                 <Link href="tel:+38512345678">
                   Nazovi nas <PhoneCall className="ml-2 size-5 group-hover:rotate-12 transition-transform" />
                 </Link>

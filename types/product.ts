@@ -11,6 +11,10 @@ export interface Product {
   status: ProductStatus
   isRegulated: boolean // For legal notice (weapons/ammo)
   image: string
+  galleryImages?: string[]
+  shortDescription?: string
+  availabilityLabel?: string
+  purchaseNote?: string
   metadata?: {
     label: string
     value: string

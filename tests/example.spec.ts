@@ -21,6 +21,8 @@ test.describe("storefront smoke", () => {
   test("mobile menu opens as an accessible dialog", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto("/")
+    await page.waitForLoadState("networkidle")
+    await page.waitForTimeout(500)
     await page.getByLabel("Otvori izbornik").click()
     await expect(page.getByRole("dialog").first()).toBeVisible()
     await page.keyboard.press("Escape")
@@ -30,7 +32,10 @@ test.describe("storefront smoke", () => {
   test("non-regulated products can be added to cart", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 })
     await page.goto("/kategorija/optike")
+    await page.waitForLoadState("networkidle")
+    await page.waitForTimeout(500)
     await page.getByRole("button", { name: /dodaj vortex venom/i }).click()
+    await expect(page.getByLabel(/košarica \(1\)/i)).toBeVisible()
     await page.getByLabel(/košarica/i).first().click()
     await expect(page.getByRole("dialog").first()).toContainText("Vortex Venom")
   })

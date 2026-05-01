@@ -62,24 +62,24 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 <ChevronDown className={cn("size-4 transition-transform duration-300", expanded === item.title && "rotate-180")} aria-hidden="true" />
               </button>
               {expanded === item.title && (
-                <div className="overflow-hidden bg-muted/30">
-                  <div className="px-6 py-2 pb-6">
-                    <Link href={item.href} onClick={onClose} className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-primary hover:underline">
+                <div className="overflow-hidden bg-muted/20 border-l-2 border-primary/30 ml-4">
+                  <div className="px-5 py-3 pb-6">
+                    <Link href={item.href} onClick={onClose} className="mb-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-primary hover:underline">
                       Sve iz kategorije
                     </Link>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-5">
                       {item.columns.map((col) => (
                         <div key={col.title} className="space-y-2">
-                          <h3 className="text-[11px] font-bold uppercase tracking-widest text-primary/60">
+                          <h3 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                             {col.title}
                           </h3>
-                          <ul className="space-y-3">
+                          <ul className="space-y-2.5">
                             {col.items.map((sub) => (
                               <li key={sub.title}>
                                 <Link
                                   href={sub.href}
                                   onClick={onClose}
-                                  className="text-sm font-medium text-foreground/80 hover:text-primary"
+                                  className="text-[13px] font-medium text-foreground/80 hover:text-primary transition-colors"
                                 >
                                   {sub.title}
                                 </Link>
@@ -102,29 +102,29 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           </div>
         </div>
 
-        <div className="space-y-6 border-t bg-muted/50 p-6">
-          <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" className="h-11 justify-start gap-2 text-xs" asChild>
+        <div className="space-y-5 border-t p-5">
+          <div className="grid grid-cols-2 gap-3">
+            <Button variant="outline" className="h-10 justify-start gap-2 text-xs font-bold uppercase tracking-widest rounded-sm" asChild>
               <Link href="/kontakt" onClick={onClose}>
-                <MessageSquare className="size-4" aria-hidden="true" /> Podrška
+                <MessageSquare className="size-3.5" aria-hidden="true" /> Podrška
               </Link>
             </Button>
-            <Button variant="outline" className="h-11 justify-start gap-2 text-xs" asChild>
+            <Button variant="outline" className="h-10 justify-start gap-2 text-xs font-bold uppercase tracking-widest rounded-sm" asChild>
               <Link href="/checkout" onClick={onClose}>
-                <ShoppingBag className="size-4" aria-hidden="true" /> Košarica ({itemCount})
+                <ShoppingBag className="size-3.5" aria-hidden="true" /> Košarica ({itemCount})
               </Link>
             </Button>
           </div>
 
-          <div className="space-y-3">
-            <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground">
-              <Phone className="size-3.5" aria-hidden="true" /> +385 1 234 5678
-            </div>
-            <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground">
-              <Mail className="size-3.5" aria-hidden="true" /> info@terralov.hr
-            </div>
-            <Link href="/legal" onClick={onClose} className="flex items-center gap-3 text-xs font-bold text-primary">
-              <FileText className="size-3.5" aria-hidden="true" /> Zakonske napomene
+          <div className="space-y-2.5 pt-1">
+            <a href="tel:+38512345678" className="flex items-center gap-3 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Phone className="size-3.5 shrink-0" aria-hidden="true" /> +385 1 234 5678
+            </a>
+            <a href="mailto:info@terralov.hr" className="flex items-center gap-3 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Mail className="size-3.5 shrink-0" aria-hidden="true" /> info@terralov.hr
+            </a>
+            <Link href="/legal" onClick={onClose} className="flex items-center gap-3 text-xs font-bold text-primary hover:underline">
+              <FileText className="size-3.5 shrink-0" aria-hidden="true" /> Zakonske napomene
             </Link>
           </div>
         </div>

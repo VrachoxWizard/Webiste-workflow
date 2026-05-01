@@ -44,12 +44,13 @@ const contactLinks = [
 export function Footer() {
   return (
     <footer className="bg-foreground text-background">
-      <div className="border-b border-background/10 py-16">
+      <div className="border-b border-background/10 py-14">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
-            <div className="max-w-xl space-y-4 text-center lg:text-left">
-              <h3 className="text-3xl font-bold tracking-tight">Obavijesti iz trgovine</h3>
-              <p className="font-medium text-background/60">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+            <div className="max-w-md space-y-3 text-center lg:text-left">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Obavijesti iz trgovine</p>
+              <h3 className="text-2xl font-bold tracking-tight">Budite informirani</h3>
+              <p className="text-sm font-medium text-background/50">
                 Primajte informacije o dostupnosti, novim artiklima i odgovornoj kupnji opreme.
               </p>
             </div>
@@ -59,9 +60,9 @@ export function Footer() {
                 name="email"
                 aria-label="Email adresa za newsletter"
                 placeholder="Vaša email adresa"
-                className="h-14 rounded-sm border-background/20 bg-background/5 text-background focus-visible:ring-primary"
+                className="h-12 rounded-sm border-background/15 bg-background/8 text-background placeholder:text-background/40 focus-visible:ring-primary"
               />
-              <Button size="lg" className="h-14 px-8 font-bold uppercase tracking-widest" type="submit">
+              <Button size="lg" className="h-12 px-6 font-bold uppercase tracking-widest shrink-0" type="submit">
                 Prijavi se <Send className="ml-2 size-4" aria-hidden="true" />
               </Button>
             </form>
@@ -134,32 +135,33 @@ export function Footer() {
         </Container>
       </div>
 
-      <div className="border-b border-background/5 bg-black/20 py-12">
+      <div className="border-b border-background/5 bg-black/20 py-8">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-            <div className="flex flex-wrap justify-center gap-8 opacity-40 grayscale transition-all hover:opacity-100 hover:grayscale-0">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <div className="flex flex-wrap justify-center gap-2">
               {["Visa", "Mastercard", "Maestro", "PayPal", "DPD", "GLS"].map((label) => (
-                <span key={label} className="text-xl font-black uppercase italic">
+                <span key={label} className="rounded-sm border border-background/10 bg-background/5 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-background/40">
                   {label}
                 </span>
               ))}
             </div>
-            <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-background/40 md:text-right">
-              Sigurna obrada podataka i provjera uvjeta kupnje prije isporuke.
+            <p className="text-center text-[10px] font-medium uppercase tracking-widest text-background/30 md:text-right">
+              Sigurna obrada podataka i provjera uvjeta kupnje.
             </p>
           </div>
         </Container>
       </div>
 
-      <div className="py-8">
+      <div className="py-6">
         <Container>
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-[11px] font-medium text-background/30 md:text-left">
-              © {new Date().getFullYear()} TerraLov d.o.o. Sva prava pridržana.
+            <p className="text-center text-[10px] font-medium text-background/30 md:text-left">
+              © {new Date().getFullYear()} TerraLov d.o.o. - Sva prava pridržana. Odgovorna kupnja opreme u skladu s hrvatskim zakonodavstvom.
             </p>
-            <div className="flex gap-6 text-[11px] font-bold uppercase tracking-widest text-background/40">
-              <Link href="/privatnost" className="hover:text-primary">GDPR</Link>
-              <Link href="/legal" className="hover:text-primary">Hrvatska</Link>
+            <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-background/30">
+              <Link href="/privatnost" className="hover:text-primary transition-colors">GDPR</Link>
+              <Link href="/legal" className="hover:text-primary transition-colors">Pravne napomene</Link>
+              <Link href="/opci-uvjeti" className="hover:text-primary transition-colors">Uvjeti</Link>
             </div>
           </div>
         </Container>

@@ -8,7 +8,6 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { ProductFilters } from "@/types/filters"
 
-const BRANDS = ["Tikka", "Beretta", "Vortex", "Pulsar", "Geco", "RWS"]
 const STATUSES = [
   { id: "in_stock", label: "Dostupno odmah" },
   { id: "on_order", label: "Po narudžbi" },
@@ -18,6 +17,7 @@ const STATUSES = [
 
 interface MobileFiltersProps {
   isOpen: boolean
+  brands: string[]
   filters: ProductFilters
   onChange: (filters: Partial<ProductFilters>) => void
   onReset: () => void
@@ -28,7 +28,7 @@ const toggleValue = (values: string[], value: string) => {
   return values.includes(value) ? values.filter((item) => item !== value) : [...values, value]
 }
 
-export function MobileFilters({ isOpen, filters, onChange, onReset, onClose }: MobileFiltersProps) {
+export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onClose }: MobileFiltersProps) {
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent side="bottom" showCloseButton={false} className="h-[90vh] gap-0 p-0 lg:hidden">
@@ -101,7 +101,7 @@ export function MobileFilters({ isOpen, filters, onChange, onReset, onClose }: M
             <fieldset className="space-y-4">
               <legend className="text-xs font-bold uppercase tracking-widest text-primary/60">Proizvođač</legend>
               <div className="grid grid-cols-2 gap-4">
-                {BRANDS.map((brand) => (
+                {brands.map((brand) => (
                   <div key={brand} className="flex items-center gap-3 rounded-sm border p-3">
                     <Checkbox
                       id={`mob-brand-${brand}`}
