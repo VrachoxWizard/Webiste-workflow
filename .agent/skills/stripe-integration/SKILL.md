@@ -41,22 +41,23 @@ Use Stripe test mode with real test cards for all development.
 ## Anti-Patterns
 
 ### Never:
+
 - **Trust the API response** — Always verify via webhooks
 - **Webhook without signature verification** — Always verify signatures
 - **Subscription status checks without refresh** — Always sync with Stripe
 
 ## Sharp Edges
 
-| Issue | Severity | Notes |
-|-------|----------|-------|
-| Not verifying webhook signatures | Critical | Always verify |
-| JSON middleware parsing body before webhook verify | Critical | Use raw body for webhooks |
-| Not using idempotency keys | High | Always use for payments |
-| Trusting API responses over webhooks | Critical | Webhook-first architecture |
-| Not passing metadata through checkout session | High | Always include metadata |
-| Local subscription state drifting from Stripe | High | Handle ALL subscription webhooks |
-| Not handling failed payments and dunning | High | Handle invoice.payment_failed |
-| Different behavior between test and live mode | High | Separate all keys |
+| Issue                                              | Severity | Notes                            |
+| -------------------------------------------------- | -------- | -------------------------------- |
+| Not verifying webhook signatures                   | Critical | Always verify                    |
+| JSON middleware parsing body before webhook verify | Critical | Use raw body for webhooks        |
+| Not using idempotency keys                         | High     | Always use for payments          |
+| Trusting API responses over webhooks               | Critical | Webhook-first architecture       |
+| Not passing metadata through checkout session      | High     | Always include metadata          |
+| Local subscription state drifting from Stripe      | High     | Handle ALL subscription webhooks |
+| Not handling failed payments and dunning           | High     | Handle invoice.payment_failed    |
+| Different behavior between test and live mode      | High     | Separate all keys                |
 
 ## Related Skills
 

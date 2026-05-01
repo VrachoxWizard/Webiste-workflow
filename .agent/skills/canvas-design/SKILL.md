@@ -18,6 +18,7 @@ Create design philosophies — aesthetic movements expressed visually. Output .m
 ## Design Philosophy Creation
 
 Create a VISUAL PHILOSOPHY (not layouts or templates) interpreted through:
+
 - Form, space, color, composition
 - Images, graphics, shapes, patterns
 - Minimal text as visual accent
@@ -27,6 +28,7 @@ Create a VISUAL PHILOSOPHY (not layouts or templates) interpreted through:
 **Name the movement** (1-2 words): "Brutalist Joy" / "Chromatic Silence" / "Metabolist Dreams"
 
 **Articulate the philosophy** (4-6 paragraphs):
+
 - Space and form
 - Color and material
 - Scale and rhythm

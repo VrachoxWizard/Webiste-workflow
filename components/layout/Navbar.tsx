@@ -21,8 +21,8 @@ export function Navbar() {
   return (
     <Container className="flex items-center justify-between">
       {/* Mobile Toggle */}
-      <button 
-        className="lg:hidden -ml-2 p-2 hover:bg-muted rounded-md transition-colors"
+      <button
+        className="hover:bg-muted -ml-2 rounded-md p-2 transition-colors lg:hidden"
         onClick={() => setIsMobileMenuOpen(true)}
         aria-label="Otvori izbornik"
       >
@@ -30,47 +30,45 @@ export function Navbar() {
       </button>
 
       {/* Logo Area */}
-      <Link href="/" className="flex flex-col group">
-        <span className="text-2xl font-bold tracking-tighter uppercase leading-none">
+      <Link href="/" className="group flex flex-col">
+        <span className="text-2xl leading-none font-bold tracking-tighter uppercase">
           Terra<span className="text-primary italic">Lov</span>
         </span>
-        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary/60 -mt-0.5 transition-colors group-hover:text-primary">
+        <span className="text-primary/60 group-hover:text-primary -mt-0.5 text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
           Odgovorna oprema
         </span>
       </Link>
 
-      <form
-        action="/kategorija/sve"
-        className="hidden xl:flex w-full max-w-sm items-center gap-2 rounded-sm border border-border/60 bg-muted/30 px-3 py-1.5 transition-all hover:border-primary/40 focus-within:border-primary focus-within:bg-background focus-within:shadow-sm"
-        role="search"
+      {/* Search Trigger (Desktop) */}
+      <button
+        type="button"
+        onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
+        className="flex w-full max-w-sm items-center gap-3 rounded-sm border border-border/60 bg-muted/30 px-3 py-2 text-muted-foreground transition-all hover:border-primary/40 hover:bg-background hover:shadow-sm xl:flex hidden"
       >
-        <Search className="size-4 text-muted-foreground" aria-hidden="true" />
-        <Input
-          name="q"
-          type="search"
-          aria-label="Pretraži proizvode"
-          placeholder="Pretraži proizvode, brend ili šifru"
-          className="h-8 border-0 px-0 shadow-none focus-visible:ring-0 text-sm"
-        />
-      </form>
+        <Search className="size-4" aria-hidden="true" />
+        <span className="text-sm font-medium">Pretražite katalog...</span>
+        <kbd className="ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100">
+          <span className="text-xs">⌘</span>K
+        </kbd>
+      </button>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center gap-0.5">
+      <nav className="hidden items-center gap-1 lg:flex">
         {NAVIGATION_DATA.map((item) => (
           <div key={item.title} className="group relative">
-            <Link 
+            <Link
               href={item.href}
-              className="px-3.5 py-2 text-[13px] font-semibold tracking-tight hover:text-primary transition-colors flex items-center gap-1 rounded-sm hover:bg-muted/50"
+              className="flex items-center gap-1 rounded-sm px-4 py-2.5 text-[13px] font-bold tracking-tight transition-colors hover:bg-muted/50 hover:text-primary"
             >
               {item.title}
-              <span className="size-1 rounded-full bg-primary scale-0 group-hover:scale-100 transition-transform origin-center" />
+              <span className="bg-primary size-1 origin-center scale-0 rounded-full transition-transform group-hover:scale-100" />
             </Link>
             <MegaMenu data={item.columns} />
           </div>
         ))}
-        <Link 
+        <Link
           href="/kategorija/akcija"
-          className="ml-1 px-3.5 py-2 text-[13px] font-bold tracking-tight text-destructive hover:bg-destructive/5 rounded-sm transition-colors"
+          className="ml-1 rounded-sm px-4 py-2.5 text-[13px] font-black tracking-tight text-destructive transition-colors hover:bg-destructive/5"
         >
           Akcija
         </Link>
@@ -78,35 +76,39 @@ export function Navbar() {
 
       {/* Actions */}
       <div className="flex items-center gap-1 sm:gap-2">
-        <Button variant="ghost" size="icon" className="hidden sm:flex xl:hidden" aria-label="Pretraži proizvode" asChild>
-          <Link href="/kategorija/sve">
-            <Search className="size-5" />
-          </Link>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="size-10 rounded-full sm:flex xl:hidden hidden"
+          aria-label="Pretraži proizvode"
+          onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
+        >
+          <Search className="size-5" />
         </Button>
-        <Button variant="ghost" size="icon" aria-label="Korisnički račun" asChild>
+        <Button variant="ghost" size="icon" className="size-10 rounded-full" aria-label="Korisnički račun" asChild>
           <Link href="/kontakt">
             <User className="size-5" />
           </Link>
         </Button>
-        <Button variant="ghost" size="icon" className="relative group" aria-label={`Košarica (${itemCount})`} onClick={() => setIsCartOpen(true)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="group relative size-10 rounded-full"
+          aria-label={`Košarica (${itemCount})`}
+          onClick={() => setIsCartOpen(true)}
+        >
           <ShoppingBag className="size-5" />
           {itemCount > 0 && (
-            <span className="absolute top-1.5 right-1.5 size-4 bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center rounded-sm shadow-premium group-hover:scale-110 transition-transform">
+            <span className="absolute top-1 right-1 flex size-4.5 items-center justify-center rounded-full bg-primary text-[10px] font-black text-primary-foreground shadow-premium-hover transition-transform group-hover:scale-110">
               {itemCount}
             </span>
           )}
         </Button>
       </div>
 
-      <MobileDrawer 
-        isOpen={isMobileMenuOpen} 
-        onClose={() => setIsMobileMenuOpen(false)} 
-      />
-      
-      <CartDrawer 
-        isOpen={isCartOpen} 
-        onClose={() => setIsCartOpen(false)} 
-      />
+      <MobileDrawer isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </Container>
   )
 }

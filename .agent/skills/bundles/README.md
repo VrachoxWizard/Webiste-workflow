@@ -9,13 +9,13 @@
 
 ### Step 1: Pick Your Bundle
 
-| Bundle | Skills | Best For |
-|--------|--------|----------|
-| **Essentials** | 5 | Planning, quality, workflow basics |
-| **Web Wizard** | 7 | React + Next.js + Tailwind web apps |
-| **Web Designer** | 10 | Visual design, 3D, animations, scroll |
-| **Full-Stack** | 13 | End-to-end app development |
-| **Debugging & Quality** | 12 | Bug fixing, error analysis, testing |
+| Bundle                  | Skills | Best For                              |
+| ----------------------- | ------ | ------------------------------------- |
+| **Essentials**          | 5      | Planning, quality, workflow basics    |
+| **Web Wizard**          | 7      | React + Next.js + Tailwind web apps   |
+| **Web Designer**        | 10     | Visual design, 3D, animations, scroll |
+| **Full-Stack**          | 13     | End-to-end app development            |
+| **Debugging & Quality** | 12     | Bug fixing, error analysis, testing   |
 
 ### Step 2: Tell Oz Which Bundle to Use
 
@@ -66,18 +66,23 @@ Use form-cro and frontend-design to redesign the contact form
 ## Bundle Quick Reference
 
 ### Essentials (5 skills)
+
 `concise-planning` · `lint-and-validate` · `git-pushing` · `kaizen` · `systematic-debugging`
 
 ### Web Wizard (7 skills)
+
 `frontend-design` · `react-best-practices` · `react-patterns` · `nextjs-best-practices` · `tailwind-patterns` · `form-cro` · `seo-audit`
 
 ### Web Designer (10 skills)
+
 `ui-ux-pro-max` · `frontend-design` · `antigravity-design-expert` · `threejs-skills` · `3d-web-experience` · `react-ui-patterns` · `tailwind-patterns` · `canvas-design` · `mobile-design` · `scroll-experience`
 
 ### Full-Stack (13 skills)
+
 `senior-fullstack` · `frontend-developer` · `frontend-dev-guidelines` · `backend-dev-guidelines` · `nextjs-app-router-patterns` · `nextjs-supabase-auth` · `api-patterns` · `database-design` · `react-state-management` · `tanstack-query-expert` · `vercel-ai-sdk-expert` · `vercel-deployment` · `stripe-integration`
 
 ### Debugging & Quality (12 skills)
+
 `systematic-debugging` · `debugger` · `bug-hunter` · `find-bugs` · `debugging-strategies` · `debugging-toolkit-smart-debug` · `error-debugging-error-analysis` · `error-debugging-error-trace` · `error-diagnostics-error-analysis` · `test-fixing` · `performance-optimizer` · `lint-and-validate`
 
 ---

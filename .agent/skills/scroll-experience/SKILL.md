@@ -29,48 +29,44 @@ and when to go cinematic. You balance performance with visual impact.
 
 ### Library Options
 
-| Library | Best For | Learning Curve |
-|---------|----------|----------------|
-| GSAP ScrollTrigger | Complex animations | Medium |
-| Framer Motion | React projects | Low |
-| Locomotive Scroll | Smooth scroll + parallax | Medium |
-| Lenis | Smooth scroll only | Low |
-| CSS scroll-timeline | Simple, native | Low |
+| Library             | Best For                 | Learning Curve |
+| ------------------- | ------------------------ | -------------- |
+| GSAP ScrollTrigger  | Complex animations       | Medium         |
+| Framer Motion       | React projects           | Low            |
+| Locomotive Scroll   | Smooth scroll + parallax | Medium         |
+| Lenis               | Smooth scroll only       | Low            |
+| CSS scroll-timeline | Simple, native           | Low            |
 
 ### GSAP ScrollTrigger Setup
 
 ```javascript
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-gsap.to('.element', {
+gsap.to(".element", {
   scrollTrigger: {
-    trigger: '.element',
-    start: 'top center',
-    end: 'bottom center',
+    trigger: ".element",
+    start: "top center",
+    end: "bottom center",
     scrub: true,
   },
   y: -100,
   opacity: 1,
-});
+})
 ```
 
 ### Framer Motion Scroll
 
 ```jsx
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion"
 
 function ParallaxSection() {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const { scrollYProgress } = useScroll()
+  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 
-  return (
-    <motion.div style={{ y }}>
-      Content moves with scroll
-    </motion.div>
-  );
+  return <motion.div style={{ y }}>Content moves with scroll</motion.div>
 }
 ```
 
@@ -78,8 +74,14 @@ function ParallaxSection() {
 
 ```css
 @keyframes reveal {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-on-scroll {
@@ -93,13 +95,13 @@ function ParallaxSection() {
 
 ### Layer Speeds
 
-| Layer | Speed | Effect |
-|-------|-------|--------|
-| Background | 0.2x | Far away, slow |
-| Midground | 0.5x | Middle depth |
-| Foreground | 1.0x | Normal scroll |
-| Content | 1.0x | Readable |
-| Floating elements | 1.2x | Pop forward |
+| Layer             | Speed | Effect         |
+| ----------------- | ----- | -------------- |
+| Background        | 0.2x  | Far away, slow |
+| Midground         | 0.5x  | Middle depth   |
+| Foreground        | 1.0x  | Normal scroll  |
+| Content           | 1.0x  | Readable       |
+| Floating elements | 1.2x  | Pop forward    |
 
 ### Story Beats
 
@@ -134,38 +136,39 @@ Section 5: Resolution (CTA or conclusion)
 ### GSAP Pin
 
 ```javascript
-gsap.to('.content', {
+gsap.to(".content", {
   scrollTrigger: {
-    trigger: '.section',
+    trigger: ".section",
     pin: true,
-    start: 'top top',
-    end: '+=1000',
+    start: "top top",
+    end: "+=1000",
     scrub: true,
   },
-  x: '-100vw',
-});
+  x: "-100vw",
+})
 ```
 
 ### Horizontal Scroll Section
 
 ```javascript
-const sections = gsap.utils.toArray('.panel');
+const sections = gsap.utils.toArray(".panel")
 
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
-  ease: 'none',
+  ease: "none",
   scrollTrigger: {
-    trigger: '.horizontal-container',
+    trigger: ".horizontal-container",
     pin: true,
     scrub: 1,
-    end: () => '+=' + document.querySelector('.horizontal-container').offsetWidth,
+    end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth,
   },
-});
+})
 ```
 
 ## Anti-Patterns
 
 ### Do NOT:
+
 - **Scroll hijacking** — Users hate losing scroll control. Enhance scroll, don't replace it.
 - **Animation overload** — Less is more. Animate key moments, not everything.
 - **Desktop-only experience** — Mobile-first scroll design. Simpler effects on mobile.

@@ -10,47 +10,54 @@ interface MegaMenuProps {
 
 export function MegaMenu({ data }: MegaMenuProps) {
   return (
-    <div className="absolute top-full left-1/2 z-50 hidden w-[min(820px,calc(100vw-2rem))] -translate-x-1/2 pt-2 group-hover:block group-focus-within:block">
-      <div className="w-full overflow-hidden rounded-sm border bg-background p-8 shadow-premium">
+    <div className="absolute top-full left-1/2 z-50 hidden w-[min(820px,calc(100vw-2rem))] -translate-x-1/2 pt-2 group-focus-within:block group-hover:block">
+      <div className="bg-background shadow-premium w-full overflow-hidden rounded-sm border p-8">
         <div className="grid grid-cols-3 gap-10">
           {data.map((col) => (
             <div key={col.title} className="space-y-4">
               <div className="flex items-center gap-3">
-                <span className="h-4 w-0.5 bg-primary/50 rounded-full shrink-0" aria-hidden="true" />
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                <span
+                  className="bg-primary/50 h-4 w-0.5 shrink-0 rounded-full"
+                  aria-hidden="true"
+                />
+                <h3 className="text-muted-foreground text-[10px] font-bold tracking-widest uppercase">
                   {col.title}
                 </h3>
               </div>
               <ul className="space-y-1">
                 {col.items.map((item) => (
                   <li key={item.title}>
-                    <Link 
+                    <Link
                       href={item.href}
-                      className="group/link text-[13px] font-medium text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 py-1 px-2 rounded-sm hover:bg-muted/40"
+                      className="group/link text-foreground/70 hover:text-primary hover:bg-muted/40 flex items-center gap-2 rounded-sm px-2 py-1 text-[13px] font-medium transition-colors"
                     >
                       {item.title}
-                      <ChevronRight className="size-3 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all ml-auto" />
+                      <ChevronRight className="ml-auto size-3 -translate-x-1 opacity-0 transition-all group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-          
+
           {/* Support Footer Bar */}
-          <div className="col-span-full mt-6 pt-6 border-t border-border/50 flex items-center justify-between">
+          <div className="border-border/50 col-span-full mt-6 flex items-center justify-between border-t pt-6">
             <div className="flex items-center gap-3">
-              <div className="size-7 rounded-sm bg-primary/8 border border-primary/15 flex items-center justify-center shrink-0">
-                <ChevronRight className="size-3.5 text-primary" aria-hidden="true" />
+              <div className="bg-primary/8 border-primary/15 flex size-7 shrink-0 items-center justify-center rounded-sm border">
+                <ChevronRight className="text-primary size-3.5" aria-hidden="true" />
               </div>
               <div className="space-y-0.5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Stručna podrška</p>
-                <p className="text-xs font-medium text-foreground/60">Za kompatibilnost, dokumentaciju i dostupnost kontaktirajte nas.</p>
+                <p className="text-muted-foreground text-[10px] font-bold tracking-widest uppercase">
+                  Stručna podrška
+                </p>
+                <p className="text-foreground/60 text-xs font-medium">
+                  Za kompatibilnost, dokumentaciju i dostupnost kontaktirajte nas.
+                </p>
               </div>
             </div>
-            <Link 
+            <Link
               href="/kontakt"
-              className="shrink-0 text-[11px] font-bold uppercase tracking-widest text-primary border border-primary/20 hover:bg-primary/5 px-4 py-2 rounded-sm transition-colors"
+              className="text-primary border-primary/20 hover:bg-primary/5 shrink-0 rounded-sm border px-4 py-2 text-[11px] font-bold tracking-widest uppercase transition-colors"
             >
               Zatraži savjet
             </Link>

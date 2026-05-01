@@ -7,16 +7,21 @@ export function ProductSpecs({ specs }: ProductSpecsProps) {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Tehničke specifikacije</h3>
-      <div className="border border-border/50 rounded-sm overflow-hidden bg-background">
-        <table className="w-full text-sm text-left">
-          <tbody className="divide-y divide-border/50">
+      <h3 className="text-muted-foreground text-[11px] font-bold tracking-widest uppercase">
+        Tehničke specifikacije
+      </h3>
+      <div className="border-border/50 bg-background overflow-hidden rounded-sm border">
+        <table className="w-full text-left text-sm">
+          <tbody className="divide-border/50 divide-y">
             {specs.map((spec) => (
               <tr key={spec.label} className="group hover:bg-muted/20 transition-colors">
-                <th scope="row" className="px-4 py-3.5 font-bold text-[11px] uppercase tracking-widest text-muted-foreground w-2/5 border-r border-border/50 align-top">
+                <th
+                  scope="row"
+                  className="text-muted-foreground border-border/50 w-2/5 border-r px-4 py-3.5 align-top text-[11px] font-bold tracking-widest uppercase"
+                >
                   {spec.label}
                 </th>
-                <td className="px-4 py-3.5 font-semibold text-foreground align-top">
+                <td className="text-foreground px-4 py-3.5 align-top font-semibold">
                   {spec.value}
                 </td>
               </tr>

@@ -30,10 +30,10 @@ This index answers:
 
 It prevents:
 
-* premature redesigns
-* gut-feel field removal
-* optimization without measurement
-* "just make it shorter" mistakes
+- premature redesigns
+- gut-feel field removal
+- optimization without measurement
+- "just make it shorter" mistakes
 
 ---
 
@@ -53,39 +53,39 @@ It prevents:
 
 #### 1. Field Necessity & Efficiency (0-30)
 
-* Every required field is justified
-* No unused or "nice-to-have" fields
-* No duplicated or inferable data
+- Every required field is justified
+- No unused or "nice-to-have" fields
+- No duplicated or inferable data
 
 #### 2. Value-Effort Balance (0-20)
 
-* Clear value proposition before the form
-* Effort required matches perceived reward
-* Commitment level fits traffic intent
+- Clear value proposition before the form
+- Effort required matches perceived reward
+- Commitment level fits traffic intent
 
 #### 3. Cognitive Load & Clarity (0-20)
 
-* Clear labels and instructions
-* Logical field order
-* Minimal decision fatigue
+- Clear labels and instructions
+- Logical field order
+- Minimal decision fatigue
 
 #### 4. Error Handling & Recovery (0-15)
 
-* Inline validation
-* Helpful error messages
-* No data loss on errors
+- Inline validation
+- Helpful error messages
+- No data loss on errors
 
 #### 5. Trust & Friction Reduction (0-10)
 
-* Privacy reassurance
-* Objection handling
-* Social proof where appropriate
+- Privacy reassurance
+- Objection handling
+- Social proof where appropriate
 
 #### 6. Mobile Usability (0-5)
 
-* Touch-friendly
-* Proper keyboards
-* No horizontal scrolling or cramped fields
+- Touch-friendly
+- Proper keyboards
+- No horizontal scrolling or cramped fields
 
 ---
 
@@ -108,9 +108,9 @@ Each required field reduces completion.
 
 Rule of thumb:
 
-* 3 fields → baseline
-* 4-6 fields → -10-25%
-* 7+ fields → -25-50%+
+- 3 fields → baseline
+- 4-6 fields → -10-25%
+- 7+ fields → -25-50%+
 
 Fields must **earn their place**.
 
@@ -127,148 +127,167 @@ People abandon forms more from **thinking** than typing.
 ## Field-Level Optimization
 
 ### Email
-* Single field (no confirmation)
-* Inline validation
-* Typo correction
-* Correct mobile keyboard
+
+- Single field (no confirmation)
+- Inline validation
+- Typo correction
+- Correct mobile keyboard
 
 ### Name
-* Single "Name" field by default
-* Split only if operationally required
+
+- Single "Name" field by default
+- Split only if operationally required
 
 ### Phone
-* Optional unless critical
-* Explain why if required
-* Auto-format and support country codes
+
+- Optional unless critical
+- Explain why if required
+- Auto-format and support country codes
 
 ### Company / Organization
-* Auto-suggest when possible
-* Infer from email domain
-* Enrich after submission if feasible
+
+- Auto-suggest when possible
+- Infer from email domain
+- Enrich after submission if feasible
 
 ### Free-Text Fields
-* Optional unless essential
-* Clear guidance on length/purpose
-* Expand on focus
+
+- Optional unless essential
+- Clear guidance on length/purpose
+- Expand on focus
 
 ---
 
 ## Layout & Flow
 
 ### Field Order
+
 1. Easiest first (email, name)
 2. Commitment-building fields
 3. Sensitive or high-effort fields last
 
 ### Labels & Placeholders
-* Labels must always be visible
-* Placeholders are examples only
-* Avoid label-as-placeholder anti-pattern
+
+- Labels must always be visible
+- Placeholders are examples only
+- Avoid label-as-placeholder anti-pattern
 
 ### Single vs Multi-Column
-* Default to single column
-* Multi-column only for closely related fields
+
+- Default to single column
+- Multi-column only for closely related fields
 
 ---
 
 ## Multi-Step Forms
 
 ### Use When
-* 6+ fields
-* Distinct logical sections
-* Qualification or routing required
+
+- 6+ fields
+- Distinct logical sections
+- Qualification or routing required
 
 ### Best Practices
-* Progress indicator
-* Back navigation
-* Save progress
-* One topic per step
+
+- Progress indicator
+- Back navigation
+- Save progress
+- One topic per step
 
 ---
 
 ## Error Handling
 
 ### Inline Validation
-* After field interaction, not keystroke
-* Clear visual feedback
-* Do not clear input on error
+
+- After field interaction, not keystroke
+- Clear visual feedback
+- Do not clear input on error
 
 ### Error Messaging
-* Specific, human, actionable
-* Bad: "Invalid input"
-* Good: "Please enter a valid email (name@company.com)"
+
+- Specific, human, actionable
+- Bad: "Invalid input"
+- Good: "Please enter a valid email (name@company.com)"
 
 ---
 
 ## Submit Button Optimization
 
 ### Copy
+
 Avoid: Submit, Send
 Prefer: Action + Outcome (e.g., "Get My Quote", "Request Demo", "Download the Guide")
 
 ### States
-* Disabled + loading on submit
-* Clear success message
-* Next-step expectations
+
+- Disabled + loading on submit
+- Clear success message
+- Next-step expectations
 
 ---
 
 ## Trust & Friction Reduction
 
-* Privacy reassurance near submit
-* Expected response time
-* Testimonials (when appropriate)
-* Security badges only if relevant
+- Privacy reassurance near submit
+- Expected response time
+- Testimonials (when appropriate)
+- Security badges only if relevant
 
 ---
 
 ## Mobile Optimization (Mandatory)
 
-* ≥44px touch targets
-* Correct keyboard types
-* Autofill support
-* Single column
-* Sticky submit button (where helpful)
+- ≥44px touch targets
+- Correct keyboard types
+- Autofill support
+- Single column
+- Sticky submit button (where helpful)
 
 ---
 
 ## Measurement (Required)
 
 ### Key Metrics
-* Form view → start
-* Start → completion
-* Field-level drop-off
-* Error rate by field
-* Time to complete
-* Device split
+
+- Form view → start
+- Start → completion
+- Field-level drop-off
+- Error rate by field
+- Time to complete
+- Device split
 
 ---
 
 ## Output Format
 
 ### Form Health Summary
-* Form Health & Friction Index score
-* Primary bottlenecks
-* Structural vs tactical issues
+
+- Form Health & Friction Index score
+- Primary bottlenecks
+- Structural vs tactical issues
 
 ### Form Audit
+
 For each issue: **Issue**, **Impact**, **Fix**, **Priority**
 
 ### Recommended Form Design
-* Required fields (with justification)
-* Optional fields
-* Field order
-* Copy (labels, help text, CTA)
-* Error messages
-* Layout notes
+
+- Required fields (with justification)
+- Optional fields
+- Field order
+- Copy (labels, help text, CTA)
+- Error messages
+- Layout notes
 
 ### Test Hypotheses
+
 Clearly stated A/B test ideas with expected outcome
 
 ---
 
 ## Related Skills
 
-* **seo-audit** — Technical SEO health checks
-* **analytics-tracking** — Measuring form performance
-* **ab-test-setup** — Testing form changes
+- **seo-audit** — Technical SEO health checks
+- **analytics-tracking** — Measuring form performance
+- **ab-test-setup** — Testing form changes

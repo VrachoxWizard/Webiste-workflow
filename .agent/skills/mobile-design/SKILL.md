@@ -60,6 +60,7 @@ If any of the following are not stated, you MUST ask:
 ## 3. Performance Anti-Patterns (Hard Bans)
 
 ### Never:
+
 - ScrollView for long lists → Use FlatList / FlashList
 - Inline renderItem → useCallback + memo
 - Index as key → Stable ID
@@ -67,6 +68,7 @@ If any of the following are not stated, you MUST ask:
 - console.log in prod → Strip logs
 
 ### Touch & UX — Never:
+
 - Touch target <44-48px → Min touch target
 - Gesture-only action → Button fallback
 - No loading state → Explicit feedback
@@ -74,6 +76,7 @@ If any of the following are not stated, you MUST ask:
 - Ignore platform norms → iOS ≠ Android
 
 ### Security — Never:
+
 - Tokens in AsyncStorage → SecureStore / Keychain
 - Hardcoded secrets → Env + secure storage
 - No SSL pinning → Cert pinning
@@ -82,13 +85,13 @@ If any of the following are not stated, you MUST ask:
 
 ## 4. Platform Defaults
 
-| Element | iOS | Android |
-|---------|-----|---------|
-| Font | SF Pro | Roboto |
-| Min touch | 44pt | 48dp |
-| Back | Edge swipe | System back |
-| Sheets | Bottom sheet | Dialog / sheet |
-| Icons | SF Symbols | Material Icons |
+| Element   | iOS          | Android        |
+| --------- | ------------ | -------------- |
+| Font      | SF Pro       | Roboto         |
+| Min touch | 44pt         | 48dp           |
+| Back      | Edge swipe   | System back    |
+| Sheets    | Bottom sheet | Dialog / sheet |
+| Icons     | SF Symbols   | Material Icons |
 
 ---
 

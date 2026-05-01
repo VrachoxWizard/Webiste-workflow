@@ -1,4 +1,3 @@
-
 # Design Spells Skill
 
 [Design Spells](https://www.designspells.com/) is a collection of exceptional design details—micro-interactions, easter eggs, and clever UX patterns—that transform standard interfaces into memorable digital experiences.

@@ -8,16 +8,16 @@ This is **not** a 1:1 clone of the existing website. The goal is to build a mode
 
 The redesign should preserve the logic of a specialized product catalog, but improve the experience so the final result feels:
 
-* more professional
-* more trustworthy
-* easier to browse
-* visually cleaner
-* less generic
-* less AI-generated
-* more premium
-* more locally credible for a Croatian ecommerce context
-* better suited for real ecommerce usage
-* safer and more responsible for regulated products
+- more professional
+- more trustworthy
+- easier to browse
+- visually cleaner
+- less generic
+- less AI-generated
+- more premium
+- more locally credible for a Croatian ecommerce context
+- better suited for real ecommerce usage
+- safer and more responsible for regulated products
 
 Because the product range includes weapons and ammunition, the interface must clearly communicate legal responsibility, age restrictions, availability disclaimers, and the need to contact the store for certain regulated items.
 
@@ -31,15 +31,15 @@ The final website should feel like a serious production ecommerce redesign, not 
 
 Create a premium ecommerce website for a specialized shop that sells:
 
-* firearms
-* ammunition
-* optics
-* hunting equipment
-* outdoor equipment
-* apparel
-* footwear
-* maintenance accessories
-* bags, holsters, cases, flashlights, and related equipment
+- firearms
+- ammunition
+- optics
+- hunting equipment
+- outdoor equipment
+- apparel
+- footwear
+- maintenance accessories
+- bags, holsters, cases, flashlights, and related equipment
 
 The site should communicate expertise, reliability, and responsibility. It should not look like a cheap tactical shop, a gaming-themed store, or a generic dropshipping webshop.
 
@@ -47,55 +47,55 @@ The site should communicate expertise, reliability, and responsibility. It shoul
 
 Users should be able to:
 
-* quickly understand the product categories
-* easily navigate between categories and subcategories
-* filter products efficiently
-* understand product availability
-* recognize regulated products
-* contact the store when needed
-* browse comfortably on mobile
-* use a clear cart experience
-* move through a responsible checkout flow
-* read legal and purchase conditions without friction
+- quickly understand the product categories
+- easily navigate between categories and subcategories
+- filter products efficiently
+- understand product availability
+- recognize regulated products
+- contact the store when needed
+- browse comfortably on mobile
+- use a clear cart experience
+- move through a responsible checkout flow
+- read legal and purchase conditions without friction
 
 ### 1.3 UI Goal
 
 The visual design should feel:
 
-* premium
-* natural
-* grounded
-* rugged but not aggressive
-* elegant
-* structured
-* editorial
-* warm
-* professional
-* Croatian/local-market credible
+- premium
+- natural
+- grounded
+- rugged but not aggressive
+- elegant
+- structured
+- editorial
+- warm
+- professional
+- Croatian/local-market credible
 
 The interface should avoid:
 
-* generic AI gradients
-* overly rounded SaaS-style cards
-* aggressive military visuals
-* neon tactical aesthetics
-* default shadcn/ui styling
-* default WooCommerce product cards
-* cluttered layouts
-* fake urgency and cheap ecommerce tricks
+- generic AI gradients
+- overly rounded SaaS-style cards
+- aggressive military visuals
+- neon tactical aesthetics
+- default shadcn/ui styling
+- default WooCommerce product cards
+- cluttered layouts
+- fake urgency and cheap ecommerce tricks
 
 ### 1.4 Compliance and Safety Goal
 
 Since the webshop includes weapons and ammunition, the UI must clearly include:
 
-* age/legal responsibility notices
-* availability disclaimers
-* permit/license notices where relevant
-* a clear “contact before purchase” option for regulated items
-* no unsafe copywriting
-* no aggressive product language
-* no instructions on weapon use
-* no militaristic or violent marketing tone
+- age/legal responsibility notices
+- availability disclaimers
+- permit/license notices where relevant
+- a clear “contact before purchase” option for regulated items
+- no unsafe copywriting
+- no aggressive product language
+- no instructions on weapon use
+- no militaristic or violent marketing tone
 
 The interface should present regulated products responsibly and professionally.
 
@@ -165,17 +165,17 @@ The home page is the premium entry point into the store.
 
 It must include:
 
-* top utility bar
-* main navigation
-* hero section
-* trust strip
-* category discovery grid
-* featured products / new arrivals
-* ammunition and accessories section
-* brand strip
-* responsible purchase section
-* store/contact info block
-* footer
+- top utility bar
+- main navigation
+- hero section
+- trust strip
+- category discovery grid
+- featured products / new arrivals
+- ammunition and accessories section
+- brand strip
+- responsible purchase section
+- store/contact info block
+- footer
 
 The home page should immediately communicate that this is a specialized and responsible ecommerce shop.
 
@@ -187,20 +187,20 @@ The category page is the main product browsing experience.
 
 It must include:
 
-* breadcrumb navigation
-* category hero
-* short category description
-* subcategory pills
-* product count
-* sorting
-* search within category
-* desktop filter sidebar
-* mobile filter drawer
-* active filter chips
-* product grid
-* pagination or load more
-* no-results state
-* category SEO/content block
+- breadcrumb navigation
+- category hero
+- short category description
+- subcategory pills
+- product count
+- sorting
+- search within category
+- desktop filter sidebar
+- mobile filter drawer
+- active filter chips
+- product grid
+- pagination or load more
+- no-results state
+- category SEO/content block
 
 ---
 
@@ -208,19 +208,19 @@ It must include:
 
 The product detail page must clearly present:
 
-* product gallery
-* product title
-* brand
-* SKU
-* availability
-* price
-* sale price if applicable
-* regulated product notice if relevant
-* product description
-* product specifications
-* delivery/pickup information
-* related products
-* contact/inquiry option
+- product gallery
+- product title
+- brand
+- SKU
+- availability
+- price
+- sale price if applicable
+- regulated product notice if relevant
+- product description
+- product specifications
+- delivery/pickup information
+- related products
+- contact/inquiry option
 
 For regulated products, the buying flow should prioritize inquiry and availability confirmation instead of aggressive direct purchase messaging.
 
@@ -258,12 +258,12 @@ The About page should strengthen trust and local credibility.
 
 It should include:
 
-* short business story
-* store expertise
-* local presence
-* responsible business approach
-* store/contact CTA
-* trust-focused content
+- short business story
+- store expertise
+- local presence
+- responsible business approach
+- store/contact CTA
+- trust-focused content
 
 ---
 
@@ -271,14 +271,14 @@ It should include:
 
 The Contact page should include:
 
-* address
-* phone number
-* email
-* map
-* contact form
-* opening hours if available
-* CTA for product inquiries
-* CTA for regulated product questions
+- address
+- phone number
+- email
+- map
+- contact form
+- opening hours if available
+- CTA for product inquiries
+- CTA for regulated product questions
 
 ---
 
@@ -286,13 +286,13 @@ The Contact page should include:
 
 The legal section should include:
 
-* purchase terms
-* delivery policy
-* return policy
-* privacy policy
-* regulated product purchase conditions
-* age restriction notices
-* product availability disclaimer
+- purchase terms
+- delivery policy
+- return policy
+- privacy policy
+- regulated product purchase conditions
+- age restriction notices
+- product availability disclaimer
 
 Legal pages should be readable and well-designed, not plain walls of text.
 
@@ -304,12 +304,12 @@ Legal pages should be readable and well-designed, not plain walls of text.
 
 The home page must immediately communicate:
 
-* expertise
-* trust
-* premium product range
-* responsible shopping
-* clear categories
-* serious ecommerce quality
+- expertise
+- trust
+- premium product range
+- responsible shopping
+- clear categories
+- serious ecommerce quality
 
 It should not feel like a generic WooCommerce home page.
 
@@ -342,29 +342,29 @@ A small informational strip above the main navbar.
 
 ### Content Examples
 
-* Delivery within Croatia
-* Personal pickup available
-* Availability is confirmed before delivery
-* Legal conditions apply for regulated items
-* Phone number
-* Email
-* Link to purchase terms
+- Delivery within Croatia
+- Personal pickup available
+- Availability is confirmed before delivery
+- Legal conditions apply for regulated items
+- Phone number
+- Email
+- Link to purchase terms
 
 ### Visual Direction
 
-* dark charcoal or dark olive background
-* off-white text
-* small typography
-* very subtle separators
-* no loud colors
-* no flashing promo style
+- dark charcoal or dark olive background
+- off-white text
+- small typography
+- very subtle separators
+- no loud colors
+- no flashing promo style
 
 ### UX Rules
 
-* on mobile, show only the most important items
-* do not make it too tall
-* avoid making it feel like a sales banner
-* keep it informative and serious
+- on mobile, show only the most important items
+- do not make it too tall
+- avoid making it feel like a sales banner
+- keep it informative and serious
 
 ---
 
@@ -378,22 +378,22 @@ A small informational strip above the main navbar.
 
 ### UX Rules
 
-* search must be easy to access
-* cart badge must be visible
-* mega menu must be clear and structured
-* navbar should become sticky after scroll
-* hover states should be subtle and premium
-* avoid too many icons
-* avoid overly rounded pill-style navigation
+- search must be easy to access
+- cart badge must be visible
+- mega menu must be clear and structured
+- navbar should become sticky after scroll
+- hover states should be subtle and premium
+- avoid too many icons
+- avoid overly rounded pill-style navigation
 
 ### Visual Direction
 
-* warm off-white background
-* thin bottom border
-* serious typography
-* logo on the left
-* hover underline using olive or brass accent
-* cart icon with a small badge
+- warm off-white background
+- thin bottom border
+- serious typography
+- logo on the left
+- hover underline using olive or brass accent
+- cart icon with a small badge
 
 ---
 
@@ -432,15 +432,15 @@ Trust Notes
 
 ### Eyebrow Copy Examples
 
-* `Specialized outdoor and hunting equipment`
-* `Equipment for hunting, sport, and field use`
-* `Selected products. Clear conditions. Expert support.`
+- `Specialized outdoor and hunting equipment`
+- `Equipment for hunting, sport, and field use`
+- `Selected products. Clear conditions. Expert support.`
 
 ### Headline Examples
 
-* `Reliable equipment for hunting, sport, and the field.`
-* `Selected gear for demanding outdoor conditions.`
-* `A specialized shop for hunters, sport shooters, and outdoor users.`
+- `Reliable equipment for hunting, sport, and the field.`
+- `Selected gear for demanding outdoor conditions.`
+- `A specialized shop for hunters, sport shooters, and outdoor users.`
 
 ### Supporting Text Example
 
@@ -450,40 +450,40 @@ Trust Notes
 
 Primary:
 
-* `Explore the Offer`
-* `View Categories`
+- `Explore the Offer`
+- `View Categories`
 
 Secondary:
 
-* `Contact for Regulated Products`
-* `Check Availability`
+- `Contact for Regulated Products`
+- `Check Availability`
 
 ### Hero Visual Rules
 
 Do not use:
 
-* generic AI gradients
-* floating SaaS cards
-* aggressive weapon imagery
-* neon tactical styling
-* overdesigned template visuals
+- generic AI gradients
+- floating SaaS cards
+- aggressive weapon imagery
+- neon tactical styling
+- overdesigned template visuals
 
 Use:
 
-* natural outdoor atmosphere
-* product composition
-* field/trail/store context
-* warm neutral background
-* muted olive and sand tones
-* serious editorial composition
+- natural outdoor atmosphere
+- product composition
+- field/trail/store context
+- warm neutral background
+- muted olive and sand tones
+- serious editorial composition
 
 ### Hero Trust Notes
 
 Below the CTA buttons, show short trust notes:
 
-* `Availability confirmed before delivery`
-* `Personal pickup available`
-* `Legal conditions apply for regulated products`
+- `Availability confirmed before delivery`
+- `Personal pickup available`
+- `Legal conditions apply for regulated products`
 
 ---
 
@@ -513,12 +513,12 @@ The trust strip should immediately show responsible ecommerce signals.
 
 ### Visual Style
 
-* compact cards
-* small icons
-* thin borders
-* warm neutral background
-* no heavy shadows
-* no generic ecommerce icon overload
+- compact cards
+- small icons
+- thin borders
+- warm neutral background
+- no heavy shadows
+- no generic ecommerce icon overload
 
 ---
 
@@ -530,9 +530,9 @@ Users should quickly understand the store’s product range.
 
 ### Section Title Examples
 
-* `Explore the Offer by Category`
-* `Equipment Organized by Real Use Cases`
-* `Find What You Need for Hunting, Sport, and the Field`
+- `Explore the Offer by Category`
+- `Equipment Organized by Real Use Cases`
+- `Find What You Need for Hunting, Sport, and the Field`
 
 ### Desktop Layout
 
@@ -547,21 +547,21 @@ Small Card: Sale / Used Products
 
 ### Mobile Layout
 
-* cards stacked vertically
-* most important categories first
-* images remain large enough
-* CTA visible on every card
+- cards stacked vertically
+- most important categories first
+- images remain large enough
+- CTA visible on every card
 
 ### Category Card Content
 
 Each card should include:
 
-* category name
-* short description
-* 3–5 subcategory links
-* image or texture
-* CTA
-* subtle hover state
+- category name
+- short description
+- 3–5 subcategory links
+- image or texture
+- CTA
+- subtle hover state
 
 ### Example Category Card
 
@@ -571,10 +571,10 @@ Each card should include:
 
 Mini links:
 
-* Shotguns
-* Rifles
-* Handguns
-* Cleaning and Maintenance
+- Shotguns
+- Rifles
+- Handguns
+- Cleaning and Maintenance
 
 CTA:
 
@@ -600,50 +600,50 @@ Show recently added products with a stronger product card system.
 
 Each product card must include:
 
-* large product image
-* brand
-* product name
-* category
-* price
-* old price if on sale
-* status badge
-* CTA
-* quick action
-* regulated product indicator if relevant
+- large product image
+- brand
+- product name
+- category
+- price
+- old price if on sale
+- status badge
+- CTA
+- quick action
+- regulated product indicator if relevant
 
 ### Product Status Badges
 
 Examples:
 
-* `Available`
-* `On Order`
-* `New`
-* `Sale`
-* `Check Availability`
-* `Regulated Item`
+- `Available`
+- `On Order`
+- `New`
+- `Sale`
+- `Check Availability`
+- `Regulated Item`
 
 ### CTA Logic
 
 For regular items:
 
-* `Add to Cart`
-* `Details`
+- `Add to Cart`
+- `Details`
 
 For regulated items:
 
-* `View Details`
-* `Send Inquiry`
-* `Check Conditions`
+- `View Details`
+- `Send Inquiry`
+- `Check Conditions`
 
 ### Visual Style
 
-* less rounded cards
-* larger image area
-* clear typography
-* clean price block
-* subtle badges
-* minimal hover shadow
-* no excessive colors
+- less rounded cards
+- larger image area
+- clear typography
+- clean price block
+- subtle badges
+- minimal hover shadow
+- no excessive colors
 
 ---
 
@@ -663,17 +663,17 @@ Ammunition is an important category, but it must be presented responsibly.
 
 ### Layout
 
-* left side: text and legal notice
-* right side: product grid or carousel
-* filter pills for subcategories
+- left side: text and legal notice
+- right side: product grid or carousel
+- filter pills for subcategories
 
 ### Filter Pills
 
-* Shotgun Ammunition
-* Small-Caliber
-* Rifle Ammunition
-* Pellets
-* Reloading
+- Shotgun Ammunition
+- Small-Caliber
+- Rifle Ammunition
+- Pellets
+- Reloading
 
 ### Legal Note
 
@@ -681,8 +681,8 @@ Ammunition is an important category, but it must be presented responsibly.
 
 ### CTA
 
-* `View Ammunition`
-* `Contact for Availability`
+- `View Ammunition`
+- `Contact for Availability`
 
 ---
 
@@ -698,17 +698,17 @@ Strengthen trust through recognizable brands.
 
 ### Layout
 
-* horizontal strip of brand logos
-* monochrome logos by default
-* full color or stronger contrast on hover
-* CTA: `View All Brands`
+- horizontal strip of brand logos
+- monochrome logos by default
+- full color or stronger contrast on hover
+- CTA: `View All Brands`
 
 ### Visual Rules
 
-* can use a darker background section
-* logos should not feel like placeholders
-* use generous spacing
-* avoid visual clutter
+- can use a darker background section
+- logos should not feel like placeholders
+- use generous spacing
+- avoid visual clutter
 
 ---
 
@@ -750,14 +750,14 @@ Increase local credibility and trust.
 
 ### Content
 
-* store name
-* address
-* phone
-* email
-* map
-* opening hours if available
-* CTA: `Contact the Store`
-* CTA: `Get Directions`
+- store name
+- address
+- phone
+- email
+- map
+- opening hours if available
+- CTA: `Contact the Store`
+- CTA: `Get Directions`
 
 ### Desktop Layout
 
@@ -768,9 +768,9 @@ Right: Map / store image / contact form preview
 
 ### Mobile Layout
 
-* store info card first
-* CTA buttons
-* map below
+- store info card first
+- CTA buttons
+- map below
 
 ---
 
@@ -784,33 +784,33 @@ The footer should feel like a serious final section, not a generic afterthought.
 
 #### Categories
 
-* Weapons
-* Ammunition
-* Optics
-* Equipment
-* Apparel and Footwear
+- Weapons
+- Ammunition
+- Optics
+- Equipment
+- Apparel and Footwear
 
 #### Shopping
 
-* Purchase Terms
-* Delivery
-* Returns
-* Payment
-* Regulated Products
+- Purchase Terms
+- Delivery
+- Returns
+- Payment
+- Regulated Products
 
 #### Support
 
-* Contact
-* About
-* FAQ
-* Check Availability
+- Contact
+- About
+- FAQ
+- Check Availability
 
 #### Contact
 
-* address
-* phone
-* email
-* opening hours
+- address
+- phone
+- email
+- opening hours
 
 ### Footer Legal Note
 
@@ -824,12 +824,12 @@ The footer should feel like a serious final section, not a generic afterthought.
 
 The category page should allow users to:
 
-* understand the category quickly
-* browse subcategories
-* filter products efficiently
-* compare products visually
-* identify regulated products
-* contact the store when needed
+- understand the category quickly
+- browse subcategories
+- filter products efficiently
+- compare products visually
+- identify regulated products
+- contact the store when needed
 
 ---
 
@@ -862,10 +862,10 @@ Home / Weapons / Long Weapons / Rifles
 
 ### UX Rules
 
-* discreet visual style
-* every segment should be clickable
-* on mobile, use a shorter format such as `← Weapons`
-* avoid taking too much vertical space
+- discreet visual style
+- every segment should be clickable
+- on mobile, use a shorter format such as `← Weapons`
+- avoid taking too much vertical space
 
 ---
 
@@ -873,11 +873,11 @@ Home / Weapons / Long Weapons / Rifles
 
 ### Content
 
-* H1 category name
-* short description
-* product count
-* legal notice if category is regulated
-* visual image or texture
+- H1 category name
+- short description
+- product count
+- legal notice if category is regulated
+- visual image or texture
 
 ### Example for “Long Weapons”
 
@@ -899,22 +899,22 @@ Allow quick movement within the category.
 
 ### Example for Weapons
 
-* Long Weapons
-* Shotguns
-* Rifles
-* Modern Weapons
-* Used Weapons
-* Handguns
-* Air Weapons
-* Cleaning and Maintenance
+- Long Weapons
+- Shotguns
+- Rifles
+- Modern Weapons
+- Used Weapons
+- Handguns
+- Air Weapons
+- Cleaning and Maintenance
 
 ### UX Rules
 
-* desktop: horizontal layout or grid
-* mobile: horizontal scroll
-* active state must be clear
-* avoid overly rounded pill styling
-* use thin border and olive active state
+- desktop: horizontal layout or grid
+- mobile: horizontal scroll
+- active state must be clear
+- avoid overly rounded pill styling
+- use thin border and olive active state
 
 ---
 
@@ -934,13 +934,13 @@ Allow quick movement within the category.
 
 ### Sort Options
 
-* Default
-* Newest
-* Price: Low to High
-* Price: High to Low
-* Sale
-* Available First
-* Brand A–Z
+- Default
+- Newest
+- Price: Low to High
+- Price: High to Low
+- Sale
+- Available First
+- Brand A–Z
 
 ---
 
@@ -948,9 +948,9 @@ Allow quick movement within the category.
 
 ### Position
 
-* left side of product grid
-* sticky on scroll
-* width around 260–320px
+- left side of product grid
+- sticky on scroll
+- width around 260–320px
 
 ### Filter Groups
 
@@ -969,10 +969,10 @@ Allow quick movement within the category.
 
 ### UX
 
-* checkbox list
-* search field if many brands exist
-* product count per brand
-* popular brands shown first
+- checkbox list
+- search field if many brands exist
+- product count per brand
+- popular brands shown first
 
 ### Example
 
@@ -990,10 +990,10 @@ Brand
 
 ### UX
 
-* range slider
-* manual min/max fields
-* currency visible
-* apply button if needed
+- range slider
+- manual min/max fields
+- currency visible
+- apply button if needed
 
 ### Example
 
@@ -1009,17 +1009,17 @@ Max: 1500 €
 
 ### Options
 
-* Available
-* On Order
-* Check Availability
-* New
-* Sale
+- Available
+- On Order
+- Check Availability
+- New
+- Sale
 
 ### UX Rules
 
-* availability filter must match product badges
-* “Available” should be easy to recognize
-* “Check Availability” should be clear and not confusing
+- availability filter must match product badges
+- “Available” should be easy to recognize
+- “Check Availability” should be clear and not confusing
 
 ---
 
@@ -1027,10 +1027,10 @@ Max: 1500 €
 
 ### Options
 
-* Show All
-* Direct Purchase Items Only
-* Inquiry / Contact Items Only
-* Regulated Items
+- Show All
+- Direct Purchase Items Only
+- Inquiry / Contact Items Only
+- Regulated Items
 
 ### Purpose
 
@@ -1058,12 +1058,12 @@ Sticky Footer
 
 ### UX Rules
 
-* full-screen drawer or bottom sheet
-* lock background scroll
-* clear close button
-* sticky `Show Results` button
-* active filter count visible
-* selected filters must not reset accidentally
+- full-screen drawer or bottom sheet
+- lock background scroll
+- clear close button
+- sticky `Show Results` button
+- active filter count visible
+- selected filters must not reset accidentally
 
 ---
 
@@ -1081,10 +1081,10 @@ Clear All
 
 ### UX Rules
 
-* display above product grid
-* horizontal scroll on mobile
-* each chip removable
-* `Clear All` always last
+- display above product grid
+- horizontal scroll on mobile
+- each chip removable
+- `Clear All` always last
 
 ---
 
@@ -1092,19 +1092,19 @@ Clear All
 
 ### Desktop
 
-* 3 or 4 columns
-* generous spacing
-* large product images
-* clear text hierarchy
+- 3 or 4 columns
+- generous spacing
+- large product images
+- clear text hierarchy
 
 ### Tablet
 
-* 2 columns
+- 2 columns
 
 ### Mobile
 
-* 1 column for expensive or regulated products
-* optionally 2 columns for apparel/accessories if layout remains readable
+- 1 column for expensive or regulated products
+- optionally 2 columns for apparel/accessories if layout remains readable
 
 ---
 
@@ -1141,12 +1141,12 @@ Category: Rifles
 
 ### Card UX Rules
 
-* entire card can be clickable
-* CTA must be clear
-* hover should be subtle
-* image area should be consistent
-* badges should not cover important product details
-* regulated products must have a legal indicator
+- entire card can be clickable
+- CTA must be clear
+- hover should be subtle
+- image area should be consistent
+- badges should not cover important product details
+- regulated products must have a legal indicator
 
 ---
 
@@ -1158,15 +1158,15 @@ Category: Rifles
 
 ### Actions
 
-* `Clear Filters`
-* `View All Products in This Category`
-* `Contact the Store for Help`
+- `Clear Filters`
+- `View All Products in This Category`
+- `Contact the Store for Help`
 
 ### UX Rules
 
-* do not leave the user with a dead end
-* provide next steps
-* keep tone helpful and calm
+- do not leave the user with a dead end
+- provide next steps
+- keep tone helpful and calm
 
 ---
 
@@ -1176,16 +1176,16 @@ At the bottom of each category page, include a short content block.
 
 ### Purpose
 
-* SEO
-* context
-* trust
+- SEO
+- context
+- trust
 
 ### Rules
 
-* keep it concise
-* avoid aggressive marketing
-* do not include instructions for weapon use
-* focus on selection, availability, purchase conditions, and support
+- keep it concise
+- avoid aggressive marketing
+- do not include instructions for weapon use
+- focus on selection, availability, purchase conditions, and support
 
 ---
 
@@ -1195,15 +1195,15 @@ At the bottom of each category page, include a short content block.
 
 The product detail page must give users:
 
-* a clear product image
-* product name and brand
-* price
-* availability
-* purchase or inquiry option
-* legal context if needed
-* useful specifications
-* delivery/pickup information
-* related products
+- a clear product image
+- product name and brand
+- price
+- availability
+- purchase or inquiry option
+- legal context if needed
+- useful specifications
+- delivery/pickup information
+- related products
 
 For regulated products, the page must clearly communicate purchase conditions and prioritize contact/inquiry when necessary.
 
@@ -1262,20 +1262,20 @@ Related Products
 
 ### Requirements
 
-* large main image
-* thumbnail navigation
-* zoom on hover for desktop
-* full-screen gallery
-* swipe support on mobile
-* neutral image background
-* consistent aspect ratio
+- large main image
+- thumbnail navigation
+- zoom on hover for desktop
+- full-screen gallery
+- swipe support on mobile
+- neutral image background
+- consistent aspect ratio
 
 ### Visual Style
 
-* off-white or light sand image background
-* thin border
-* no heavy shadows
-* limited border radius
+- off-white or light sand image background
+- thin border
+- no heavy shadows
+- limited border radius
 
 ---
 
@@ -1283,18 +1283,18 @@ Related Products
 
 ### Content
 
-* brand
-* product title
-* SKU
-* status badge
-* price block
-* old price / sale price if applicable
-* availability info
-* quantity selector
-* primary CTA
-* secondary CTA
-* legal notice
-* delivery / pickup information
+- brand
+- product title
+- SKU
+- status badge
+- price block
+- old price / sale price if applicable
+- availability info
+- quantity selector
+- primary CTA
+- secondary CTA
+- legal notice
+- delivery / pickup information
 
 ### CTA Logic
 
@@ -1302,31 +1302,31 @@ Related Products
 
 Primary:
 
-* `Add to Cart`
+- `Add to Cart`
 
 Secondary:
 
-* `Ask About Product`
-* `Add to Compare`
+- `Ask About Product`
+- `Add to Compare`
 
 #### Regulated Products
 
 Primary:
 
-* `Send Inquiry`
-* `Check Availability`
-* `Contact for Purchase`
+- `Send Inquiry`
+- `Check Availability`
+- `Contact for Purchase`
 
 Secondary:
 
-* `Read Purchase Conditions`
-* `Add to Compare`
+- `Read Purchase Conditions`
+- `Add to Compare`
 
 Avoid:
 
-* `Buy Now`
-* `Order Immediately`
-* aggressive urgency copy
+- `Buy Now`
+- `Order Immediately`
+- aggressive urgency copy
 
 ---
 
@@ -1353,10 +1353,10 @@ If relevant:
 
 ### UX Rules
 
-* price must be large and easy to read
-* old price should be visually weaker
-* sale price should not use loud neon red
-* legal notes should be visible but not compete with the price
+- price must be large and easy to read
+- old price should be visually weaker
+- sale price should not use loud neon red
+- legal notes should be visible but not compete with the price
 
 ---
 
@@ -1366,9 +1366,9 @@ If relevant:
 
 For:
 
-* weapons
-* ammunition
-* potentially other regulated products
+- weapons
+- ammunition
+- potentially other regulated products
 
 ### Text
 
@@ -1376,11 +1376,11 @@ For:
 
 ### Visual Style
 
-* sand background
-* thin border
-* small alert or shield icon
-* readable text
-* link: `Read Purchase Conditions`
+- sand background
+- thin border
+- small alert or shield icon
+- readable text
+- link: `Read Purchase Conditions`
 
 ---
 
@@ -1404,33 +1404,33 @@ On mobile, use accordions instead of horizontal tabs.
 
 ### Example Fields for Weapons
 
-* Brand
-* Model
-* Category
-* Caliber
-* Availability
-* SKU
-* Condition
-* Note
+- Brand
+- Model
+- Category
+- Caliber
+- Availability
+- SKU
+- Condition
+- Note
 
 ### Example Fields for Optics
 
-* Brand
-* Type
-* Magnification
-* Mounting
-* Use Case
-* SKU
-* Availability
+- Brand
+- Type
+- Magnification
+- Mounting
+- Use Case
+- SKU
+- Availability
 
 ### Example Fields for Apparel
 
-* Brand
-* Size
-* Color
-* Material
-* Season
-* Availability
+- Brand
+- Size
+- Color
+- Material
+- Season
+- Availability
 
 ---
 
@@ -1438,18 +1438,18 @@ On mobile, use accordions instead of horizontal tabs.
 
 ### Sections
 
-* Similar Products
-* Compatible Equipment
-* Frequently Viewed Together
-* From the Same Category
+- Similar Products
+- Compatible Equipment
+- Frequently Viewed Together
+- From the Same Category
 
 ### UX Rules
 
-* do not show random products
-* related products should have a clear logic
-* keep the section focused
-* 4 products on desktop
-* carousel on mobile
+- do not show random products
+- related products should have a clear logic
+- keep the section focused
+- 4 products on desktop
+- carousel on mobile
 
 ---
 
@@ -1488,21 +1488,21 @@ Cart
 
 ### Column 1: Long Weapons
 
-* Shotguns
-* Rifles
-* Modern Weapons
-* Used Weapons
+- Shotguns
+- Rifles
+- Modern Weapons
+- Used Weapons
 
 ### Column 2: Short and Air Weapons
 
-* Handguns
-* Gas Weapons
-* Air Weapons
+- Handguns
+- Gas Weapons
+- Air Weapons
 
 ### Column 3: Maintenance and Protection
 
-* Cleaning and Maintenance
-* Holsters and Cases
+- Cleaning and Maintenance
+- Holsters and Cases
 
 ### Column 4: Info Panel
 
@@ -1516,8 +1516,8 @@ Text:
 
 CTA:
 
-* `Purchase Conditions`
-* `Contact the Store`
+- `Purchase Conditions`
+- `Contact the Store`
 
 ---
 
@@ -1525,11 +1525,11 @@ CTA:
 
 ### Columns
 
-* Shotgun Ammunition
-* Small-Caliber Ammunition
-* Rifle Ammunition
-* Pellets
-* Reloading
+- Shotgun Ammunition
+- Small-Caliber Ammunition
+- Rifle Ammunition
+- Pellets
+- Reloading
 
 ### Info Panel
 
@@ -1543,8 +1543,8 @@ Text:
 
 CTA:
 
-* `View Ammunition`
-* `Contact for Availability`
+- `View Ammunition`
+- `Contact for Availability`
 
 ---
 
@@ -1552,29 +1552,29 @@ CTA:
 
 ### Column 1: Optics
 
-* Red Dot Sights
-* Day Optics
-* Night and Thermal Devices
-* Rails and Rings
+- Red Dot Sights
+- Day Optics
+- Night and Thermal Devices
+- Rails and Rings
 
 ### Column 2: Hunting Equipment
 
-* Hunting Equipment
-* Flashlights
-* Knives
-* Backpacks and Bags
+- Hunting Equipment
+- Flashlights
+- Knives
+- Backpacks and Bags
 
 ### Column 3: Popular
 
-* New Arrivals
-* Sale
-* Recommended Equipment
+- New Arrivals
+- Sale
+- Recommended Equipment
 
 ### Column 4: Featured Block
 
-* optics/equipment image
-* short text
-* CTA: `Explore Equipment`
+- optics/equipment image
+- short text
+- CTA: `Explore Equipment`
 
 ---
 
@@ -1582,22 +1582,22 @@ CTA:
 
 ### Must Include
 
-* clear columns
-* group headings
-* good spacing
-* subtle hover states
-* info/legal panel
-* refined border
-* serious typography
+- clear columns
+- group headings
+- good spacing
+- subtle hover states
+- info/legal panel
+- refined border
+- serious typography
 
 ### Must Avoid
 
-* too many animations
-* oversized icons
-* neon colors
-* AI gradients
-* generic dropdown look
-* cluttered link lists without hierarchy
+- too many animations
+- oversized icons
+- neon colors
+- AI gradients
+- generic dropdown look
+- cluttered link lists without hierarchy
 
 ---
 
@@ -1607,11 +1607,11 @@ CTA:
 
 The mobile menu must be:
 
-* fast
-* search-first
-* structured
-* easy to navigate
-* better than a basic hamburger list
+- fast
+- search-first
+- structured
+- easy to navigate
+- better than a basic hamburger list
 
 ---
 
@@ -1625,11 +1625,11 @@ The mobile menu must be:
 
 ### Rules
 
-* sticky top
-* visible cart badge
-* search immediately available
-* hamburger tap target at least 44px
-* clean spacing
+- sticky top
+- visible cart badge
+- search immediately available
+- hamburger tap target at least 44px
+- clean spacing
 
 ---
 
@@ -1647,13 +1647,13 @@ Contact Info
 
 ### Quick Links
 
-* New Arrivals
-* Sale
-* Weapons
-* Ammunition
-* Optics
-* Apparel and Footwear
-* Contact
+- New Arrivals
+- Sale
+- Weapons
+- Ammunition
+- Optics
+- Apparel and Footwear
+- Contact
 
 ---
 
@@ -1713,24 +1713,24 @@ CTA:
 
 At the bottom of the drawer:
 
-* phone
-* email
-* location
-* contact link
-* purchase terms link
+- phone
+- email
+- location
+- contact link
+- purchase terms link
 
 ---
 
 ## 7.7 Mobile Interaction Rules
 
-* drawer locks background scroll
-* close button always visible
-* back button clear
-* smooth slide animation
-* ESC closes on desktop/tablet
-* overlay closes drawer
-* avoid too many nested accordions
-* prioritize readability
+- drawer locks background scroll
+- close button always visible
+- back button clear
+- smooth slide animation
+- ESC closes on desktop/tablet
+- overlay closes drawer
+- avoid too many nested accordions
+- prioritize readability
 
 ---
 
@@ -1742,12 +1742,12 @@ Filters must help users narrow down products without frustration.
 
 They are especially important for:
 
-* brand
-* price
-* availability
-* category
-* regulated products
-* product type
+- brand
+- price
+- availability
+- category
+- regulated products
+- product type
 
 ---
 
@@ -1755,9 +1755,9 @@ They are especially important for:
 
 ### Position
 
-* left of product grid
-* sticky on scroll
-* width around 260–320px
+- left of product grid
+- sticky on scroll
+- width around 260–320px
 
 ### Sections
 
@@ -1776,10 +1776,10 @@ They are especially important for:
 
 ### UX
 
-* checkbox list
-* search field if many brands exist
-* product count per brand
-* popular brands shown first
+- checkbox list
+- search field if many brands exist
+- product count per brand
+- popular brands shown first
 
 ### Example
 
@@ -1797,10 +1797,10 @@ Brand
 
 ### UX
 
-* range slider
-* manual min/max fields
-* currency visible
-* apply button if needed
+- range slider
+- manual min/max fields
+- currency visible
+- apply button if needed
 
 ### Example
 
@@ -1816,17 +1816,17 @@ Max: 1500 €
 
 ### Options
 
-* Available
-* On Order
-* Check Availability
-* New
-* Sale
+- Available
+- On Order
+- Check Availability
+- New
+- Sale
 
 ### UX Rules
 
-* availability options must match product badges
-* available products should be easy to identify
-* “Check Availability” should be clear, not confusing
+- availability options must match product badges
+- available products should be easy to identify
+- “Check Availability” should be clear, not confusing
 
 ---
 
@@ -1834,10 +1834,10 @@ Max: 1500 €
 
 ### Options
 
-* Show All
-* Direct Purchase Items Only
-* Inquiry / Contact Items Only
-* Regulated Items
+- Show All
+- Direct Purchase Items Only
+- Inquiry / Contact Items Only
+- Regulated Items
 
 ### Purpose
 
@@ -1865,12 +1865,12 @@ Sticky Footer
 
 ### UX Rules
 
-* full-screen drawer or bottom sheet
-* background scroll locked
-* clear close button
-* sticky `Show Results` button
-* active filter count visible
-* selected filters must persist after closing drawer
+- full-screen drawer or bottom sheet
+- background scroll locked
+- clear close button
+- sticky `Show Results` button
+- active filter count visible
+- selected filters must persist after closing drawer
 
 ---
 
@@ -1888,10 +1888,10 @@ Clear All
 
 ### UX Rules
 
-* shown above product grid
-* horizontal scroll on mobile
-* each chip removable
-* `Clear All` always last
+- shown above product grid
+- horizontal scroll on mobile
+- each chip removable
+- `Clear All` always last
 
 ---
 
@@ -1899,10 +1899,10 @@ Clear All
 
 When filters change:
 
-* product grid shows skeleton loading
-* filter sidebar remains stable
-* page should not jump unnecessarily
-* result count updates clearly
+- product grid shows skeleton loading
+- filter sidebar remains stable
+- page should not jump unnecessarily
+- result count updates clearly
 
 ---
 
@@ -1914,9 +1914,9 @@ When filters change:
 
 ### Actions
 
-* `Clear Filters`
-* `Return to Category`
-* `Contact the Store`
+- `Clear Filters`
+- `Return to Category`
+- `Contact the Store`
 
 ---
 
@@ -1926,12 +1926,12 @@ When filters change:
 
 The cart must be:
 
-* fast
-* clear
-* readable
-* responsible
-* mobile-friendly
-* aware of regulated product states
+- fast
+- clear
+- readable
+- responsible
+- mobile-friendly
+- aware of regulated product states
 
 ---
 
@@ -1939,8 +1939,8 @@ The cart must be:
 
 ### Opens When
 
-* user adds a product to cart
-* user clicks the cart icon
+- user adds a product to cart
+- user clicks the cart icon
 
 ### Layout
 
@@ -1973,14 +1973,14 @@ Footer
 
 ### Content
 
-* image
-* name
-* brand
-* variant if applicable
-* price
-* quantity controls
-* remove button
-* status note
+- image
+- name
+- brand
+- variant if applicable
+- price
+- quantity controls
+- remove button
+- status note
 
 ### For Regulated Items
 
@@ -1998,12 +1998,12 @@ Add text:
 
 If cart contains only regular products:
 
-* `Checkout`
+- `Checkout`
 
 If cart contains regulated products:
 
-* `Continue to Conditions`
-* or `Send Inquiry to Store`
+- `Continue to Conditions`
+- or `Send Inquiry to Store`
 
 Exact behavior depends on final business rules.
 
@@ -2013,14 +2013,14 @@ Exact behavior depends on final business rules.
 
 ### Content
 
-* H1: Cart
-* product list
-* quantity controls
-* subtotal
-* shipping estimate
-* legal notice
-* recommended accessories
-* CTA toward checkout
+- H1: Cart
+- product list
+- quantity controls
+- subtotal
+- shipping estimate
+- legal notice
+- recommended accessories
+- CTA toward checkout
 
 ### Desktop Layout
 
@@ -2051,9 +2051,9 @@ Sticky Bottom CTA
 
 ### CTA
 
-* `New Arrivals`
-* `Hunting Equipment`
-* `Contact for Advice`
+- `New Arrivals`
+- `Hunting Equipment`
+- `Contact for Advice`
 
 ---
 
@@ -2118,10 +2118,10 @@ Sticky CTA
 
 ### UX Rules
 
-* show current step
-* allow returning to previous steps
-* avoid unnecessary animations
-* form should feel linear and clear
+- show current step
+- allow returning to previous steps
+- avoid unnecessary animations
+- form should feel linear and clear
 
 ---
 
@@ -2129,23 +2129,23 @@ Sticky CTA
 
 ### Fields
 
-* First Name
-* Last Name
-* Email
-* Phone
-* Address
-* City
-* Postal Code
-* Country
-* Company optional
-* Tax ID optional
+- First Name
+- Last Name
+- Email
+- Phone
+- Address
+- City
+- Postal Code
+- Country
+- Company optional
+- Tax ID optional
 
 ### UX Rules
 
-* labels must always be visible
-* placeholders are not replacements for labels
-* validation must be clear
-* error messages should be human and helpful
+- labels must always be visible
+- placeholders are not replacements for labels
+- validation must be clear
+- error messages should be human and helpful
 
 ---
 
@@ -2167,16 +2167,16 @@ Sticky CTA
 
 ### Options
 
-* Cash on delivery
-* Bank transfer
-* Card payment if supported
-* Arrangement with store for regulated items
+- Cash on delivery
+- Bank transfer
+- Card payment if supported
+- Arrangement with store for regulated items
 
 ### UX Rules
 
-* explain each option clearly
-* do not promise options that are not implemented
-* display additional note if regulated products exist in the order
+- explain each option clearly
+- do not promise options that are not implemented
+- display additional note if regulated products exist in the order
 
 ---
 
@@ -2184,14 +2184,14 @@ Sticky CTA
 
 ### Required Checkboxes
 
-* `I accept the purchase terms and privacy policy.`
-* `I confirm that the entered information is correct.`
-* `I understand that product availability is confirmed before delivery or pickup.`
+- `I accept the purchase terms and privacy policy.`
+- `I confirm that the entered information is correct.`
+- `I understand that product availability is confirmed before delivery or pickup.`
 
 ### For Regulated Products
 
-* `I understand that selected products may require legal conditions, age restrictions, and valid documentation.`
-* `I understand that ordering a regulated product is not an automatic confirmation of purchase.`
+- `I understand that selected products may require legal conditions, age restrictions, and valid documentation.`
+- `I understand that ordering a regulated product is not an automatic confirmation of purchase.`
 
 ---
 
@@ -2199,20 +2199,20 @@ Sticky CTA
 
 ### Content
 
-* products
-* quantity
-* price
-* subtotal
-* delivery
-* total
-* regulated product notice if relevant
+- products
+- quantity
+- price
+- subtotal
+- delivery
+- total
+- regulated product notice if relevant
 
 ### UX Rules
 
-* sticky on desktop
-* collapsible on mobile
-* regulated products clearly marked
-* price must be readable
+- sticky on desktop
+- collapsible on mobile
+- regulated products clearly marked
+- price must be readable
 
 ---
 
@@ -2220,11 +2220,11 @@ Sticky CTA
 
 ### Content
 
-* order number
-* summary
-* next steps
-* contact information
-* legal note if regulated product exists
+- order number
+- summary
+- next steps
+- contact information
+- legal note if regulated product exists
 
 ### Example Text
 
@@ -2238,14 +2238,14 @@ Sticky CTA
 
 The website should feel:
 
-* professional
-* stable
-* calm
-* natural
-* rugged
-* premium
-* responsible
-* locally credible
+- professional
+- stable
+- calm
+- natural
+- rugged
+- premium
+- responsible
+- locally credible
 
 ---
 
@@ -2253,24 +2253,24 @@ The website should feel:
 
 ### Good Associations
 
-* nature
-* field use
-* wood
-* metal
-* leather
-* outdoor equipment
-* serious catalog
-* specialized store
+- nature
+- field use
+- wood
+- metal
+- leather
+- outdoor equipment
+- serious catalog
+- specialized store
 
 ### Bad Associations
 
-* gaming
-* neon
-* aggressive military design
-* cheap tactical look
-* dropshipping
-* AI SaaS template
-* crypto/web3 styling
+- gaming
+- neon
+- aggressive military design
+- cheap tactical look
+- dropshipping
+- AI SaaS template
+- crypto/web3 styling
 
 ---
 
@@ -2293,34 +2293,34 @@ The website should feel:
 
 ### Background
 
-* main background: warm off-white
-* secondary sections: sand or very light olive tint
-* footer: deep charcoal
-* info cards: soft sand
+- main background: warm off-white
+- secondary sections: sand or very light olive tint
+- footer: deep charcoal
+- info cards: soft sand
 
 ### Text
 
-* main text: deep charcoal
-* secondary text: muted charcoal/gray
-* text on dark background: off-white
+- main text: deep charcoal
+- secondary text: muted charcoal/gray
+- text on dark background: off-white
 
 ### Buttons
 
 Primary:
 
-* dark olive background
-* off-white text
+- dark olive background
+- off-white text
 
 Secondary:
 
-* transparent background
-* charcoal border
-* charcoal text
+- transparent background
+- charcoal border
+- charcoal text
 
 Accent:
 
-* brass border or underline
-* use sparingly
+- brass border or underline
+- use sparingly
 
 ---
 
@@ -2330,32 +2330,32 @@ Accent:
 
 Headings should feel:
 
-* editorial
-* premium
-* serious
-* slightly traditional
+- editorial
+- premium
+- serious
+- slightly traditional
 
 Recommended directions:
 
-* Cormorant Garamond
-* Libre Baskerville
-* Fraunces
-* Playfair Display
+- Cormorant Garamond
+- Libre Baskerville
+- Fraunces
+- Playfair Display
 
 ### Body Font Direction
 
 Body/UI typography should feel:
 
-* clean
-* readable
-* modern
+- clean
+- readable
+- modern
 
 Recommended directions:
 
-* Inter
-* Manrope
-* Geist
-* IBM Plex Sans
+- Inter
+- Manrope
+- Geist
+- IBM Plex Sans
 
 ---
 
@@ -2363,22 +2363,22 @@ Recommended directions:
 
 ### Desktop
 
-* H1: 56–72px
-* H2: 36–48px
-* H3: 24–32px
-* Body: 16–18px
-* Small: 13–14px
-* Product title: 16–18px
-* Price: 20–28px
+- H1: 56–72px
+- H2: 36–48px
+- H3: 24–32px
+- Body: 16–18px
+- Small: 13–14px
+- Product title: 16–18px
+- Price: 20–28px
 
 ### Mobile
 
-* H1: 36–44px
-* H2: 28–34px
-* H3: 22–26px
-* Body: 16px
-* Small: 13px
-* Price: 20–24px
+- H1: 36–44px
+- H2: 28–34px
+- H3: 22–26px
+- Body: 16px
+- Small: 13px
+- Price: 20–24px
 
 ---
 
@@ -2386,22 +2386,22 @@ Recommended directions:
 
 ### Sections
 
-* desktop section padding: 72–120px
-* tablet section padding: 56–80px
-* mobile section padding: 40–64px
+- desktop section padding: 72–120px
+- tablet section padding: 56–80px
+- mobile section padding: 40–64px
 
 ### Container
 
-* max width: 1200–1440px
-* desktop horizontal padding: 32px
-* tablet horizontal padding: 24px
-* mobile horizontal padding: 16px
+- max width: 1200–1440px
+- desktop horizontal padding: 32px
+- tablet horizontal padding: 24px
+- mobile horizontal padding: 16px
 
 ### Grid Gap
 
-* product grid: 24–32px
-* category cards: 24px
-* mobile gap: 16px
+- product grid: 24–32px
+- category cards: 24px
+- mobile gap: 16px
 
 ---
 
@@ -2411,11 +2411,11 @@ Use less rounding than typical modern templates.
 
 ### Rules
 
-* product cards: 6–8px
-* buttons: 4–6px
-* input fields: 4–6px
-* large sections/cards: 8–12px max
-* avoid excessive `rounded-2xl` and `rounded-3xl`
+- product cards: 6–8px
+- buttons: 4–6px
+- input fields: 4–6px
+- large sections/cards: 8–12px max
+- avoid excessive `rounded-2xl` and `rounded-3xl`
 
 ---
 
@@ -2425,10 +2425,10 @@ Use shadows minimally.
 
 ### Rules
 
-* default cards: no shadow or very subtle shadow
-* hover: subtle shadow
-* drawer/modal: stronger shadow allowed
-* product images: avoid heavy shadows
+- default cards: no shadow or very subtle shadow
+- hover: subtle shadow
+- drawer/modal: stronger shadow allowed
+- product images: avoid heavy shadows
 
 ---
 
@@ -2438,46 +2438,46 @@ Use shadows minimally.
 
 Purpose:
 
-* main CTA
-* checkout
-* category CTA
+- main CTA
+- checkout
+- category CTA
 
 Style:
 
-* dark olive
-* off-white text
-* small radius
-* subtle hover darkening
-* no loud animations
+- dark olive
+- off-white text
+- small radius
+- subtle hover darkening
+- no loud animations
 
 ### Secondary Button
 
 Purpose:
 
-* inquiry
-* details
-* secondary actions
+- inquiry
+- details
+- secondary actions
 
 Style:
 
-* transparent
-* border
-* charcoal text
-* sand background on hover
+- transparent
+- border
+- charcoal text
+- sand background on hover
 
 ### Text Button
 
 Purpose:
 
-* smaller actions
-* read more
-* remove
-* view all
+- smaller actions
+- read more
+- remove
+- view all
 
 Style:
 
-* underline on hover
-* brass/olive accent
+- underline on hover
+- brass/olive accent
 
 ---
 
@@ -2485,21 +2485,21 @@ Style:
 
 ### Badge Types
 
-* Available
-* New
-* Sale
-* On Order
-* Check Availability
-* Regulated Item
+- Available
+- New
+- Sale
+- On Order
+- Check Availability
+- Regulated Item
 
 ### Style
 
-* small
-* optional uppercase
-* muted color
-* no neon tones
-* 4px radius
-* consistent placement
+- small
+- optional uppercase
+- muted color
+- no neon tones
+- 4px radius
+- consistent placement
 
 ---
 
@@ -2509,26 +2509,26 @@ Use Lucide icons.
 
 ### Icons
 
-* Search
-* ShoppingBag
-* User
-* Menu
-* Filter
-* Shield
-* Truck
-* MapPin
-* Phone
-* Mail
-* AlertTriangle
-* ChevronDown
-* X
+- Search
+- ShoppingBag
+- User
+- Menu
+- Filter
+- Shield
+- Truck
+- MapPin
+- Phone
+- Mail
+- AlertTriangle
+- ChevronDown
+- X
 
 ### Rules
 
-* stroke 1.5–2
-* do not overuse icons
-* icons must serve UX
-* avoid decorative icons without purpose
+- stroke 1.5–2
+- do not overuse icons
+- icons must serve UX
+- avoid decorative icons without purpose
 
 ---
 
@@ -2536,21 +2536,21 @@ Use Lucide icons.
 
 ### Allowed Animations
 
-* menu fade/slide
-* drawer slide
-* accordion expand
-* card hover image scale
-* button hover
-* skeleton loading
-* gallery transition
+- menu fade/slide
+- drawer slide
+- accordion expand
+- card hover image scale
+- button hover
+- skeleton loading
+- gallery transition
 
 ### Avoid
 
-* bounce animations
-* flashy parallax
-* moving gradients
-* too many scroll reveals
-* animations that slow down shopping
+- bounce animations
+- flashy parallax
+- moving gradients
+- too many scroll reveals
+- animations that slow down shopping
 
 ---
 
@@ -2560,13 +2560,13 @@ Use Lucide icons.
 
 Copy should be:
 
-* professional
-* calm
-* responsible
-* clear
-* Croatian/local-market credible
-* not exaggerated
-* not aggressive
+- professional
+- calm
+- responsible
+- clear
+- Croatian/local-market credible
+- not exaggerated
+- not aggressive
 
 ---
 
@@ -2574,14 +2574,14 @@ Copy should be:
 
 Avoid phrases such as:
 
-* `Most powerful weapon`
-* `Dominate the field`
-* `Destroy the competition`
-* `Tactical superiority`
-* `Buy now before it disappears`
-* `Crazy deal`
-* `Ultimate weapon store`
-* `Experience the future`
+- `Most powerful weapon`
+- `Dominate the field`
+- `Destroy the competition`
+- `Tactical superiority`
+- `Buy now before it disappears`
+- `Crazy deal`
+- `Ultimate weapon store`
+- `Experience the future`
 
 ---
 
@@ -2597,22 +2597,22 @@ Avoid phrases such as:
 
 ### Category CTA
 
-* `Explore Category`
-* `View Offer`
-* `Check Availability`
+- `Explore Category`
+- `View Offer`
+- `Check Availability`
 
 ### Product CTA
 
 For regular products:
 
-* `Add to Cart`
-* `View Details`
+- `Add to Cart`
+- `View Details`
 
 For regulated products:
 
-* `Send Inquiry`
-* `Check Availability`
-* `Contact for Purchase`
+- `Send Inquiry`
+- `Check Availability`
+- `Contact for Purchase`
 
 ---
 
@@ -2632,11 +2632,11 @@ For regulated products:
 
 Examples:
 
-* `Shop Informed`
-* `Availability Confirmed Before Delivery`
-* `Expert Support Before Purchase`
-* `Responsible Sale of Regulated Products`
-* `Clear Purchase and Pickup Conditions`
+- `Shop Informed`
+- `Availability Confirmed Before Delivery`
+- `Expert Support Before Purchase`
+- `Responsible Sale of Regulated Products`
+- `Clear Purchase and Pickup Conditions`
 
 ---
 
@@ -2784,10 +2784,10 @@ The logo must not be plain text without character.
 
 It should include:
 
-* serious wordmark typography
-* small mark or monogram
-* outdoor/premium feel
-* no aggressive tactical symbol
+- serious wordmark typography
+- small mark or monogram
+- outdoor/premium feel
+- no aggressive tactical symbol
 
 ---
 
@@ -2795,20 +2795,20 @@ It should include:
 
 The hero must not use:
 
-* generic gradients
-* floating cards
-* AI-generated “premium” look
-* overly rounded cards
-* unclear CTA
+- generic gradients
+- floating cards
+- AI-generated “premium” look
+- overly rounded cards
+- unclear CTA
 
 The hero must include:
 
-* strong editorial layout
-* natural visual direction
-* serious headline
-* good spacing
-* clear business category
-* responsible purchase tone
+- strong editorial layout
+- natural visual direction
+- serious headline
+- good spacing
+- clear business category
+- responsible purchase tone
 
 ---
 
@@ -2818,13 +2818,13 @@ Product cards must not look like default WooCommerce cards.
 
 They need:
 
-* larger image area
-* better price block
-* clear status badges
-* brand metadata
-* less visual noise
-* better CTA buttons
-* consistent image ratio
+- larger image area
+- better price block
+- clear status badges
+- brand metadata
+- less visual noise
+- better CTA buttons
+- consistent image ratio
 
 ---
 
@@ -2834,12 +2834,12 @@ The mega menu must not be just a dropdown list.
 
 It should feel like a serious catalog:
 
-* columns
-* groups
-* info panel
-* subcategories
-* legal notice
-* elegant hover states
+- columns
+- groups
+- info panel
+- subcategories
+- legal notice
+- elegant hover states
 
 ---
 
@@ -2849,13 +2849,13 @@ The footer must not be a generic dark block.
 
 It should include:
 
-* clear categories
-* contact information
-* purchase terms
-* legal note
-* local credibility
-* good spacing
-* serious contrast
+- clear categories
+- contact information
+- purchase terms
+- legal note
+- local credibility
+- good spacing
+- serious contrast
 
 ---
 
@@ -2863,17 +2863,17 @@ It should include:
 
 Avoid generic trust copy such as:
 
-* `Free Shipping`
-* `Secure Payment`
-* `Best Quality`
+- `Free Shipping`
+- `Secure Payment`
+- `Best Quality`
 
 Use relevant trust copy such as:
 
-* `Availability Confirmation`
-* `Responsible Purchase`
-* `Expert Support`
-* `Personal Pickup`
-* `Clear Conditions for Regulated Items`
+- `Availability Confirmation`
+- `Responsible Purchase`
+- `Expert Support`
+- `Personal Pickup`
+- `Clear Conditions for Regulated Items`
 
 ---
 
@@ -2883,11 +2883,11 @@ Legal notices must not look like ugly warnings.
 
 They should be:
 
-* elegant
-* clear
-* discreet but visible
-* aligned with the premium visual style
-* linked to purchase conditions
+- elegant
+- clear
+- discreet but visible
+- aligned with the premium visual style
+- linked to purchase conditions
 
 ---
 
@@ -2897,12 +2897,12 @@ Filters must not be a basic unstyled sidebar.
 
 They should include:
 
-* good spacing
-* clear accordion groups
-* active states
-* filter chips
-* mobile drawer
-* sticky apply button
+- good spacing
+- clear accordion groups
+- active states
+- filter chips
+- mobile drawer
+- sticky apply button
 
 ---
 
@@ -2912,12 +2912,12 @@ The cart must not be a basic popup.
 
 It needs:
 
-* product images
-* clear price
-* quantity controls
-* legal state
-* checkout CTA
-* responsive behavior
+- product images
+- clear price
+- quantity controls
+- legal state
+- checkout CTA
+- responsive behavior
 
 ---
 
@@ -2927,12 +2927,12 @@ Checkout must not look like a plain form.
 
 It should include:
 
-* stepper
-* order summary
-* legal confirmations
-* clear delivery/payment flow
-* mobile-first approach
-* trust elements
+- stepper
+- order summary
+- legal confirmations
+- clear delivery/payment flow
+- mobile-first approach
+- trust elements
 
 ---
 
@@ -2946,36 +2946,36 @@ Establish the visual and technical foundation.
 
 ### Implement
 
-* Next.js 16 setup
-* TypeScript
-* Tailwind CSS v4
-* shadcn/ui
-* Motion
-* Lucide icons
-* base route structure
-* design tokens
-* color palette
-* typography scale
-* spacing scale
-* button variants
-* badge variants
-* card variants
-* layout container
-* mock data structure
+- Next.js 16 setup
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Motion
+- Lucide icons
+- base route structure
+- design tokens
+- color palette
+- typography scale
+- spacing scale
+- button variants
+- badge variants
+- card variants
+- layout container
+- mock data structure
 
 ### Pay Special Attention To
 
-* do not use default shadcn styling
-* do not use generic gradient backgrounds
-* define smaller border radius early
-* establish premium spacing from the start
+- do not use default shadcn styling
+- do not use generic gradient backgrounds
+- define smaller border radius early
+- establish premium spacing from the start
 
 ### Output
 
-* design system preview
-* UI primitives
-* mock product data
-* base layout
+- design system preview
+- UI primitives
+- mock product data
+- base layout
 
 ---
 
@@ -2987,27 +2987,27 @@ Build navigation as the most important ecommerce UX element.
 
 ### Implement
 
-* TopUtilityBar
-* SiteHeader
-* DesktopNav
-* MegaMenu
-* SearchOverlay
-* MobileNavDrawer
-* CartIcon
-* sticky behavior
+- TopUtilityBar
+- SiteHeader
+- DesktopNav
+- MegaMenu
+- SearchOverlay
+- MobileNavDrawer
+- CartIcon
+- sticky behavior
 
 ### Pay Special Attention To
 
-* mega menu must feel like a serious catalog
-* mobile drawer must use drill-down navigation
-* search must be easy to access
-* legal info must be integrated into navigation
+- mega menu must feel like a serious catalog
+- mobile drawer must use drill-down navigation
+- search must be easy to access
+- legal info must be integrated into navigation
 
 ### Output
 
-* production-level desktop navbar
-* production-level mobile drawer
-* responsive navigation behavior
+- production-level desktop navbar
+- production-level mobile drawer
+- responsive navigation behavior
 
 ---
 
@@ -3019,28 +3019,28 @@ Build the premium home page.
 
 ### Implement
 
-* hero section
-* trust strip
-* category discovery grid
-* featured products
-* ammunition section
-* brand strip
-* expert/trust section
-* store info block
-* footer
+- hero section
+- trust strip
+- category discovery grid
+- featured products
+- ammunition section
+- brand strip
+- expert/trust section
+- store info block
+- footer
 
 ### Pay Special Attention To
 
-* hero must not look AI-generated
-* product cards must look premium
-* category cards must have character
-* footer must strengthen trust
+- hero must not look AI-generated
+- product cards must look premium
+- category cards must have character
+- footer must strengthen trust
 
 ### Output
 
-* complete home page
-* responsive mobile home page
-* polished visual hierarchy
+- complete home page
+- responsive mobile home page
+- polished visual hierarchy
 
 ---
 
@@ -3052,32 +3052,32 @@ Build a serious ecommerce listing page.
 
 ### Implement
 
-* breadcrumbs
-* category hero
-* subcategory pills
-* listing toolbar
-* desktop filter sidebar
-* mobile filter drawer
-* active filter chips
-* product grid
-* sort dropdown
-* pagination/load more
-* no-results state
-* loading skeleton
+- breadcrumbs
+- category hero
+- subcategory pills
+- listing toolbar
+- desktop filter sidebar
+- mobile filter drawer
+- active filter chips
+- product grid
+- sort dropdown
+- pagination/load more
+- no-results state
+- loading skeleton
 
 ### Pay Special Attention To
 
-* filter UX
-* mobile filters
-* product grid spacing
-* legal indicator for regulated products
-* query params for filters
+- filter UX
+- mobile filters
+- product grid spacing
+- legal indicator for regulated products
+- query params for filters
 
 ### Output
 
-* reusable category page
-* dynamic filter behavior
-* responsive product listing
+- reusable category page
+- dynamic filter behavior
+- responsive product listing
 
 ---
 
@@ -3089,29 +3089,29 @@ Build a premium product detail page.
 
 ### Implement
 
-* product image gallery
-* buying panel
-* product price
-* status badges
-* CTA logic
-* legal notice
-* product tabs
-* specs table
-* related products
-* contact before purchase CTA
+- product image gallery
+- buying panel
+- product price
+- status badges
+- CTA logic
+- legal notice
+- product tabs
+- specs table
+- related products
+- contact before purchase CTA
 
 ### Pay Special Attention To
 
-* regulated products must have responsible UX
-* CTA must not be aggressive
-* price and availability must be clear
-* product gallery must look premium
+- regulated products must have responsible UX
+- CTA must not be aggressive
+- price and availability must be clear
+- product gallery must look premium
 
 ### Output
 
-* product detail page for regular items
-* product detail page for regulated items
-* responsive product layout
+- product detail page for regular items
+- product detail page for regulated items
+- responsive product layout
 
 ---
 
@@ -3123,27 +3123,27 @@ Build a clear cart flow.
 
 ### Implement
 
-* CartDrawer
-* CartLineItem
-* CartSummary
-* quantity controls
-* remove item
-* legal notice in cart
-* CartPage
-* EmptyCartState
-* recommended products
+- CartDrawer
+- CartLineItem
+- CartSummary
+- quantity controls
+- remove item
+- legal notice in cart
+- CartPage
+- EmptyCartState
+- recommended products
 
 ### Pay Special Attention To
 
-* regulated items must have a special cart state
-* checkout CTA must depend on product type
-* mobile cart must be clean and readable
+- regulated items must have a special cart state
+- checkout CTA must depend on product type
+- mobile cart must be clean and readable
 
 ### Output
 
-* cart drawer
-* cart page
-* responsive cart UX
+- cart drawer
+- cart page
+- responsive cart UX
 
 ---
 
@@ -3155,27 +3155,27 @@ Create a checkout experience that feels realistic and responsible.
 
 ### Implement
 
-* CheckoutStepper
-* CustomerForm
-* ShippingOptions
-* PaymentOptions
-* LegalAcknowledgementBox
-* OrderSummary
-* ConfirmationPage
+- CheckoutStepper
+- CustomerForm
+- ShippingOptions
+- PaymentOptions
+- LegalAcknowledgementBox
+- OrderSummary
+- ConfirmationPage
 
 ### Pay Special Attention To
 
-* legal checkboxes
-* clear steps
-* sticky summary on desktop
-* collapsed summary on mobile
-* no aggressive checkout pressure
+- legal checkboxes
+- clear steps
+- sticky summary on desktop
+- collapsed summary on mobile
+- no aggressive checkout pressure
 
 ### Output
 
-* checkout mockup
-* mobile checkout
-* confirmation page
+- checkout mockup
+- mobile checkout
+- confirmation page
 
 ---
 
@@ -3187,25 +3187,25 @@ Strengthen trust and complete informational pages.
 
 ### Implement
 
-* AboutPage
-* ContactPage
-* LegalPage
-* DeliveryReturnsPage
-* ResponsiblePurchasePage
-* PrivacyPage
+- AboutPage
+- ContactPage
+- LegalPage
+- DeliveryReturnsPage
+- ResponsiblePurchasePage
+- PrivacyPage
 
 ### Pay Special Attention To
 
-* do not create plain WordPress-like text pages
-* use strong layout
-* legal pages should have a table of contents
-* contact page needs a strong store info block
+- do not create plain WordPress-like text pages
+- use strong layout
+- legal pages should have a table of contents
+- contact page needs a strong store info block
 
 ### Output
 
-* complete informational pages
-* legal hub
-* contact UX
+- complete informational pages
+- legal hub
+- contact UX
 
 ---
 
@@ -3217,36 +3217,36 @@ Turn the project into a production-level frontend.
 
 ### Check and Improve
 
-* spacing consistency
-* typography consistency
-* color contrast
-* focus states
-* keyboard navigation
-* mobile drawer behavior
-* cart drawer behavior
-* filter drawer behavior
-* loading states
-* empty states
-* responsive bugs
-* SEO metadata
-* product structured data
-* Playwright tests
-* performance optimization
+- spacing consistency
+- typography consistency
+- color contrast
+- focus states
+- keyboard navigation
+- mobile drawer behavior
+- cart drawer behavior
+- filter drawer behavior
+- loading states
+- empty states
+- responsive bugs
+- SEO metadata
+- product structured data
+- Playwright tests
+- performance optimization
 
 ### Pay Special Attention To
 
-* remove every generic visual pattern
-* avoid default shadcn appearance
-* avoid excessive rounded design
-* avoid AI gradient aesthetics
-* ensure mobile UX is as strong as desktop UX
+- remove every generic visual pattern
+- avoid default shadcn appearance
+- avoid excessive rounded design
+- avoid AI gradient aesthetics
+- ensure mobile UX is as strong as desktop UX
 
 ### Output
 
-* polished final frontend
-* QA checklist
-* accessibility pass
-* responsive pass
+- polished final frontend
+- QA checklist
+- accessibility pass
+- responsive pass
 
 ---
 
@@ -3254,63 +3254,63 @@ Turn the project into a production-level frontend.
 
 ## 16.1 UX Checklist
 
-* [ ] Navigation is clear
-* [ ] Mega menu is organized
-* [ ] Mobile drawer uses drill-down navigation
-* [ ] Search is easy to access
-* [ ] Categories are understandable
-* [ ] Filters are intuitive
-* [ ] Active filter chips exist
-* [ ] Product cards are readable
-* [ ] Product detail page is clear
-* [ ] Cart drawer is fast
-* [ ] Checkout is logical
-* [ ] Empty states exist
-* [ ] Loading states exist
+- [ ] Navigation is clear
+- [ ] Mega menu is organized
+- [ ] Mobile drawer uses drill-down navigation
+- [ ] Search is easy to access
+- [ ] Categories are understandable
+- [ ] Filters are intuitive
+- [ ] Active filter chips exist
+- [ ] Product cards are readable
+- [ ] Product detail page is clear
+- [ ] Cart drawer is fast
+- [ ] Checkout is logical
+- [ ] Empty states exist
+- [ ] Loading states exist
 
 ---
 
 ## 16.2 UI Checklist
 
-* [ ] Website looks premium
-* [ ] No generic AI gradients
-* [ ] No default template look
-* [ ] Product cards look improved
-* [ ] Footer looks serious
-* [ ] Navbar looks professional
-* [ ] Border radius is controlled
-* [ ] Spacing is consistent
-* [ ] Typography is strong
-* [ ] Colors are natural and grounded
+- [ ] Website looks premium
+- [ ] No generic AI gradients
+- [ ] No default template look
+- [ ] Product cards look improved
+- [ ] Footer looks serious
+- [ ] Navbar looks professional
+- [ ] Border radius is controlled
+- [ ] Spacing is consistent
+- [ ] Typography is strong
+- [ ] Colors are natural and grounded
 
 ---
 
 ## 16.3 Compliance Checklist
 
-* [ ] Legal notice exists in relevant places
-* [ ] Regulated product badge exists
-* [ ] Product detail page has regulated item conditions
-* [ ] Cart clearly displays regulated items
-* [ ] Checkout has legal checkboxes
-* [ ] No aggressive copywriting
-* [ ] No instructions on weapon use
-* [ ] No “buy now” pressure for regulated products
-* [ ] Availability is not presented as guaranteed if it requires confirmation
+- [ ] Legal notice exists in relevant places
+- [ ] Regulated product badge exists
+- [ ] Product detail page has regulated item conditions
+- [ ] Cart clearly displays regulated items
+- [ ] Checkout has legal checkboxes
+- [ ] No aggressive copywriting
+- [ ] No instructions on weapon use
+- [ ] No “buy now” pressure for regulated products
+- [ ] Availability is not presented as guaranteed if it requires confirmation
 
 ---
 
 ## 16.4 Mobile Checklist
 
-* [ ] Header is sticky
-* [ ] Hamburger works
-* [ ] Search works
-* [ ] Cart badge is visible
-* [ ] Mobile drawer is readable
-* [ ] Drill-down navigation works
-* [ ] Filter drawer works
-* [ ] Sticky filter CTA exists
-* [ ] Product cards are readable
-* [ ] Checkout is easy to complete on mobile
+- [ ] Header is sticky
+- [ ] Hamburger works
+- [ ] Search works
+- [ ] Cart badge is visible
+- [ ] Mobile drawer is readable
+- [ ] Drill-down navigation works
+- [ ] Filter drawer works
+- [ ] Sticky filter CTA exists
+- [ ] Product cards are readable
+- [ ] Checkout is easy to complete on mobile
 
 ---
 
@@ -3320,13 +3320,13 @@ This redesign should look like a serious Croatian premium ecommerce shop for hun
 
 The main emotional direction is not aggression. The site should communicate:
 
-* trust
-* expertise
-* safety
-* clarity
-* responsibility
-* quality
-* premium presentation
+- trust
+- expertise
+- safety
+- clarity
+- responsibility
+- quality
+- premium presentation
 
 The areas that must be visibly improved compared to a generic ecommerce design are:
 
@@ -3404,6 +3404,7 @@ Special compliance requirements:
 
 The final result must look like a serious production ecommerce redesign, not a generated template.
 ```
+
 # UX/UI Plan
 
 ## 1. Sitemap
@@ -3434,6 +3435,7 @@ The layout must be mobile-first and scale upward.
 ## 3. Header UX
 
 ### Desktop Header
+
 - Logo left
 - Main categories centered or left-aligned
 - Search prominent
@@ -3443,7 +3445,9 @@ The layout must be mobile-first and scale upward.
 - Sticky but not visually heavy
 
 ### Desktop Mega Menu
+
 Mega menu should open for main categories:
+
 - Oružje
 - Streljivo
 - Odjeća
@@ -3451,6 +3455,7 @@ Mega menu should open for main categories:
 - Oprema
 
 Each mega menu contains:
+
 - category columns
 - featured category card
 - short description
@@ -3458,12 +3463,14 @@ Each mega menu contains:
 - “Pogledaj sve” link
 
 ### Mobile Header
+
 - Logo
 - Search icon or search field
 - Cart icon
 - Menu button
 
 ### Mobile Drawer
+
 - Search at top
 - Accordion categories
 - Account/cart/contact links
@@ -3474,9 +3481,11 @@ Each mega menu contains:
 ## 4. Homepage UX
 
 ### Hero
+
 Goal: establish trust and premium ecommerce identity immediately.
 
 Hero includes:
+
 - strong headline
 - short benefit copy
 - primary CTA: Istraži ponudu
@@ -3488,7 +3497,9 @@ Hero includes:
 Avoid generic gradient hero.
 
 ### Category Discovery
+
 Grid of major categories:
+
 - Oružje
 - Streljivo
 - Optike
@@ -3497,6 +3508,7 @@ Grid of major categories:
 - Oprema
 
 Each card:
+
 - title
 - short description
 - product count mock
@@ -3504,24 +3516,31 @@ Each card:
 - subtle image/illustration placeholder
 
 ### Novo u ponudi
+
 Horizontal or responsive product grid using ProductCard.
 
 ### Optike Highlight
+
 Editorial split layout:
+
 - text block
 - highlighted product cards
 - CTA
 
 ### Novo streljivo / Regulated Products
+
 Use careful legal/responsible purchase notice.
 
 ### Brand Strip
+
 Refined brand grid, not noisy.
 
 ### Expert Help CTA
+
 A section that says the store can help choose the right product.
 
 ### Trust Section
+
 - Sigurna kupovina
 - Provjerena oprema
 - Stručna podrška
@@ -3531,6 +3550,7 @@ A section that says the store can help choose the right product.
 ## 5. Category Listing UX
 
 Category page structure:
+
 1. Breadcrumb
 2. Category header
 3. Description
@@ -3544,6 +3564,7 @@ Category page structure:
 8. Pagination
 
 ### Desktop Filters
+
 - Price
 - Brand
 - Availability
@@ -3551,6 +3572,7 @@ Category page structure:
 - Category/subcategory
 
 ### Mobile Filters
+
 - Drawer
 - sticky apply button
 - clear filters
@@ -3559,6 +3581,7 @@ Category page structure:
 ## 6. Product Card UX
 
 ProductCard states:
+
 - Normal
 - New
 - Sale
@@ -3568,6 +3591,7 @@ ProductCard states:
 - Regulated item
 
 ProductCard fields:
+
 - image
 - category
 - brand
@@ -3581,6 +3605,7 @@ ProductCard fields:
 - quick view / details CTA
 
 Rules:
+
 - Price must be visually clear.
 - Product name must be readable.
 - Badges must be refined.
@@ -3590,6 +3615,7 @@ Rules:
 ## 7. Product Detail UX
 
 Product page structure:
+
 1. Breadcrumb
 2. Product gallery
 3. Product info panel
@@ -3602,6 +3628,7 @@ Product page structure:
 10. Related products
 
 For regulated products:
+
 - CTA can be “Pošalji upit” or “Provjeri dostupnost”
 - show legal notice prominently
 - do not overpromise web checkout
@@ -3609,6 +3636,7 @@ For regulated products:
 ## 8. Cart UX
 
 Cart drawer:
+
 - slides from right
 - product rows
 - quantity controls
@@ -3620,6 +3648,7 @@ Cart drawer:
 ## 9. Checkout UX
 
 Checkout mockup:
+
 - contact info
 - delivery/pickup
 - payment placeholder
@@ -3630,6 +3659,7 @@ Checkout mockup:
 ## 10. Contact UX
 
 Contact page:
+
 - store info card
 - phone/email
 - working hours
@@ -3641,6 +3671,7 @@ Contact page:
 ## 11. Footer UX
 
 Footer columns:
+
 - Kategorije
 - Korisnička podrška
 - Informacije
@@ -3652,6 +3683,7 @@ Footer should feel complete, serious, and trustworthy.
 ## 12. Design Anti-Generic Rules
 
 Avoid:
+
 - same cards everywhere
 - identical section spacing
 - huge random gradients
@@ -3662,6 +3694,7 @@ Avoid:
 - too many icons
 
 Use:
+
 - varied section rhythm
 - editorial layout
 - natural asymmetry

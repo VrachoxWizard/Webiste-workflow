@@ -5,33 +5,79 @@ import { Container } from "@/components/ui/container"
 import { motion } from "motion/react"
 
 const BRANDS = [
-  "Tikka", "Beretta", "Vortex", "Sako", "Harkila", "Pulsar", "Geco", "RWS"
+  "Tikka",
+  "Beretta",
+  "Vortex",
+  "Sako",
+  "Harkila",
+  "Pulsar",
+  "Geco",
+  "RWS",
+  "Leica",
+  "Swarovski",
+  "Blaser",
+  "Browning",
 ]
 
 export function BrandStrip() {
   return (
-    <div className="bg-secondary/20 border-y py-12">
+    <div className="relative border-y bg-secondary/5 py-16 md:py-24">
+      {/* Decorative accent lines */}
+      <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
       <Container>
-        <div className="flex flex-col space-y-8 items-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground text-center">
-            Zastupamo vodeće svjetske brendove
+        <div className="flex flex-col items-center space-y-12">
+          <p className="text-center text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground/40">
+            Zastupamo Vodeće Svjetske Brendove
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60">
-            {BRANDS.map((brand, idx) => (
-              <motion.span
-                key={brand}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className="text-xl md:text-2xl font-black tracking-tighter uppercase italic hover:opacity-100 transition-opacity cursor-default"
-              >
-                {brand}
-              </motion.span>
-            ))}
+
+          <div className="relative w-full overflow-hidden">
+            {/* Desktop / Large Screens: Static Grid with hover effects */}
+            <div className="hidden flex-wrap items-center justify-center gap-x-20 gap-y-12 opacity-30 transition-opacity hover:opacity-100 lg:flex">
+              {BRANDS.map((brand, idx) => (
+                <motion.span
+                  key={brand}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05, duration: 0.5 }}
+                  className="cursor-default text-3xl font-black italic tracking-tighter uppercase text-foreground transition-all hover:scale-110 hover:text-primary md:text-4xl"
+                >
+                  {brand}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* Mobile / Tablet: Infinite CSS Marquee */}
+            <div className="group flex overflow-hidden lg:hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}>
+              <div className="flex animate-marquee items-center gap-12 whitespace-nowrap py-4 pr-12">
+                {[...BRANDS, ...BRANDS].map((brand, idx) => (
+                  <span
+                    key={`${brand}-${idx}`}
+                    className="text-2xl font-black italic tracking-tighter uppercase text-foreground/40 md:text-3xl"
+                  >
+                    {brand}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Container>
+
+      <style jsx global>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .group:hover .animate-marquee {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   )
 }

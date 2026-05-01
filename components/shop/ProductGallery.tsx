@@ -20,7 +20,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-sm border bg-muted/10">
+      <div className="bg-muted/10 relative aspect-[4/5] overflow-hidden rounded-sm border">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIdx}
@@ -41,9 +41,13 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 onError={() => markFailed(activeIdx)}
               />
             ) : (
-              <div className="flex h-full flex-col items-center justify-center gap-3 bg-secondary/30 p-8 text-center">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Galerija</p>
-                <p className="max-w-xs text-sm font-semibold text-muted-foreground">Slika proizvoda trenutno nije dostupna.</p>
+              <div className="bg-secondary/30 flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
+                <p className="text-primary text-xs font-bold tracking-[0.2em] uppercase">
+                  Galerija
+                </p>
+                <p className="text-muted-foreground max-w-xs text-sm font-semibold">
+                  Slika proizvoda trenutno nije dostupna.
+                </p>
               </div>
             )}
           </motion.div>
@@ -60,15 +64,24 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             aria-pressed={activeIdx === idx}
             className={cn(
               "relative aspect-square overflow-hidden rounded-sm border-2 transition-all",
-              activeIdx === idx ? "border-primary" : "border-transparent opacity-60 hover:opacity-100"
+              activeIdx === idx
+                ? "border-primary"
+                : "border-transparent opacity-60 hover:opacity-100"
             )}
           >
             {failedImages.has(idx) ? (
-              <div className="flex h-full items-center justify-center bg-secondary/30 text-[10px] font-bold uppercase tracking-widest text-primary">
+              <div className="bg-secondary/30 text-primary flex h-full items-center justify-center text-[10px] font-bold tracking-widest uppercase">
                 Nema slike
               </div>
             ) : (
-              <Image src={img} alt="" fill sizes="120px" className="object-cover" onError={() => markFailed(idx)} />
+              <Image
+                src={img}
+                alt=""
+                fill
+                sizes="120px"
+                className="object-cover"
+                onError={() => markFailed(idx)}
+              />
             )}
           </button>
         ))}

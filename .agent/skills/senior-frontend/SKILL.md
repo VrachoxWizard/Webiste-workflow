@@ -136,18 +136,18 @@ Generate React components with TypeScript, tests, and Storybook stories.
 ### Generated Component Example
 
 ```tsx
-"use client";
+"use client"
 
-import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { useState } from "react"
+import { cn } from "@/lib/utils"
 
 interface ButtonProps {
-  className?: string;
-  children?: React.ReactNode;
+  className?: string
+  children?: React.ReactNode
 }
 
 export function Button({ className, children }: ButtonProps) {
-  return <div className={cn("", className)}>{children}</div>;
+  return <div className={cn("", className)}>{children}</div>
 }
 ```
 
@@ -219,26 +219,22 @@ Share state between related components:
 
 ```tsx
 const Tabs = ({ children }) => {
-  const [active, setActive] = useState(0);
-  return (
-    <TabsContext.Provider value={{ active, setActive }}>
-      {children}
-    </TabsContext.Provider>
-  );
-};
+  const [active, setActive] = useState(0)
+  return <TabsContext.Provider value={{ active, setActive }}>{children}</TabsContext.Provider>
+}
 
-Tabs.List = TabList;
-Tabs.Panel = TabPanel;
+Tabs.List = TabList
+Tabs.Panel = TabPanel
 
 // Usage
-<Tabs>
+;<Tabs>
   <Tabs.List>
     <Tabs.Tab>One</Tabs.Tab>
     <Tabs.Tab>Two</Tabs.Tab>
   </Tabs.List>
   <Tabs.Panel>Content 1</Tabs.Panel>
   <Tabs.Panel>Content 2</Tabs.Panel>
-</Tabs>;
+</Tabs>
 ```
 
 ### Custom Hooks
@@ -247,18 +243,18 @@ Extract reusable logic:
 
 ```tsx
 function useDebounce<T>(value: T, delay = 500): T {
-  const [debouncedValue, setDebouncedValue] = useState(value);
+  const [debouncedValue, setDebouncedValue] = useState(value)
 
   useEffect(() => {
-    const timer = setTimeout(() => setDebouncedValue(value), delay);
-    return () => clearTimeout(timer);
-  }, [value, delay]);
+    const timer = setTimeout(() => setDebouncedValue(value), delay)
+    return () => clearTimeout(timer)
+  }, [value, delay])
 
-  return debouncedValue;
+  return debouncedValue
 }
 
 // Usage
-const debouncedSearch = useDebounce(searchTerm, 300);
+const debouncedSearch = useDebounce(searchTerm, 300)
 ```
 
 ### Render Props
@@ -267,26 +263,24 @@ Share rendering logic:
 
 ```tsx
 function DataFetcher({ url, render }) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch(url)
       .then((r) => r.json())
       .then(setData)
-      .finally(() => setLoading(false));
-  }, [url]);
+      .finally(() => setLoading(false))
+  }, [url])
 
-  return render({ data, loading });
+  return render({ data, loading })
 }
 
 // Usage
-<DataFetcher
+;<DataFetcher
   url="/api/users"
-  render={({ data, loading }) =>
-    loading ? <Spinner /> : <UserList users={data} />
-  }
-/>;
+  render={({ data, loading }) => (loading ? <Spinner /> : <UserList users={data} />)}
+/>
 ```
 
 ---
@@ -307,21 +301,21 @@ Use Server Components by default. Add 'use client' only when you need:
 ```tsx
 // Server Component (default) - no 'use client'
 async function ProductPage({ params }) {
-  const product = await getProduct(params.id); // Server-side fetch
+  const product = await getProduct(params.id) // Server-side fetch
 
   return (
     <div>
       <h1>{product.name}</h1>
       <AddToCartButton productId={product.id} /> {/* Client component */}
     </div>
-  );
+  )
 }
 
 // Client Component
-("use client");
+;("use client")
 function AddToCartButton({ productId }) {
-  const [adding, setAdding] = useState(false);
-  return <button onClick={() => addToCart(productId)}>Add</button>;
+  const [adding, setAdding] = useState(false)
+  return <button onClick={() => addToCart(productId)}>Add</button>
 }
 ```
 
@@ -356,8 +350,8 @@ import Image from 'next/image';
 ```tsx
 // Parallel fetching
 async function Dashboard() {
-  const [user, stats] = await Promise.all([getUser(), getStats()]);
-  return <div>...</div>;
+  const [user, stats] = await Promise.all([getUser(), getStats()])
+  return <div>...</div>
 }
 
 // Streaming with Suspense
@@ -369,7 +363,7 @@ async function ProductPage({ params }) {
         <Reviews productId={params.id} />
       </Suspense>
     </div>
-  );
+  )
 }
 ```
 
@@ -408,24 +402,24 @@ Reference: `references/frontend_best_practices.md`
 
 ```tsx
 // Component test with React Testing Library
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 
 test("button triggers action on click", async () => {
-  const onClick = vi.fn();
-  render(<Button onClick={onClick}>Click me</Button>);
+  const onClick = vi.fn()
+  render(<Button onClick={onClick}>Click me</Button>)
 
-  await userEvent.click(screen.getByRole("button"));
-  expect(onClick).toHaveBeenCalledTimes(1);
-});
+  await userEvent.click(screen.getByRole("button"))
+  expect(onClick).toHaveBeenCalledTimes(1)
+})
 
 // Test accessibility
 test("dialog is accessible", async () => {
-  render(<Dialog open={true} title="Confirm" />);
+  render(<Dialog open={true} title="Confirm" />)
 
-  expect(screen.getByRole("dialog")).toBeInTheDocument();
-  expect(screen.getByRole("dialog")).toHaveAttribute("aria-labelledby");
-});
+  expect(screen.getByRole("dialog")).toBeInTheDocument()
+  expect(screen.getByRole("dialog")).toHaveAttribute("aria-labelledby")
+})
 ```
 
 ---
@@ -444,22 +438,22 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "@heroicons/react"],
   },
-};
+}
 ```
 
 ### Tailwind CSS Utilities
 
 ```tsx
 // Conditional classes with cn()
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-<button
+;<button
   className={cn(
-    "px-4 py-2 rounded",
+    "rounded px-4 py-2",
     variant === "primary" && "bg-blue-500 text-white",
-    disabled && "opacity-50 cursor-not-allowed",
+    disabled && "cursor-not-allowed opacity-50"
   )}
-/>;
+/>
 ```
 
 ### TypeScript Patterns
@@ -467,18 +461,18 @@ import { cn } from "@/lib/utils";
 ```tsx
 // Props with children
 interface CardProps {
-  className?: string;
-  children: React.ReactNode;
+  className?: string
+  children: React.ReactNode
 }
 
 // Generic component
 interface ListProps<T> {
-  items: T[];
-  renderItem: (item: T) => React.ReactNode;
+  items: T[]
+  renderItem: (item: T) => React.ReactNode
 }
 
 function List<T>({ items, renderItem }: ListProps<T>) {
-  return <ul>{items.map(renderItem)}</ul>;
+  return <ul>{items.map(renderItem)}</ul>
 }
 ```
 

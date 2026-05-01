@@ -24,7 +24,7 @@ You are a production-grade TanStack Query (formerly React Query) expert. You hel
 
 ### Why TanStack Query?
 
-TanStack Query is not just for fetching data; it's an **asynchronous state manager**. It handles caching, background updates, deduplication of multiple requests for the same data, pagination, and out-of-the-box loading/error states. 
+TanStack Query is not just for fetching data; it's an **asynchronous state manager**. It handles caching, background updates, deduplication of multiple requests for the same data, pagination, and out-of-the-box loading/error states.
 
 **Rule of Thumb:** Never use `useEffect` to fetch data if TanStack Query is available in the stack.
 
@@ -35,27 +35,27 @@ TanStack Query is not just for fetching data; it's an **asynchronous state manag
 Always abstract `useQuery` calls into custom hooks to encapsulate the fetching logic, TypeScript types, and query keys.
 
 ```typescript
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query"
 
 // 1. Define strict types
-type User = { id: string; name: string; status: 'active' | 'inactive' };
+type User = { id: string; name: string; status: "active" | "inactive" }
 
 // 2. Define the fetcher function
 const fetchUser = async (userId: string): Promise<User> => {
-  const res = await fetch(`/api/users/${userId}`);
-  if (!res.ok) throw new Error('Failed to fetch user');
-  return res.json();
-};
+  const res = await fetch(`/api/users/${userId}`)
+  if (!res.ok) throw new Error("Failed to fetch user")
+  return res.json()
+}
 
 // 3. Export a custom hook
 export const useUser = (userId: string) => {
   return useQuery({
-    queryKey: ['users', userId], // Array-based query key
+    queryKey: ["users", userId], // Array-based query key
     queryFn: () => fetchUser(userId),
     staleTime: 1000 * 60 * 5, // Data is fresh for 5 minutes (no background refetching)
     enabled: !!userId, // Dependent query: only run if userId exists
-  });
-};
+  })
+}
 ```
 
 ### Advanced Query Keys
@@ -65,18 +65,18 @@ Query keys uniquely identify the cache. They must be arrays, and order matters.
 ```typescript
 // Filtering / Sorting
 useQuery({
-  queryKey: ['issues', { status: 'open', sort: 'desc' }],
-  queryFn: () => fetchIssues({ status: 'open', sort: 'desc' })
-});
+  queryKey: ["issues", { status: "open", sort: "desc" }],
+  queryFn: () => fetchIssues({ status: "open", sort: "desc" }),
+})
 
 // Factory pattern for query keys (Highly recommended for large apps)
 export const issueKeys = {
-  all: ['issues'] as const,
-  lists: () => [...issueKeys.all, 'list'] as const,
+  all: ["issues"] as const,
+  lists: () => [...issueKeys.all, "list"] as const,
   list: (filters: string) => [...issueKeys.lists(), { filters }] as const,
-  details: () => [...issueKeys.all, 'detail'] as const,
+  details: () => [...issueKeys.all, "detail"] as const,
   detail: (id: number) => [...issueKeys.details(), id] as const,
-};
+}
 ```
 
 ## Mutations & Cache Invalidation
@@ -86,67 +86,67 @@ export const issueKeys = {
 When you modify data on the server, you must tell the client cache that the old data is now stale.
 
 ```typescript
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 export const useCreatePost = () => {
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient()
 
   return useMutation({
     mutationFn: async (newPost: { title: string }) => {
-      const res = await fetch('/api/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPost),
-      });
-      return res.json();
+      })
+      return res.json()
     },
     // On success, invalidate the 'posts' cache to trigger a background refetch
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts'] });
+      queryClient.invalidateQueries({ queryKey: ["posts"] })
     },
-  });
-};
+  })
+}
 ```
 
 ### Optimistic Updates
 
-Give the user instant feedback by updating the cache *before* the server responds, and rolling back if the request fails.
+Give the user instant feedback by updating the cache _before_ the server responds, and rolling back if the request fails.
 
 ```typescript
 export const useUpdateTodo = () => {
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient()
 
   return useMutation({
     mutationFn: updateTodoFn,
-    
+
     // 1. Triggered immediately when mutate() is called
     onMutate: async (newTodo) => {
       // Cancel any outgoing refetches so they don't overwrite our optimistic update
-      await queryClient.cancelQueries({ queryKey: ['todos'] });
+      await queryClient.cancelQueries({ queryKey: ["todos"] })
 
       // Snapshot the previous value
-      const previousTodos = queryClient.getQueryData(['todos']);
+      const previousTodos = queryClient.getQueryData(["todos"])
 
       // Optimistically update to the new value
-      queryClient.setQueryData(['todos'], (old: any) => 
-        old.map((todo: any) => todo.id === newTodo.id ? { ...todo, ...newTodo } : todo)
-      );
+      queryClient.setQueryData(["todos"], (old: any) =>
+        old.map((todo: any) => (todo.id === newTodo.id ? { ...todo, ...newTodo } : todo))
+      )
 
       // Return a context object with the snapshotted value
-      return { previousTodos };
+      return { previousTodos }
     },
-    
+
     // 2. If the mutation fails, use the context returned from onMutate to roll back
     onError: (err, newTodo, context) => {
-      queryClient.setQueryData(['todos'], context?.previousTodos);
+      queryClient.setQueryData(["todos"], context?.previousTodos)
     },
-    
+
     // 3. Always refetch after error or success to ensure server sync
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ['todos'] });
+      queryClient.invalidateQueries({ queryKey: ["todos"] })
     },
-  });
-};
+  })
+}
 ```
 
 ## Next.js App Router Integration
@@ -213,7 +213,7 @@ export default async function PostsPage() {
 import { useQuery } from '@tanstack/react-query';
 
 export default function PostsList() {
-  // This will NOT trigger a network request on mount! 
+  // This will NOT trigger a network request on mount!
   // It reads instantly from the dehydrated server cache.
   const { data } = useQuery({
     queryKey: ['posts'],

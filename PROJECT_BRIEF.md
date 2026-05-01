@@ -1,9 +1,11 @@
 # Project Brief: Pointer-Inspired Premium Ecommerce Redesign
 
 ## Project Name
+
 Pointer Premium Redesign
 
 ## Goal
+
 Create a modern, premium, responsive ecommerce website inspired by the structure and business type of pointershop.net.
 
 The website should serve as a better-designed version of a Croatian specialty ecommerce store for hunting, sport shooting, outdoor equipment, optics, apparel, footwear, and accessories.
@@ -11,6 +13,7 @@ The website should serve as a better-designed version of a Croatian specialty ec
 The project must not be a direct clone. It must be an original redesign with a new visual identity, improved UX/UI, better mobile behavior, better category navigation, stronger product cards, and a more trustworthy purchase experience.
 
 ## Target Audience
+
 - Hunters
 - Sport shooting users
 - Outdoor enthusiasts
@@ -19,7 +22,9 @@ The project must not be a direct clone. It must be an original redesign with a n
 - Croatian / regional ecommerce users
 
 ## Business Type
+
 Specialized ecommerce and physical store hybrid for:
+
 - hunting equipment
 - outdoor gear
 - optics
@@ -29,6 +34,7 @@ Specialized ecommerce and physical store hybrid for:
 - regulated products where legal restrictions apply
 
 ## Main Categories
+
 - Oružje
   - Dugo oružje
   - Sačmarice
@@ -71,6 +77,7 @@ Specialized ecommerce and physical store hybrid for:
   - Ruksaci i torbe
 
 ## Required Pages
+
 1. Home page
 2. Category listing page
 3. Product detail page
@@ -81,6 +88,7 @@ Specialized ecommerce and physical store hybrid for:
 8. Legal / purchase conditions page
 
 ## Homepage Sections
+
 1. Top legal/trust bar
 2. Premium header with mega menu
 3. Hero section
@@ -94,6 +102,7 @@ Specialized ecommerce and physical store hybrid for:
 11. Footer
 
 ## Category Page Requirements
+
 - Breadcrumb
 - Category title
 - Category description
@@ -109,6 +118,7 @@ Specialized ecommerce and physical store hybrid for:
 - Compliance notice for regulated categories
 
 ## Product Detail Page Requirements
+
 - Product image gallery
 - Product title
 - Brand
@@ -126,6 +136,7 @@ Specialized ecommerce and physical store hybrid for:
 - FAQ accordion
 
 ## Cart Requirements
+
 - Cart drawer
 - Product list
 - Quantity controls
@@ -136,6 +147,7 @@ Specialized ecommerce and physical store hybrid for:
 - Continue shopping
 
 ## Checkout Mockup Requirements
+
 - Contact details
 - Delivery / pickup method
 - Payment method placeholder
@@ -145,7 +157,9 @@ Specialized ecommerce and physical store hybrid for:
 - Submit button
 
 ## Visual Style
+
 Premium Croatian outdoor ecommerce:
+
 - grounded
 - elegant
 - serious
@@ -155,6 +169,7 @@ Premium Croatian outdoor ecommerce:
 - not gimmicky
 
 ## Color Direction
+
 - Warm off-white
 - Stone / sand
 - Deep charcoal
@@ -163,6 +178,7 @@ Premium Croatian outdoor ecommerce:
 - Brass or amber accent
 
 ## Typography Direction
+
 - Editorial display font for headings
 - Clean sans-serif for UI
 - Strong hierarchy
@@ -171,6 +187,7 @@ Premium Croatian outdoor ecommerce:
 - Prices clear and prominent
 
 ## Interaction Direction
+
 - Subtle hover states
 - Functional Motion animations
 - Smooth drawers
@@ -179,7 +196,9 @@ Premium Croatian outdoor ecommerce:
 - No unnecessary animation
 
 ## Responsible Commerce Requirements
+
 For regulated products:
+
 - show legal notice
 - show purchase limitation
 - show contact/pickup/store verification CTA
@@ -188,7 +207,9 @@ For regulated products:
 - avoid usage instructions
 
 ## Success Criteria
+
 The final result should look like a serious production ecommerce site:
+
 - visually premium
 - easy to browse
 - excellent mobile UX

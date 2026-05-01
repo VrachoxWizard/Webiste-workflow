@@ -4,19 +4,20 @@
 
 ## Skills in this Bundle
 
-| Skill | Purpose | Status |
-|-------|---------|--------|
-| `frontend-design` | UI guidelines and aesthetics | ✅ Installed |
-| `react-best-practices` | React & Next.js performance optimization | ✅ Installed |
-| `react-patterns` | Modern React patterns and principles | ✅ Installed |
-| `nextjs-best-practices` | Next.js App Router patterns | ✅ Installed |
-| `tailwind-patterns` | Tailwind CSS v4 styling superpowers | ✅ Installed |
-| `form-cro` | Optimize forms for conversion | ✅ Installed |
-| `seo-audit` | Get found on Google | ✅ Installed |
+| Skill                   | Purpose                                  | Status       |
+| ----------------------- | ---------------------------------------- | ------------ |
+| `frontend-design`       | UI guidelines and aesthetics             | ✅ Installed |
+| `react-best-practices`  | React & Next.js performance optimization | ✅ Installed |
+| `react-patterns`        | Modern React patterns and principles     | ✅ Installed |
+| `nextjs-best-practices` | Next.js App Router patterns              | ✅ Installed |
+| `tailwind-patterns`     | Tailwind CSS v4 styling superpowers      | ✅ Installed |
+| `form-cro`              | Optimize forms for conversion            | ✅ Installed |
+| `seo-audit`             | Get found on Google                      | ✅ Installed |
 
 ## How to Use
 
 Reference these skills when:
+
 - **Building UI** → Use `frontend-design` + `tailwind-patterns`
 - **React components** → Use `react-best-practices` + `react-patterns`
 - **Next.js routing/SSR** → Use `nextjs-best-practices`

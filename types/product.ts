@@ -1,4 +1,4 @@
-export type ProductStatus = 'in_stock' | 'on_order' | 'new' | 'sale'
+export type ProductStatus = "in_stock" | "on_order" | "new" | "sale"
 
 export interface Product {
   id: string

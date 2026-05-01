@@ -1,9 +1,11 @@
 # AI Agent Rules
 
 ## Project
+
 Premium ecommerce redesign inspired by pointershop.net.
 
 ## Core Goal
+
 Build an original, modern, premium, responsive ecommerce website for a Croatian hunting, outdoor, optics, apparel, footwear, and equipment store.
 
 This is not a pixel-perfect clone.
@@ -11,6 +13,7 @@ Do not copy protected branding, exact text, exact layout, product photos, logos,
 Use the business structure and ecommerce UX pattern as inspiration, but create a new and better design.
 
 ## Stack
+
 - Next.js 16
 - React
 - TypeScript
@@ -21,7 +24,9 @@ Use the business structure and ecommerce UX pattern as inspiration, but create a
 - Playwright
 
 ## Design Direction
+
 The website must feel:
+
 - premium
 - grounded
 - trustworthy
@@ -32,6 +37,7 @@ The website must feel:
 - responsive and mobile-first
 
 ## Avoid
+
 - generic AI-generated SaaS gradients
 - excessive glassmorphism
 - excessive border radius
@@ -44,7 +50,9 @@ The website must feel:
 - inaccessible navigation
 
 ## Visual Language
+
 Use:
+
 - warm off-white backgrounds
 - deep charcoal text
 - muted olive / forest tones
@@ -59,6 +67,7 @@ Use:
 - natural spacing rhythm
 
 ## UX Rules
+
 - Search must be prominent.
 - Desktop navigation must support deep categories through a mega menu.
 - Mobile navigation must use a drawer with accordion categories.
@@ -70,7 +79,9 @@ Use:
 - Footer must feel complete and production-ready.
 
 ## Compliance / Responsible Commerce Rules
+
 Because the niche includes regulated products:
+
 - Include age/legal responsibility notices where relevant.
 - Include permit/license notice for regulated products.
 - Use neutral commerce language.
@@ -81,6 +92,7 @@ Because the niche includes regulated products:
 - Never imply that regulated products can be purchased without legal requirements.
 
 ## Code Rules
+
 - Keep components small and reusable.
 - Use semantic HTML.
 - Use TypeScript.
@@ -93,7 +105,9 @@ Because the niche includes regulated products:
 - Do not hardcode messy repeated data directly into UI components if mock data can be separated.
 
 ## Before Completing Any Task
+
 Check:
+
 - Does it match PROJECT_BRIEF.md?
 - Does it match UX_UI_PLAN.md?
 - Is it responsive?

@@ -4,17 +4,18 @@
 
 ## Skills in this Bundle
 
-| Skill | Purpose | Status |
-|-------|---------|--------|
-| `concise-planning` | Always start with a plan | ✅ Installed |
-| `lint-and-validate` | Keep your code clean automatically | ✅ Installed |
-| `git-pushing` | Save your work safely with conventional commits | ✅ Installed |
-| `kaizen` | Continuous improvement mindset | ✅ Installed |
-| `systematic-debugging` | Debug like a pro | ✅ Installed |
+| Skill                  | Purpose                                         | Status       |
+| ---------------------- | ----------------------------------------------- | ------------ |
+| `concise-planning`     | Always start with a plan                        | ✅ Installed |
+| `lint-and-validate`    | Keep your code clean automatically              | ✅ Installed |
+| `git-pushing`          | Save your work safely with conventional commits | ✅ Installed |
+| `kaizen`               | Continuous improvement mindset                  | ✅ Installed |
+| `systematic-debugging` | Debug like a pro                                | ✅ Installed |
 
 ## How to Use
 
 Reference these skills when:
+
 - **Starting any task** → Use `concise-planning` to outline your approach
 - **Writing code** → Use `lint-and-validate` to ensure quality
 - **Debugging issues** → Use `systematic-debugging` for structured problem-solving

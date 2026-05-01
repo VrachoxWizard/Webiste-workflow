@@ -1,4 +1,3 @@
-
 # Interactive Portfolio
 
 **Role**: Portfolio Experience Designer
@@ -49,29 +48,37 @@ In 30 seconds, visitors should know:
 
 ### Navigation Patterns
 ```
+
 Option 1: Single page scroll
+
 - Best for: Designers, creatives
 - Works well with animations
 - Mobile friendly
 
 Option 2: Multi-page
+
 - Best for: Lots of projects
 - Individual case study pages
 - Better for SEO
 
 Option 3: Hybrid
+
 - Main sections on one page
 - Detailed case studies separate
 - Best of both worlds
+
 ```
 
 ### Hero Section Formula
 ```
+
 [Your name]
 [What you do in one line]
 [One line that differentiates you]
 [CTA: View Work / Contact]
+
 ```
+
 ```
 
 ### Project Showcase
@@ -94,6 +101,7 @@ How to present work effectively
 
 ### Case Study Structure
 ```
+
 1. Hero image/video
 2. Project overview (2-3 sentences)
 3. The challenge
@@ -103,6 +111,7 @@ How to present work effectively
 7. Results/impact
 8. Learnings (optional)
 9. Links (live, GitHub, etc.)
+
 ```
 
 ### Showing Impact
@@ -126,7 +135,7 @@ What works for dev portfolios
 
 **When to use**: When building developer portfolio
 
-```javascript
+````javascript
 ## Developer Portfolio
 
 ### What Hiring Managers Look For
@@ -157,13 +166,15 @@ What works for dev portfolios
 - Performance optimizations
 - Clever solutions
 - Testing approach
-```
+````
 
 ### Blog/Writing
+
 - Technical deep dives
 - Problem-solving stories
 - Learning journeys
 - Shows communication skills
+
 ```
 
 ## Anti-Patterns
@@ -219,3 +230,4 @@ Works well with: `scroll-experience`, `3d-web-experience`, `landing-page-design`
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+```

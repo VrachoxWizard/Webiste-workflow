@@ -36,7 +36,10 @@ test.describe("storefront smoke", () => {
     await page.waitForTimeout(500)
     await page.getByRole("button", { name: /dodaj vortex venom/i }).click()
     await expect(page.getByLabel(/košarica \(1\)/i)).toBeVisible()
-    await page.getByLabel(/košarica/i).first().click()
+    await page
+      .getByLabel(/košarica/i)
+      .first()
+      .click()
     await expect(page.getByRole("dialog").first()).toContainText("Vortex Venom")
   })
 })

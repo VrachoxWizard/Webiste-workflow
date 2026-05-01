@@ -1,6 +1,7 @@
 # QA Checklist
 
 ## Visual Quality
+
 - [x] Does the design look premium?
 - [x] Does it avoid generic AI gradients?
 - [x] Does it avoid over-rounded cards?
@@ -11,6 +12,7 @@
 - [x] Does the site feel like a real ecommerce store?
 
 ## Responsive
+
 - [x] Mobile 360px works
 - [x] Mobile 390px works
 - [x] Tablet works
@@ -22,6 +24,7 @@
 - [x] Cart drawer works on mobile
 
 ## Navigation
+
 - [x] Desktop mega menu opens correctly
 - [x] Mobile drawer opens correctly
 - [x] Mobile accordion categories work
@@ -30,6 +33,7 @@
 - [x] Important links are reachable
 
 ## Category Page
+
 - [x] Breadcrumb exists
 - [x] Category title exists
 - [x] Description exists
@@ -41,6 +45,7 @@
 - [x] Legal notice exists where relevant
 
 ## Product Detail
+
 - [x] Gallery exists
 - [x] Price visible
 - [x] Availability visible
@@ -51,6 +56,7 @@
 - [x] FAQ exists
 
 ## Cart / Checkout
+
 - [x] Cart drawer opens
 - [x] Product rows are readable
 - [x] Quantity controls are understandable
@@ -61,6 +67,7 @@
 - [x] Legal responsibility checkbox exists
 
 ## Accessibility
+
 - [x] Semantic HTML
 - [x] Buttons are buttons
 - [x] Links are links
@@ -72,6 +79,7 @@
 - [x] Reduced motion considered
 
 ## Code Quality
+
 - [x] Components are small
 - [x] TypeScript types are clean
 - [x] Mock data separated
@@ -81,6 +89,7 @@
 - [x] Lint passes if configured
 
 ## Responsible Commerce
+
 - [x] Regulated products have legal notice
 - [x] No unsafe instructions
 - [x] No aggressive marketing

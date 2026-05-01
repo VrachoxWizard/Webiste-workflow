@@ -30,12 +30,12 @@ a 3D app. You create moments of wonder without sacrificing usability.
 
 ### Options Comparison
 
-| Tool | Best For | Learning Curve | Control |
-|------|----------|----------------|---------|
-| Spline | Quick prototypes, designers | Low | Medium |
-| React Three Fiber | React apps, complex scenes | Medium | High |
-| Three.js vanilla | Max control, non-React | High | Maximum |
-| Babylon.js | Games, heavy 3D | High | Maximum |
+| Tool              | Best For                    | Learning Curve | Control |
+| ----------------- | --------------------------- | -------------- | ------- |
+| Spline            | Quick prototypes, designers | Low            | Medium  |
+| React Three Fiber | React apps, complex scenes  | Medium         | High    |
+| Three.js vanilla  | Max control, non-React      | High           | Maximum |
+| Babylon.js        | Games, heavy 3D             | High           | Maximum |
 
 ### Decision Tree
 
@@ -56,24 +56,22 @@ Need max performance/control?
 ### Spline (Fastest Start)
 
 ```jsx
-import Spline from '@splinetool/react-spline';
+import Spline from "@splinetool/react-spline"
 
 export default function Scene() {
-  return (
-    <Spline scene="https://prod.spline.design/xxx/scene.splinecode" />
-  );
+  return <Spline scene="https://prod.spline.design/xxx/scene.splinecode" />
 }
 ```
 
 ### React Three Fiber
 
 ```jsx
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls, useGLTF } from "@react-three/drei"
 
 function Model() {
-  const { scene } = useGLTF('/model.glb');
-  return <primitive object={scene} />;
+  const { scene } = useGLTF("/model.glb")
+  return <primitive object={scene} />
 }
 
 export default function Scene() {
@@ -83,7 +81,7 @@ export default function Scene() {
       <Model />
       <OrbitControls />
     </Canvas>
-  );
+  )
 }
 ```
 
@@ -91,12 +89,12 @@ export default function Scene() {
 
 ### Format Selection
 
-| Format | Use Case | Size |
-|--------|----------|------|
-| GLB/GLTF | Standard web 3D | Smallest |
-| FBX | From 3D software | Large |
-| OBJ | Simple meshes | Medium |
-| USDZ | Apple AR | Medium |
+| Format   | Use Case         | Size     |
+| -------- | ---------------- | -------- |
+| GLB/GLTF | Standard web 3D  | Smallest |
+| FBX      | From 3D software | Large    |
+| OBJ      | Simple meshes    | Medium   |
+| USDZ     | Apple AR         | Medium   |
 
 ### Optimization Pipeline
 
@@ -119,18 +117,18 @@ gltf-transform optimize input.glb output.glb --compress draco --texture-compress
 ### R3F + Scroll Controls
 
 ```jsx
-import { ScrollControls, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { ScrollControls, useScroll } from "@react-three/drei"
+import { useFrame } from "@react-three/fiber"
 
 function RotatingModel() {
-  const scroll = useScroll();
-  const ref = useRef();
+  const scroll = useScroll()
+  const ref = useRef()
 
   useFrame(() => {
-    ref.current.rotation.y = scroll.offset * Math.PI * 2;
-  });
+    ref.current.rotation.y = scroll.offset * Math.PI * 2
+  })
 
-  return <mesh ref={ref}>...</mesh>;
+  return <mesh ref={ref}>...</mesh>
 }
 
 export default function Scene() {
@@ -140,13 +138,14 @@ export default function Scene() {
         <RotatingModel />
       </ScrollControls>
     </Canvas>
-  );
+  )
 }
 ```
 
 ## Anti-Patterns
 
 ### Do NOT:
+
 - **3D for 3D's sake** — Slows site, confuses users, drains battery. Ask: would an image work?
 - **Desktop-only 3D** — Most traffic is mobile. Reduce quality on mobile, provide static fallback.
 - **No loading state** — Users think it's broken. Always show progress indicator.

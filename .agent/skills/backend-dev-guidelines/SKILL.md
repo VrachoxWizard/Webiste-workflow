@@ -32,7 +32,7 @@ Routes → Controllers → Services → Repositories → Database
 
 ```ts
 // ALWAYS
-router.post('/create', (req, res) => userController.create(req, res));
+router.post("/create", (req, res) => userController.create(req, res))
 ```
 
 **Controllers** — Coordinate. Parse request, call services, handle response.
@@ -41,10 +41,10 @@ router.post('/create', (req, res) => userController.create(req, res));
 export class UserController extends BaseController {
   async getUser(req: Request, res: Response): Promise<void> {
     try {
-      const user = await this.userService.getById(req.params.id);
-      this.handleSuccess(res, user);
+      const user = await this.userService.getById(req.params.id)
+      this.handleSuccess(res, user)
     } catch (error) {
-      this.handleError(error, res, 'getUser');
+      this.handleError(error, res, "getUser")
     }
   }
 }
@@ -67,9 +67,9 @@ export class UserService {
 ```ts
 const schema = z.object({
   email: z.string().email(),
-});
+})
 
-const input = schema.parse(req.body);
+const input = schema.parse(req.body)
 ```
 
 No validation = bug.
@@ -81,8 +81,8 @@ No validation = bug.
 ```ts
 // NEVER: process.env.JWT_SECRET
 // ALWAYS:
-import { config } from '@/config/unifiedConfig';
-config.auth.jwtSecret;
+import { config } from "@/config/unifiedConfig"
+config.auth.jwtSecret
 ```
 
 ---

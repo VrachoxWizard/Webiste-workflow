@@ -26,7 +26,7 @@ Systematically create high-quality 3D scenes and interactive experiences using T
 Always use the correct CDN version (r128):
 
 ```javascript
-import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
 ```
 
 **CRITICAL**: Do NOT use example imports like `THREE.OrbitControls` - they won't work on the CDN.
@@ -37,21 +37,21 @@ Every Three.js artifact needs these core components:
 
 ```javascript
 // Scene - contains all 3D objects
-const scene = new THREE.Scene();
+const scene = new THREE.Scene()
 
 // Camera - defines viewing perspective
 const camera = new THREE.PerspectiveCamera(
   75, // Field of view
   window.innerWidth / window.innerHeight, // Aspect ratio
   0.1, // Near clipping plane
-  1000, // Far clipping plane
-);
-camera.position.z = 5;
+  1000 // Far clipping plane
+)
+camera.position.z = 5
 
 // Renderer - draws the scene
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({ antialias: true })
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.body.appendChild(renderer.domElement)
 ```
 
 ### 3. Animation Loop
@@ -60,15 +60,15 @@ Use requestAnimationFrame for smooth rendering:
 
 ```javascript
 function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate)
 
   // Update object transformations here
-  mesh.rotation.x += 0.01;
-  mesh.rotation.y += 0.01;
+  mesh.rotation.x += 0.01
+  mesh.rotation.y += 0.01
 
-  renderer.render(scene, camera);
+  renderer.render(scene, camera)
 }
-animate();
+animate()
 ```
 
 ## Systematic Development Process
@@ -118,7 +118,7 @@ const material = new THREE.MeshStandardMaterial({
   color: 0x00ff00,
   metalness: 0.5,
   roughness: 0.5,
-});
+})
 ```
 
 ### 4. Add Lighting
@@ -127,13 +127,13 @@ const material = new THREE.MeshStandardMaterial({
 
 ```javascript
 // Ambient light - general illumination
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-scene.add(ambientLight);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+scene.add(ambientLight)
 
 // Directional light - like sunlight
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-directionalLight.position.set(5, 5, 5);
-scene.add(directionalLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8)
+directionalLight.position.set(5, 5, 5)
+scene.add(directionalLight)
 ```
 
 **Skip lighting** if using `MeshBasicMaterial` - it's unlit by design.
@@ -144,10 +144,10 @@ Always add window resize handling:
 
 ```javascript
 window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+})
 ```
 
 ## Common Patterns
@@ -156,10 +156,10 @@ window.addEventListener("resize", () => {
 
 ```javascript
 function animate() {
-  requestAnimationFrame(animate);
-  mesh.rotation.x += 0.01;
-  mesh.rotation.y += 0.01;
-  renderer.render(scene, camera);
+  requestAnimationFrame(animate)
+  mesh.rotation.x += 0.01
+  mesh.rotation.y += 0.01
+  renderer.render(scene, camera)
 }
 ```
 
@@ -168,38 +168,38 @@ function animate() {
 Since `THREE.OrbitControls` isn't available on CDN, implement custom controls:
 
 ```javascript
-let isDragging = false;
-let previousMousePosition = { x: 0, y: 0 };
+let isDragging = false
+let previousMousePosition = { x: 0, y: 0 }
 
 renderer.domElement.addEventListener("mousedown", () => {
-  isDragging = true;
-});
+  isDragging = true
+})
 
 renderer.domElement.addEventListener("mouseup", () => {
-  isDragging = false;
-});
+  isDragging = false
+})
 
 renderer.domElement.addEventListener("mousemove", (event) => {
   if (isDragging) {
-    const deltaX = event.clientX - previousMousePosition.x;
-    const deltaY = event.clientY - previousMousePosition.y;
+    const deltaX = event.clientX - previousMousePosition.x
+    const deltaY = event.clientY - previousMousePosition.y
 
     // Rotate camera around scene
-    const rotationSpeed = 0.005;
-    camera.position.x += deltaX * rotationSpeed;
-    camera.position.y -= deltaY * rotationSpeed;
-    camera.lookAt(scene.position);
+    const rotationSpeed = 0.005
+    camera.position.x += deltaX * rotationSpeed
+    camera.position.y -= deltaY * rotationSpeed
+    camera.lookAt(scene.position)
   }
 
-  previousMousePosition = { x: event.clientX, y: event.clientY };
-});
+  previousMousePosition = { x: event.clientX, y: event.clientY }
+})
 
 // Zoom with mouse wheel
 renderer.domElement.addEventListener("wheel", (event) => {
-  event.preventDefault();
-  camera.position.z += event.deltaY * 0.01;
-  camera.position.z = Math.max(2, Math.min(20, camera.position.z)); // Clamp
-});
+  event.preventDefault()
+  camera.position.z += event.deltaY * 0.01
+  camera.position.z = Math.max(2, Math.min(20, camera.position.z)) // Clamp
+})
 ```
 
 ### Raycasting for Object Selection
@@ -207,106 +207,103 @@ renderer.domElement.addEventListener("wheel", (event) => {
 Detect mouse clicks and hovers on 3D objects:
 
 ```javascript
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-const clickableObjects = []; // Array of meshes that can be clicked
+const raycaster = new THREE.Raycaster()
+const mouse = new THREE.Vector2()
+const clickableObjects = [] // Array of meshes that can be clicked
 
 // Update mouse position
 window.addEventListener("mousemove", (event) => {
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-});
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+})
 
 // Detect clicks
 window.addEventListener("click", () => {
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(clickableObjects);
+  raycaster.setFromCamera(mouse, camera)
+  const intersects = raycaster.intersectObjects(clickableObjects)
 
   if (intersects.length > 0) {
-    const clickedObject = intersects[0].object;
+    const clickedObject = intersects[0].object
     // Handle click - change color, scale, etc.
-    clickedObject.material.color.set(0xff0000);
+    clickedObject.material.color.set(0xff0000)
   }
-});
+})
 
 // Hover effect in animation loop
 function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate)
 
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(clickableObjects);
+  raycaster.setFromCamera(mouse, camera)
+  const intersects = raycaster.intersectObjects(clickableObjects)
 
   // Reset all objects
   clickableObjects.forEach((obj) => {
-    obj.scale.set(1, 1, 1);
-  });
+    obj.scale.set(1, 1, 1)
+  })
 
   // Highlight hovered object
   if (intersects.length > 0) {
-    intersects[0].object.scale.set(1.2, 1.2, 1.2);
-    document.body.style.cursor = "pointer";
+    intersects[0].object.scale.set(1.2, 1.2, 1.2)
+    document.body.style.cursor = "pointer"
   } else {
-    document.body.style.cursor = "default";
+    document.body.style.cursor = "default"
   }
 
-  renderer.render(scene, camera);
+  renderer.render(scene, camera)
 }
 ```
 
 ### Particle System
 
 ```javascript
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 1000;
-const posArray = new Float32Array(particlesCount * 3);
+const particlesGeometry = new THREE.BufferGeometry()
+const particlesCount = 1000
+const posArray = new Float32Array(particlesCount * 3)
 
 for (let i = 0; i < particlesCount * 3; i++) {
-  posArray[i] = (Math.random() - 0.5) * 10;
+  posArray[i] = (Math.random() - 0.5) * 10
 }
 
-particlesGeometry.setAttribute(
-  "position",
-  new THREE.BufferAttribute(posArray, 3),
-);
+particlesGeometry.setAttribute("position", new THREE.BufferAttribute(posArray, 3))
 
 const particlesMaterial = new THREE.PointsMaterial({
   size: 0.02,
   color: 0xffffff,
-});
+})
 
-const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-scene.add(particlesMesh);
+const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
+scene.add(particlesMesh)
 ```
 
 ### User Interaction (Mouse Movement)
 
 ```javascript
-let mouseX = 0;
-let mouseY = 0;
+let mouseX = 0
+let mouseY = 0
 
 document.addEventListener("mousemove", (event) => {
-  mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-  mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-});
+  mouseX = (event.clientX / window.innerWidth) * 2 - 1
+  mouseY = -(event.clientY / window.innerHeight) * 2 + 1
+})
 
 function animate() {
-  requestAnimationFrame(animate);
-  camera.position.x = mouseX * 2;
-  camera.position.y = mouseY * 2;
-  camera.lookAt(scene.position);
-  renderer.render(scene, camera);
+  requestAnimationFrame(animate)
+  camera.position.x = mouseX * 2
+  camera.position.y = mouseY * 2
+  camera.lookAt(scene.position)
+  renderer.render(scene, camera)
 }
 ```
 
 ### Loading Textures
 
 ```javascript
-const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load("texture-url.jpg");
+const textureLoader = new THREE.TextureLoader()
+const texture = textureLoader.load("texture-url.jpg")
 
 const material = new THREE.MeshStandardMaterial({
   map: texture,
-});
+})
 ```
 
 ## Best Practices
@@ -318,9 +315,9 @@ const material = new THREE.MeshStandardMaterial({
 - **Limit particle counts** to maintain 60fps (start with 1000-5000)
 - **Dispose of resources** when removing objects:
   ```javascript
-  geometry.dispose();
-  material.dispose();
-  texture.dispose();
+  geometry.dispose()
+  material.dispose()
+  texture.dispose()
   ```
 
 ### Visual Quality
@@ -390,40 +387,40 @@ User: "Create an interactive 3D sphere that responds to mouse movement"
 
 ```javascript
 // Enable shadows on renderer
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Soft shadows
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap // Soft shadows
 
 // Light that casts shadows
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 10, 5);
-directionalLight.castShadow = true;
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+directionalLight.position.set(5, 10, 5)
+directionalLight.castShadow = true
 
 // Configure shadow quality
-directionalLight.shadow.mapSize.width = 2048;
-directionalLight.shadow.mapSize.height = 2048;
-directionalLight.shadow.camera.near = 0.5;
-directionalLight.shadow.camera.far = 50;
+directionalLight.shadow.mapSize.width = 2048
+directionalLight.shadow.mapSize.height = 2048
+directionalLight.shadow.camera.near = 0.5
+directionalLight.shadow.camera.far = 50
 
-scene.add(directionalLight);
+scene.add(directionalLight)
 
 // Objects cast and receive shadows
-mesh.castShadow = true;
-mesh.receiveShadow = true;
+mesh.castShadow = true
+mesh.receiveShadow = true
 
 // Ground plane receives shadows
-const groundGeometry = new THREE.PlaneGeometry(20, 20);
-const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x808080 });
-const ground = new THREE.Mesh(groundGeometry, groundMaterial);
-ground.rotation.x = -Math.PI / 2;
-ground.receiveShadow = true;
-scene.add(ground);
+const groundGeometry = new THREE.PlaneGeometry(20, 20)
+const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x808080 })
+const ground = new THREE.Mesh(groundGeometry, groundMaterial)
+ground.rotation.x = -Math.PI / 2
+ground.receiveShadow = true
+scene.add(ground)
 ```
 
 **Environment Maps & Reflections:**
 
 ```javascript
 // Create environment map from cubemap
-const loader = new THREE.CubeTextureLoader();
+const loader = new THREE.CubeTextureLoader()
 const envMap = loader.load([
   "px.jpg",
   "nx.jpg", // positive x, negative x
@@ -431,26 +428,26 @@ const envMap = loader.load([
   "ny.jpg", // positive y, negative y
   "pz.jpg",
   "nz.jpg", // positive z, negative z
-]);
+])
 
-scene.environment = envMap; // Affects all PBR materials
-scene.background = envMap; // Optional: use as skybox
+scene.environment = envMap // Affects all PBR materials
+scene.background = envMap // Optional: use as skybox
 
 // Or apply to specific materials
 const material = new THREE.MeshStandardMaterial({
   metalness: 1.0,
   roughness: 0.1,
   envMap: envMap,
-});
+})
 ```
 
 **Tone Mapping & Output Encoding:**
 
 ```javascript
 // Improve color accuracy and HDR rendering
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.0;
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 1.0
+renderer.outputEncoding = THREE.sRGBEncoding
 
 // Makes colors more vibrant and realistic
 ```
@@ -459,18 +456,18 @@ renderer.outputEncoding = THREE.sRGBEncoding;
 
 ```javascript
 // Linear fog
-scene.fog = new THREE.Fog(0xcccccc, 10, 50); // color, near, far
+scene.fog = new THREE.Fog(0xcccccc, 10, 50) // color, near, far
 
 // Or exponential fog (more realistic)
-scene.fog = new THREE.FogExp2(0xcccccc, 0.02); // color, density
+scene.fog = new THREE.FogExp2(0xcccccc, 0.02) // color, density
 ```
 
 ### Custom Geometry from Vertices
 
 ```javascript
-const geometry = new THREE.BufferGeometry();
-const vertices = new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0]);
-geometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
+const geometry = new THREE.BufferGeometry()
+const vertices = new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0])
+geometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3))
 ```
 
 ### Post-Processing Effects
@@ -480,11 +477,11 @@ While advanced post-processing may not be available in r128 CDN, basic effects c
 ### Group Objects
 
 ```javascript
-const group = new THREE.Group();
-group.add(mesh1);
-group.add(mesh2);
-group.rotation.y = Math.PI / 4;
-scene.add(group);
+const group = new THREE.Group()
+group.add(mesh1)
+group.add(mesh2)
+group.rotation.y = Math.PI / 4
+scene.add(group)
 ```
 
 ## Summary
@@ -509,10 +506,10 @@ While this skill focuses on CDN-based Three.js (r128) for artifact compatibility
 
 ```javascript
 // In production with npm/vite/webpack:
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import * as THREE from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer"
 ```
 
 **Benefits:**
@@ -526,20 +523,20 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 
 ```javascript
 // Smooth timeline-based animations
-import gsap from "gsap";
+import gsap from "gsap"
 
 // Instead of manual animation loops:
 gsap.to(mesh.position, {
   x: 5,
   duration: 2,
   ease: "power2.inOut",
-});
+})
 
 // Complex sequences:
-const timeline = gsap.timeline();
+const timeline = gsap.timeline()
 timeline
   .to(mesh.rotation, { y: Math.PI * 2, duration: 2 })
-  .to(mesh.scale, { x: 2, y: 2, z: 2, duration: 1 }, "-=1");
+  .to(mesh.scale, { x: 2, y: 2, z: 2, duration: 1 }, "-=1")
 ```
 
 **Why GSAP:**
@@ -552,22 +549,22 @@ timeline
 
 ```javascript
 // Sync 3D animations with page scroll
-let scrollY = window.scrollY;
+let scrollY = window.scrollY
 
 window.addEventListener("scroll", () => {
-  scrollY = window.scrollY;
-});
+  scrollY = window.scrollY
+})
 
 function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate)
 
   // Rotate based on scroll position
-  mesh.rotation.y = scrollY * 0.001;
+  mesh.rotation.y = scrollY * 0.001
 
   // Move camera through scene
-  camera.position.y = -(scrollY / window.innerHeight) * 10;
+  camera.position.y = -(scrollY / window.innerHeight) * 10
 
-  renderer.render(scene, camera);
+  renderer.render(scene, camera)
 }
 ```
 
@@ -581,26 +578,22 @@ function animate() {
 
 ```javascript
 // Level of Detail (LOD)
-const lod = new THREE.LOD();
-lod.addLevel(highDetailMesh, 0); // Close up
-lod.addLevel(mediumDetailMesh, 10); // Medium distance
-lod.addLevel(lowDetailMesh, 50); // Far away
-scene.add(lod);
+const lod = new THREE.LOD()
+lod.addLevel(highDetailMesh, 0) // Close up
+lod.addLevel(mediumDetailMesh, 10) // Medium distance
+lod.addLevel(lowDetailMesh, 50) // Far away
+scene.add(lod)
 
 // Instanced meshes for many identical objects
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshStandardMaterial();
-const instancedMesh = new THREE.InstancedMesh(geometry, material, 1000);
+const geometry = new THREE.BoxGeometry()
+const material = new THREE.MeshStandardMaterial()
+const instancedMesh = new THREE.InstancedMesh(geometry, material, 1000)
 
 // Set transforms for each instance
-const matrix = new THREE.Matrix4();
+const matrix = new THREE.Matrix4()
 for (let i = 0; i < 1000; i++) {
-  matrix.setPosition(
-    Math.random() * 100,
-    Math.random() * 100,
-    Math.random() * 100,
-  );
-  instancedMesh.setMatrixAt(i, matrix);
+  matrix.setPosition(Math.random() * 100, Math.random() * 100, Math.random() * 100)
+  instancedMesh.setMatrixAt(i, matrix)
 }
 ```
 
@@ -608,20 +601,20 @@ for (let i = 0; i < 1000; i++) {
 
 ```javascript
 // In production, load 3D models:
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
-const loader = new GLTFLoader();
+const loader = new GLTFLoader()
 loader.load("model.gltf", (gltf) => {
-  scene.add(gltf.scene);
+  scene.add(gltf.scene)
 
   // Traverse and setup materials
   gltf.scene.traverse((child) => {
     if (child.isMesh) {
-      child.castShadow = true;
-      child.receiveShadow = true;
+      child.castShadow = true
+      child.receiveShadow = true
     }
-  });
-});
+  })
+})
 ```
 
 ### When to Use What

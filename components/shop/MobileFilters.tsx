@@ -28,14 +28,21 @@ const toggleValue = (values: string[], value: string) => {
   return values.includes(value) ? values.filter((item) => item !== value) : [...values, value]
 }
 
-export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onClose }: MobileFiltersProps) {
+export function MobileFilters({
+  isOpen,
+  brands,
+  filters,
+  onChange,
+  onReset,
+  onClose,
+}: MobileFiltersProps) {
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent side="bottom" showCloseButton={false} className="h-[90vh] gap-0 p-0 lg:hidden">
         <SheetHeader className="flex-row items-center justify-between border-b p-4">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="size-4" aria-hidden="true" />
-            <SheetTitle className="text-sm font-bold uppercase tracking-widest">Filteri</SheetTitle>
+            <SheetTitle className="text-sm font-bold tracking-widest uppercase">Filteri</SheetTitle>
           </div>
           <SheetClose asChild>
             <Button variant="ghost" size="icon" aria-label="Zatvori filtere">
@@ -47,7 +54,12 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
         <div className="flex-1 overflow-y-auto p-6 pb-32">
           <div className="space-y-10">
             <div className="space-y-4">
-              <Label htmlFor="mobile-filter-query" className="text-xs font-bold uppercase tracking-widest text-primary/60">Pretraga</Label>
+              <Label
+                htmlFor="mobile-filter-query"
+                className="text-primary/60 text-xs font-bold tracking-widest uppercase"
+              >
+                Pretraga
+              </Label>
               <Input
                 id="mobile-filter-query"
                 value={filters.query}
@@ -58,7 +70,9 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-primary/60">Cijena (€)</h3>
+              <h3 className="text-primary/60 text-xs font-bold tracking-widest uppercase">
+                Cijena (€)
+              </h3>
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   type="number"
@@ -82,7 +96,9 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
             </div>
 
             <fieldset className="space-y-4">
-              <legend className="text-xs font-bold uppercase tracking-widest text-primary/60">Dostupnost</legend>
+              <legend className="text-primary/60 text-xs font-bold tracking-widest uppercase">
+                Dostupnost
+              </legend>
               <div className="grid grid-cols-1 gap-3">
                 {STATUSES.map((status) => (
                   <div key={status.id} className="flex items-center gap-3 rounded-sm border p-3">
@@ -90,16 +106,22 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
                       id={`mob-status-${status.id}`}
                       className="size-5"
                       checked={filters.statuses.includes(status.id)}
-                      onChange={() => onChange({ statuses: toggleValue(filters.statuses, status.id) })}
+                      onCheckedChange={() =>
+                        onChange({ statuses: toggleValue(filters.statuses, status.id) })
+                      }
                     />
-                    <Label htmlFor={`mob-status-${status.id}`} className="text-sm font-bold">{status.label}</Label>
+                    <Label htmlFor={`mob-status-${status.id}`} className="text-sm font-bold">
+                      {status.label}
+                    </Label>
                   </div>
                 ))}
               </div>
             </fieldset>
 
             <fieldset className="space-y-4">
-              <legend className="text-xs font-bold uppercase tracking-widest text-primary/60">Proizvođač</legend>
+              <legend className="text-primary/60 text-xs font-bold tracking-widest uppercase">
+                Proizvođač
+              </legend>
               <div className="grid grid-cols-2 gap-4">
                 {brands.map((brand) => (
                   <div key={brand} className="flex items-center gap-3 rounded-sm border p-3">
@@ -107,9 +129,11 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
                       id={`mob-brand-${brand}`}
                       className="size-5"
                       checked={filters.brands.includes(brand)}
-                      onChange={() => onChange({ brands: toggleValue(filters.brands, brand) })}
+                      onCheckedChange={() => onChange({ brands: toggleValue(filters.brands, brand) })}
                     />
-                    <Label htmlFor={`mob-brand-${brand}`} className="text-sm font-bold">{brand}</Label>
+                    <Label htmlFor={`mob-brand-${brand}`} className="text-sm font-bold">
+                      {brand}
+                    </Label>
                   </div>
                 ))}
               </div>
@@ -117,8 +141,10 @@ export function MobileFilters({ isOpen, brands, filters, onChange, onReset, onCl
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex gap-4 border-t bg-background p-4">
-          <Button variant="outline" className="h-14 flex-1 font-bold" onClick={onReset}>Očisti sve</Button>
+        <div className="bg-background absolute right-0 bottom-0 left-0 flex gap-4 border-t p-4">
+          <Button variant="outline" className="h-14 flex-1 font-bold" onClick={onReset}>
+            Očisti sve
+          </Button>
           <SheetClose asChild>
             <Button className="h-14 flex-1 font-bold">Prikaži rezultate</Button>
           </SheetClose>

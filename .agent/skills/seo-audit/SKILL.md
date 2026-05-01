@@ -3,7 +3,7 @@ name: seo-audit
 description: Diagnose and audit SEO issues affecting crawlability, indexation, rankings, and organic performance.
 risk: unknown
 source: community
-date_added: '2026-02-27'
+date_added: "2026-02-27"
 ---
 
 # SEO Audit
@@ -20,19 +20,19 @@ Your output must be **evidence-based, scoped, and actionable**.
 Before performing a full audit, clarify:
 
 1. **Business Context**
-   * Site type (SaaS, e-commerce, blog, local, marketplace, etc.)
-   * Primary SEO goal (traffic, conversions, leads, brand visibility)
-   * Target markets and languages
+   - Site type (SaaS, e-commerce, blog, local, marketplace, etc.)
+   - Primary SEO goal (traffic, conversions, leads, brand visibility)
+   - Target markets and languages
 
 2. **SEO Focus**
-   * Full site audit or specific sections/pages?
-   * Technical SEO, on-page, content, or all?
-   * Desktop, mobile, or both?
+   - Full site audit or specific sections/pages?
+   - Technical SEO, on-page, content, or all?
+   - Desktop, mobile, or both?
 
 3. **Data Access**
-   * Google Search Console access?
-   * Analytics access?
-   * Known issues, penalties, or recent changes?
+   - Google Search Console access?
+   - Analytics access?
+   - Known issues, penalties, or recent changes?
 
 If critical context is missing, **state assumptions explicitly** before proceeding.
 
@@ -53,129 +53,146 @@ If critical context is missing, **state assumptions explicitly** before proceedi
 ### Crawlability
 
 **Robots.txt**
-* Accidental blocking of important paths
-* Sitemap reference present
-* Environment-specific rules (prod vs staging)
+
+- Accidental blocking of important paths
+- Sitemap reference present
+- Environment-specific rules (prod vs staging)
 
 **XML Sitemaps**
-* Accessible and valid
-* Contains only canonical, indexable URLs
-* Reasonable size and segmentation
-* Submitted and processed successfully
+
+- Accessible and valid
+- Contains only canonical, indexable URLs
+- Reasonable size and segmentation
+- Submitted and processed successfully
 
 **Site Architecture**
-* Key pages within ~3 clicks
-* Logical hierarchy
-* Internal linking coverage
-* No orphaned URLs
+
+- Key pages within ~3 clicks
+- Logical hierarchy
+- Internal linking coverage
+- No orphaned URLs
 
 ### Indexation
 
 **Coverage Analysis**
-* Indexed vs expected pages
-* Excluded URLs (intentional vs accidental)
+
+- Indexed vs expected pages
+- Excluded URLs (intentional vs accidental)
 
 **Common Indexation Issues**
-* Incorrect `noindex`
-* Canonical conflicts
-* Redirect chains or loops
-* Soft 404s
-* Duplicate content without consolidation
+
+- Incorrect `noindex`
+- Canonical conflicts
+- Redirect chains or loops
+- Soft 404s
+- Duplicate content without consolidation
 
 **Canonicalization Consistency**
-* Self-referencing canonicals
-* HTTPS consistency
-* Hostname consistency (www / non-www)
-* Trailing slash rules
+
+- Self-referencing canonicals
+- HTTPS consistency
+- Hostname consistency (www / non-www)
+- Trailing slash rules
 
 ### Performance & Core Web Vitals
 
 **Key Metrics**
-* LCP < 2.5s
-* INP < 200ms
-* CLS < 0.1
+
+- LCP < 2.5s
+- INP < 200ms
+- CLS < 0.1
 
 **Contributing Factors**
-* Server response time
-* Image handling
-* JavaScript execution cost
-* CSS delivery
-* Caching strategy
-* CDN usage
-* Font loading behavior
+
+- Server response time
+- Image handling
+- JavaScript execution cost
+- CSS delivery
+- Caching strategy
+- CDN usage
+- Font loading behavior
 
 ### Mobile-Friendliness
 
-* Responsive layout
-* Proper viewport configuration
-* Tap target sizing
-* No horizontal scrolling
-* Content parity with desktop
-* Mobile-first indexing readiness
+- Responsive layout
+- Proper viewport configuration
+- Tap target sizing
+- No horizontal scrolling
+- Content parity with desktop
+- Mobile-first indexing readiness
 
 ### Security & Accessibility Signals
 
-* HTTPS everywhere
-* Valid certificates
-* No mixed content
-* HTTP → HTTPS redirects
+- HTTPS everywhere
+- Valid certificates
+- No mixed content
+- HTTP → HTTPS redirects
 
 ---
 
 ## On-Page SEO Audit
 
 ### Title Tags
-* Unique per page
-* Keyword-aligned
-* Appropriate length
-* Clear intent and differentiation
+
+- Unique per page
+- Keyword-aligned
+- Appropriate length
+- Clear intent and differentiation
 
 ### Meta Descriptions
-* Unique and descriptive
-* Supports click-through
-* Not auto-generated noise
+
+- Unique and descriptive
+- Supports click-through
+- Not auto-generated noise
 
 ### Heading Structure
-* One clear H1
-* Logical hierarchy
-* Headings reflect content structure
+
+- One clear H1
+- Logical hierarchy
+- Headings reflect content structure
 
 ### Content Optimization
-* Satisfies search intent
-* Sufficient topical depth
-* Natural keyword usage
-* Not competing with other internal pages
+
+- Satisfies search intent
+- Sufficient topical depth
+- Natural keyword usage
+- Not competing with other internal pages
 
 ### Images
-* Descriptive filenames
-* Accurate alt text
-* Proper compression and formats
-* Responsive handling and lazy loading
+
+- Descriptive filenames
+- Accurate alt text
+- Proper compression and formats
+- Responsive handling and lazy loading
 
 ### Internal Linking
-* Important pages reinforced
-* Descriptive anchor text
-* No broken links
-* Balanced link distribution
+
+- Important pages reinforced
+- Descriptive anchor text
+- No broken links
+- Balanced link distribution
 
 ---
 
 ## Content Quality & E-E-A-T
 
 ### Experience & Expertise
-* First-hand knowledge
-* Original insights or data
-* Clear author attribution
+
+- First-hand knowledge
+- Original insights or data
+- Clear author attribution
 
 ### Authoritativeness
-* Citations or recognition
-* Consistent topical focus
+
+- Citations or recognition
+- Consistent topical focus
 
 ### Trustworthiness
-* Accurate, updated content
-* Transparent business information
-* Policies (privacy, terms)
-* Secure site
+
+- Accurate, updated content
+- Transparent business information
+- Policies (privacy, terms)
+- Secure site
 
 ---
 
@@ -214,14 +231,14 @@ Weighted composite scoring:
 
 For every identified issue, provide:
 
-* **Issue** — Concise description of what is wrong
-* **Category** — Which audit category it belongs to
-* **Evidence** — Objective proof (URLs, reports, headers, metrics)
-* **Severity** — Critical / High / Medium / Low
-* **Confidence** — High / Medium / Low
-* **Why It Matters** — SEO impact in plain language
-* **Score Impact** — Point deduction applied
-* **Recommendation** — What should be done to resolve
+- **Issue** — Concise description of what is wrong
+- **Category** — Which audit category it belongs to
+- **Evidence** — Objective proof (URLs, reports, headers, metrics)
+- **Severity** — Critical / High / Medium / Low
+- **Confidence** — High / Medium / Low
+- **Why It Matters** — SEO impact in plain language
+- **Score Impact** — Point deduction applied
+- **Recommendation** — What should be done to resolve
 
 ### Prioritized Action Plan
 
@@ -236,7 +253,7 @@ Group actions as follows:
 
 ## Related Skills
 
-* **form-cro** — Form optimization
-* **frontend-design** — UI guidelines
-* **nextjs-best-practices** — Next.js performance optimization
-* **web-performance-optimization** — Core Web Vitals improvement
+- **form-cro** — Form optimization
+- **frontend-design** — UI guidelines
+- **nextjs-best-practices** — Next.js performance optimization
+- **web-performance-optimization** — Core Web Vitals improvement

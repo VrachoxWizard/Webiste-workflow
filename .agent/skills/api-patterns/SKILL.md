@@ -13,17 +13,17 @@ date_added: "2026-02-27"
 
 ## Content Map
 
-| Topic | When to Use |
-|-------|-------------|
-| API Style | Choosing between REST, GraphQL, tRPC |
-| REST | Resource naming, HTTP methods, status codes |
-| Response Format | Envelope pattern, error format, pagination |
-| GraphQL | Schema design, when to use, security |
-| tRPC | TypeScript monorepo, type safety |
-| Versioning | URI/Header/Query versioning strategies |
-| Auth | JWT, OAuth, Passkey, API Keys |
-| Rate Limiting | Token bucket, sliding window |
-| Documentation | OpenAPI/Swagger best practices |
+| Topic           | When to Use                                 |
+| --------------- | ------------------------------------------- |
+| API Style       | Choosing between REST, GraphQL, tRPC        |
+| REST            | Resource naming, HTTP methods, status codes |
+| Response Format | Envelope pattern, error format, pagination  |
+| GraphQL         | Schema design, when to use, security        |
+| tRPC            | TypeScript monorepo, type safety            |
+| Versioning      | URI/Header/Query versioning strategies      |
+| Auth            | JWT, OAuth, Passkey, API Keys               |
+| Rate Limiting   | Token bucket, sliding window                |
+| Documentation   | OpenAPI/Swagger best practices              |
 
 ---
 
@@ -44,6 +44,7 @@ Before designing an API:
 ## Anti-Patterns
 
 **DON'T:**
+
 - Default to REST for everything
 - Use verbs in REST endpoints (/getUsers)
 - Return inconsistent response formats
@@ -51,6 +52,7 @@ Before designing an API:
 - Skip rate limiting
 
 **DO:**
+
 - Choose API style based on context
 - Ask about client requirements
 - Document thoroughly

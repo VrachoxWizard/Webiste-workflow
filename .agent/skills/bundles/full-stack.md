@@ -4,25 +4,26 @@
 
 ## Skills in this Bundle
 
-| Skill | Purpose | Status |
-|-------|---------|--------|
-| `senior-fullstack` | Complete fullstack development guide | ✅ Installed |
-| `frontend-developer` | React 19+ and Next.js 15+ expertise | ✅ Installed |
-| `frontend-dev-guidelines` | Frontend development standards | ✅ Installed |
-| `backend-dev-guidelines` | Node.js/Express/TypeScript patterns | ✅ Installed |
-| `nextjs-app-router-patterns` | Next.js App Router patterns | ✅ Installed |
-| `nextjs-supabase-auth` | Supabase auth integration | ✅ Installed |
-| `api-patterns` | REST vs GraphQL vs tRPC selection | ✅ Installed |
-| `database-design` | Schema design and ORM selection | ✅ Installed |
-| `react-state-management` | State management patterns | ✅ Installed |
-| `tanstack-query-expert` | TanStack Query for data fetching | ✅ Installed |
-| `vercel-ai-sdk-expert` | Vercel AI SDK integration | ✅ Installed |
-| `vercel-deployment` | Vercel deployment patterns | ✅ Installed |
-| `stripe-integration` | Payments and subscriptions | ✅ Installed |
+| Skill                        | Purpose                              | Status       |
+| ---------------------------- | ------------------------------------ | ------------ |
+| `senior-fullstack`           | Complete fullstack development guide | ✅ Installed |
+| `frontend-developer`         | React 19+ and Next.js 15+ expertise  | ✅ Installed |
+| `frontend-dev-guidelines`    | Frontend development standards       | ✅ Installed |
+| `backend-dev-guidelines`     | Node.js/Express/TypeScript patterns  | ✅ Installed |
+| `nextjs-app-router-patterns` | Next.js App Router patterns          | ✅ Installed |
+| `nextjs-supabase-auth`       | Supabase auth integration            | ✅ Installed |
+| `api-patterns`               | REST vs GraphQL vs tRPC selection    | ✅ Installed |
+| `database-design`            | Schema design and ORM selection      | ✅ Installed |
+| `react-state-management`     | State management patterns            | ✅ Installed |
+| `tanstack-query-expert`      | TanStack Query for data fetching     | ✅ Installed |
+| `vercel-ai-sdk-expert`       | Vercel AI SDK integration            | ✅ Installed |
+| `vercel-deployment`          | Vercel deployment patterns           | ✅ Installed |
+| `stripe-integration`         | Payments and subscriptions           | ✅ Installed |
 
 ## How to Use
 
 Reference these skills when:
+
 - **Full-stack architecture** → Use `senior-fullstack`
 - **Frontend development** → Use `frontend-developer` + `frontend-dev-guidelines`
 - **Backend development** → Use `backend-dev-guidelines`

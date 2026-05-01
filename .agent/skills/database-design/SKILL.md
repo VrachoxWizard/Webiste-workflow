@@ -12,14 +12,14 @@ date_added: "2026-02-27"
 
 ## Content Map
 
-| Topic | When to Use |
-|-------|-------------|
+| Topic              | When to Use                           |
+| ------------------ | ------------------------------------- |
 | Database Selection | PostgreSQL vs Neon vs Turso vs SQLite |
-| ORM Selection | Drizzle vs Prisma vs Kysely |
-| Schema Design | Normalization, PKs, relationships |
-| Indexing | Index types, composite indexes |
-| Optimization | N+1, EXPLAIN ANALYZE |
-| Migrations | Safe migrations, serverless DBs |
+| ORM Selection      | Drizzle vs Prisma vs Kysely           |
+| Schema Design      | Normalization, PKs, relationships     |
+| Indexing           | Index types, composite indexes        |
+| Optimization       | N+1, EXPLAIN ANALYZE                  |
+| Migrations         | Safe migrations, serverless DBs       |
 
 ---
 
@@ -47,7 +47,7 @@ Before designing schema:
 
 - Default to PostgreSQL for simple apps (SQLite may suffice)
 - Skip indexing
-- Use SELECT * in production
+- Use SELECT \* in production
 - Store JSON when structured data is better
 - Ignore N+1 queries
 
