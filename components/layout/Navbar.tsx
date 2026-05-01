@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { NAVIGATION_DATA } from "@/config/navigation"
 import { MegaMenu } from "./MegaMenu"
 import { MobileDrawer } from "./MobileDrawer"
+import { motion, AnimatePresence } from "motion/react"
 
 import { useCart } from "@/context/CartContext"
 import { CartDrawer } from "@/components/shop/CartDrawer"
@@ -16,6 +17,15 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isCartOpen, setIsCartOpen] = React.useState(false)
   const { itemCount } = useCart()
+  const [shouldBump, setShouldBump] = React.useState(false)
+
+  React.useEffect(() => {
+    if (itemCount > 0) {
+      setShouldBump(true)
+      const timer = setTimeout(() => setShouldBump(false), 300)
+      return () => clearTimeout(timer)
+    }
+  }, [itemCount])
 
   React.useEffect(() => {
     const openCart = () => setIsCartOpen(true)
@@ -27,7 +37,7 @@ export function Navbar() {
     <Container className="flex items-center justify-between">
       {/* Mobile Toggle */}
       <button
-        className="hover:bg-muted -ml-2 rounded-md p-2 transition-colors lg:hidden"
+        className="hover:bg-secondary/10 -ml-2 rounded-full p-2.5 transition-colors lg:hidden"
         onClick={() => setIsMobileMenuOpen(true)}
         aria-label="Otvori izbornik"
       >
@@ -36,11 +46,11 @@ export function Navbar() {
 
       {/* Logo Area */}
       <Link href="/" className="group flex flex-col">
-        <span className="text-2xl leading-none font-bold tracking-tighter uppercase">
-          Terra<span className="text-primary italic">Lov</span>
+        <span className="text-2xl leading-none font-black tracking-tighter uppercase sm:text-3xl">
+          Terra<span className="text-accent italic">Lov</span>
         </span>
-        <span className="text-primary/60 group-hover:text-primary -mt-0.5 text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
-          Odgovorna oprema
+        <span className="text-muted-foreground/40 group-hover:text-accent -mt-0.5 text-[9px] font-black tracking-[0.25em] uppercase transition-colors">
+          Premium Terenska Oprema
         </span>
       </Link>
 
@@ -48,13 +58,14 @@ export function Navbar() {
       <button
         type="button"
         onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
-        className="border-border/60 bg-muted/30 text-muted-foreground hover:border-primary/40 hover:bg-background flex hidden w-full max-w-sm items-center gap-3 rounded-sm border px-3 py-2 transition-all hover:shadow-sm xl:flex"
+        className="bg-secondary/5 text-muted-foreground/60 border-black/5 hover:border-accent/40 hover:bg-background flex hidden w-full max-w-sm items-center gap-4 rounded-sm border px-5 py-2.5 transition-all hover:shadow-sm xl:flex"
       >
         <Search className="size-4" aria-hidden="true" />
-        <span className="text-sm font-medium">Pretražite katalog...</span>
-        <kbd className="bg-muted ml-auto inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
-          <span className="text-xs">⌘</span>K
-        </kbd>
+        <span className="text-xs font-bold tracking-tight">Pretražite katalog...</span>
+        <div className="bg-background border-black/5 ml-auto inline-flex items-center gap-1.5 rounded-sm border px-2 py-0.5 shadow-inner">
+          <span className="text-[9px] font-black text-muted-foreground/30">CTRL</span>
+          <span className="text-[9px] font-black text-muted-foreground/30">K</span>
+        </div>
       </button>
 
       {/* Desktop Navigation */}
@@ -63,19 +74,19 @@ export function Navbar() {
           <div key={item.title} className="group relative">
             <Link
               href={item.href}
-              className="hover:bg-muted/50 hover:text-primary flex items-center gap-1 rounded-sm px-4 py-2.5 text-[13px] font-bold tracking-tight transition-colors"
+              className="hover:text-accent flex items-center gap-2 px-4 py-3 text-[11px] font-black tracking-widest uppercase transition-colors"
             >
               {item.title}
-              <span className="bg-primary size-1 origin-center scale-0 rounded-full transition-transform group-hover:scale-100" />
+              <div className="bg-accent h-1 w-1 origin-center scale-0 rounded-full transition-transform group-hover:scale-100" />
             </Link>
             <MegaMenu data={item.columns} />
           </div>
         ))}
         <Link
           href="/kategorija/akcija"
-          className="text-destructive hover:bg-destructive/5 ml-1 rounded-sm px-4 py-2.5 text-[13px] font-black tracking-tight transition-colors"
+          className="text-accent hover:bg-accent/5 ml-1 rounded-sm px-4 py-3 text-[11px] font-black tracking-widest uppercase transition-colors"
         >
-          Akcija
+          Ponuda
         </Link>
       </nav>
 
@@ -84,7 +95,7 @@ export function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="hidden size-10 rounded-full sm:flex xl:hidden"
+          className="hidden size-11 rounded-full sm:flex xl:hidden"
           aria-label="Pretraži proizvode"
           onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
         >
@@ -93,7 +104,7 @@ export function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="size-10 rounded-full"
+          className="size-11 rounded-full hover:bg-secondary/10"
           aria-label="Korisnički račun"
           asChild
         >
@@ -104,16 +115,29 @@ export function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="group relative size-10 rounded-full"
+          className="group relative size-11 rounded-full hover:bg-secondary/10"
           aria-label={`Košarica (${itemCount})`}
           onClick={() => setIsCartOpen(true)}
         >
-          <ShoppingBag className="size-5" />
-          {itemCount > 0 && (
-            <span className="bg-primary text-primary-foreground shadow-premium-hover absolute top-1 right-1 flex size-4.5 items-center justify-center rounded-full text-[10px] font-black transition-transform group-hover:scale-110">
-              {itemCount}
-            </span>
-          )}
+          <motion.div
+            animate={shouldBump ? { scale: [1, 1.2, 1] } : {}}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <ShoppingBag className="size-5" />
+          </motion.div>
+          
+          <AnimatePresence>
+            {itemCount > 0 && (
+              <motion.span
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.5, opacity: 0 }}
+                className="bg-accent text-foreground shadow-premium absolute top-1.5 right-1.5 flex size-4.5 items-center justify-center rounded-full text-[10px] font-black"
+              >
+                {itemCount}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </Button>
       </div>
 

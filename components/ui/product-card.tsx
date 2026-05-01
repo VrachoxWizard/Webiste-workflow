@@ -12,13 +12,13 @@ import { useCart } from "@/context/CartContext"
 import { cva, type VariantProps } from "class-variance-authority"
 
 const productCardVariants = cva(
-  "group relative flex min-w-0 overflow-hidden rounded-sm border border-border/80 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-premium-hover focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
+  "group relative flex min-w-0 overflow-hidden rounded-sm border border-border/60 bg-background transition-all duration-500 hover:border-accent/30 hover:shadow-premium-hover focus-within:ring-1 focus-within:ring-accent focus-within:ring-offset-1",
   {
     variants: {
       variant: {
         default: "flex-col",
         compact: "flex-col text-sm",
-        featured: "flex-col lg:flex-row lg:items-stretch",
+        featured: "flex-col lg:flex-row lg:items-stretch shadow-premium",
         list: "min-h-40 flex-row items-stretch md:min-h-44",
       },
     },
@@ -36,23 +36,23 @@ interface ProductCardProps extends VariantProps<typeof productCardVariants> {
 const getAvailability = (product: Product) => {
   if (product.isRegulated) {
     return {
-      label: product.availabilityLabel ?? "Provjera dokumentacije",
-      color: "bg-primary",
+      label: product.availabilityLabel ?? "Dokumentacija obavezna",
+      color: "bg-accent",
       Icon: ShieldAlert,
     }
   }
 
   if (product.status === "on_order") {
     return {
-      label: product.availabilityLabel ?? "Po narudžbi",
-      color: "bg-amber-500",
+      label: product.availabilityLabel ?? "Dostupno po narudžbi",
+      color: "bg-amber-400",
       Icon: Clock3,
     }
   }
 
   return {
-    label: product.availabilityLabel ?? "Na zalihi",
-    color: "bg-emerald-600",
+    label: product.availabilityLabel ?? "Trenutno na zalihi",
+    color: "bg-emerald-500",
     Icon: CheckCircle2,
   }
 }
@@ -93,11 +93,11 @@ export function ProductCard({ product, variant = "default", className }: Product
         )}
       >
         {imageFailed ? (
-          <div className="from-secondary/70 to-muted/30 absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br p-4 text-center">
-            <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
+          <div className="bg-secondary/20 absolute inset-0 flex flex-col items-center justify-center gap-4 p-4 text-center">
+            <span className="text-label opacity-40">
               {product.category}
             </span>
-            <p className="text-muted-foreground text-xs font-semibold">Slika artikla u pripremi</p>
+            <p className="text-muted-foreground text-xs font-medium italic">Katalog u pripremi</p>
           </div>
         ) : (
           <div className="relative h-full w-full">
@@ -142,18 +142,18 @@ export function ProductCard({ product, variant = "default", className }: Product
           </div>
         )}
 
-        {/* Subtle wash */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+        {/* Editorial Wash */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent group-hover:from-accent/5" />
 
         {/* Status Badges */}
-        <div className="absolute top-2 left-2 flex flex-col gap-1.5 md:top-3 md:left-3">
+        <div className="absolute top-3 left-3 flex flex-col gap-2 md:top-4 md:left-4">
           {product.status === "new" && (
-            <Badge className="bg-primary text-primary-foreground h-4 border-none text-[9px] font-bold tracking-wider uppercase md:h-5 md:text-[10px]">
+            <Badge className="bg-primary hover:bg-primary border-none px-2 py-0.5 text-[9px] font-black tracking-widest text-white uppercase">
               Novo
             </Badge>
           )}
           {product.status === "sale" && (
-            <Badge className="bg-destructive text-destructive-foreground h-4 border-none text-[9px] font-bold tracking-wider uppercase md:h-5 md:text-[10px]">
+            <Badge className="bg-accent hover:bg-accent border-none px-2 py-0.5 text-[9px] font-black tracking-widest text-foreground uppercase">
               -{savings}%
             </Badge>
           )}
@@ -161,9 +161,9 @@ export function ProductCard({ product, variant = "default", className }: Product
 
         {/* Regulated Indicator Overlay */}
         {product.isRegulated && (
-          <div className="absolute top-2 right-2 md:top-3 md:right-3">
-            <div className="bg-background/90 text-primary flex items-center gap-1.5 rounded-sm px-1.5 py-1 text-[9px] font-bold tracking-widest uppercase shadow-sm backdrop-blur-sm md:text-[10px]">
-              <ShieldAlert className="size-3" />
+          <div className="absolute top-3 right-3 md:top-4 md:right-4">
+            <div className="surface-glass text-foreground flex items-center gap-2 rounded-sm border px-2 py-1 text-[9px] font-black tracking-widest uppercase shadow-sm md:text-[10px]">
+              <ShieldAlert className="text-accent size-3" />
               <span className={cn(isCompact || isList ? "sr-only md:not-sr-only" : "")}>
                 Regulirano
               </span>
@@ -183,25 +183,23 @@ export function ProductCard({ product, variant = "default", className }: Product
         <div className="space-y-1 md:space-y-2">
           {/* Brand & Category */}
           <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
-            <p className="text-primary text-[9px] font-bold tracking-[0.14em] uppercase md:text-[10px]">
-              {product.brand}
-            </p>
-            <span className="text-muted-foreground/30 text-[9px] font-light">|</span>
-            <p className="text-muted-foreground text-[9px] font-bold tracking-[0.12em] uppercase md:text-[10px]">
+            <span className="text-label text-[9px] md:text-[10px]">{product.brand}</span>
+            <span className="text-muted-foreground/30 text-[9px]">|</span>
+            <span className="text-muted-foreground text-[9px] font-bold tracking-widest uppercase opacity-60 md:text-[10px]">
               {product.category}
-            </p>
+            </span>
           </div>
 
           {/* Title */}
           <Link
             href={`/proizvod/${product.id}`}
-            className="hover:text-primary block min-w-0 transition-colors focus:outline-none"
+            className="hover:text-accent block min-w-0 transition-colors focus:outline-none"
           >
             <h3
               className={cn(
                 "text-foreground line-clamp-2 font-bold tracking-tight",
-                isCompact ? "text-sm" : "text-[15px] md:text-lg",
-                isFeatured ? "md:text-xl lg:text-2xl xl:text-3xl" : ""
+                isCompact ? "text-sm" : "text-[16px] md:text-xl",
+                isFeatured ? "md:text-2xl lg:text-3xl xl:text-4xl" : ""
               )}
             >
               {product.name}
@@ -209,11 +207,9 @@ export function ProductCard({ product, variant = "default", className }: Product
           </Link>
 
           {/* Availability Dot */}
-          <div className="flex items-center gap-2 pt-1">
-            <div
-              className={cn("size-1.5 animate-pulse rounded-full shadow-sm", availability.color)}
-            />
-            <span className="text-muted-foreground line-clamp-1 text-[10px] font-bold tracking-[0.12em] uppercase md:text-[11px]">
+          <div className="flex items-center gap-2 pt-2">
+            <div className={cn("size-1.5 rounded-full ring-2 ring-offset-2", availability.color, "ring-"+availability.color.split('-')[1]+"-400/20")} />
+            <span className="text-muted-foreground line-clamp-1 text-[10px] font-black tracking-widest uppercase md:text-[11px]">
               {availability.label}
             </span>
           </div>
@@ -250,14 +246,14 @@ export function ProductCard({ product, variant = "default", className }: Product
           <div className="flex min-w-0 flex-col">
             {isSale ? (
               <>
-                <span className="text-muted-foreground text-[10px] font-medium line-through md:text-xs">
+                <span className="text-muted-foreground text-[10px] font-medium line-through md:text-[11px]">
                   {product.price.toLocaleString("hr-HR", { style: "currency", currency: "EUR" })}
                 </span>
                 <span
                   className={cn(
-                    "text-destructive font-black tracking-tight whitespace-nowrap",
-                    isCompact ? "text-lg" : "text-xl",
-                    isFeatured ? "lg:text-3xl" : ""
+                    "text-accent font-black tracking-tighter whitespace-nowrap",
+                    isCompact ? "text-xl" : "text-2xl",
+                    isFeatured ? "lg:text-4xl" : ""
                   )}
                 >
                   {product.salePrice!.toLocaleString("hr-HR", {
@@ -269,9 +265,9 @@ export function ProductCard({ product, variant = "default", className }: Product
             ) : (
               <span
                 className={cn(
-                  "text-foreground font-black tracking-tight whitespace-nowrap",
-                  isCompact ? "text-lg" : "text-xl",
-                  isFeatured ? "lg:text-3xl" : ""
+                  "text-foreground font-black tracking-tighter whitespace-nowrap",
+                  isCompact ? "text-xl" : "text-2xl",
+                  isFeatured ? "lg:text-4xl" : ""
                 )}
               >
                 {product.price.toLocaleString("hr-HR", { style: "currency", currency: "EUR" })}
@@ -286,25 +282,25 @@ export function ProductCard({ product, variant = "default", className }: Product
                 size={isCompact || isList ? "sm" : "default"}
                 variant="outline"
                 className={cn(
-                  "border-primary/20 hover:bg-primary/5 hover:text-primary font-bold tracking-widest uppercase transition-all",
+                  "tactile-border border-accent/20 hover:bg-accent text-accent hover:text-foreground font-black tracking-[0.2em] uppercase transition-all",
                   isCompact || isList
-                    ? "h-9 px-3 text-[9px]"
-                    : "h-11 px-5 text-[10px] md:text-[11px]"
+                    ? "h-10 px-4 text-[9px]"
+                    : "h-12 px-6 text-[10px] md:text-[11px]"
                 )}
                 asChild
               >
                 <Link href={`/kontakt?product=${product.id}`}>
-                  Upit <ArrowRight className="ml-2 size-3.5" aria-hidden="true" />
+                  Upit <ArrowRight className="ml-2 size-4" aria-hidden="true" />
                 </Link>
               </Button>
             ) : (
               <Button
                 size={isCompact || isList ? "sm" : "default"}
                 className={cn(
-                  "font-bold tracking-widest uppercase shadow-sm transition-all hover:shadow-md",
+                  "font-black tracking-[0.2em] uppercase shadow-premium transition-all hover:bg-accent hover:text-foreground",
                   isCompact || isList
-                    ? "h-9 px-3 text-[9px]"
-                    : "h-11 px-5 text-[10px] md:text-[11px]"
+                    ? "h-10 px-4 text-[9px]"
+                    : "h-12 px-6 text-[10px] md:text-[11px]"
                 )}
                 onClick={(e) => {
                   e.preventDefault()
@@ -313,7 +309,7 @@ export function ProductCard({ product, variant = "default", className }: Product
                 }}
                 aria-label={`Dodaj ${product.name} u košaricu`}
               >
-                Dodaj <ShoppingBag className="ml-2 size-3.5" aria-hidden="true" />
+                Kupi <ShoppingBag className="ml-2 size-4" aria-hidden="true" />
               </Button>
             )}
           </div>

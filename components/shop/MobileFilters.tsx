@@ -7,12 +7,13 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { ProductFilters } from "@/types/filters"
+import { cn } from "@/lib/utils"
 
 const STATUSES = [
   { id: "in_stock", label: "Dostupno odmah" },
   { id: "on_order", label: "Po narudžbi" },
   { id: "sale", label: "Na akciji" },
-  { id: "new", label: "Novo" },
+  { id: "new", label: "Novo u ponudi" },
 ]
 
 interface MobileFiltersProps {
@@ -49,137 +50,136 @@ export function MobileFilters({
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <SheetContent side="bottom" showCloseButton={false} className="h-[90vh] gap-0 p-0 lg:hidden">
-        <SheetHeader className="flex-row items-center justify-between border-b p-4">
-          <div className="flex items-center gap-2">
-            <SlidersHorizontal className="size-4" aria-hidden="true" />
-            <SheetTitle className="text-sm font-bold tracking-widest uppercase">Filteri</SheetTitle>
+      <SheetContent side="bottom" showCloseButton={false} className="h-[92vh] gap-0 p-0 lg:hidden rounded-t-[2rem]">
+        <SheetHeader className="flex-row items-center justify-between border-b border-black/5 p-6">
+          <div className="flex items-center gap-3">
+            <SlidersHorizontal className="text-accent size-5" aria-hidden="true" />
+            <SheetTitle className="text-sm font-black tracking-widest uppercase">Konfiguracija</SheetTitle>
             {activeCount > 0 && (
-              <span className="bg-primary text-primary-foreground rounded-sm px-2 py-0.5 text-[10px] font-black">
+              <span className="bg-accent text-foreground rounded-full px-2.5 py-0.5 text-[10px] font-black">
                 {activeCount}
               </span>
             )}
           </div>
           <SheetClose asChild>
-            <Button variant="ghost" size="icon" aria-label="Zatvori filtere">
+            <Button variant="ghost" size="icon" className="size-12 rounded-full hover:bg-black/5" aria-label="Zatvori">
               <X className="size-6" aria-hidden="true" />
             </Button>
           </SheetClose>
         </SheetHeader>
 
-        <div className="flex-1 overflow-y-auto p-6 pb-32">
-          <div className="space-y-10">
+        <div className="flex-1 overflow-y-auto p-8 pb-40">
+          <div className="space-y-12">
+            {/* Search */}
             <div className="space-y-4">
-              <Label
-                htmlFor="mobile-filter-query"
-                className="text-primary/60 text-xs font-bold tracking-widest uppercase"
-              >
-                Pretraga
-              </Label>
+              <h3 className="text-label">Pretraga Modela</h3>
               <Input
                 id="mobile-filter-query"
                 value={filters.query}
                 onChange={(event) => onChange({ query: event.target.value })}
-                placeholder="Model, brend ili šifra"
-                className="h-12 rounded-sm text-sm"
+                placeholder="Npr. Swarovski, Blaser..."
+                className="tactile-border h-14 rounded-sm text-sm font-bold"
               />
             </div>
 
+            {/* Price */}
             <div className="space-y-4">
-              <h3 className="text-primary/60 text-xs font-bold tracking-widest uppercase">
-                Cijena (€)
-              </h3>
+              <h3 className="text-label">Cjenovni Razred (€)</h3>
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   type="number"
                   min="0"
                   value={filters.minPrice}
                   onChange={(event) => onChange({ minPrice: event.target.value })}
-                  placeholder="Od"
-                  aria-label="Najniža cijena"
-                  className="h-12 rounded-sm text-sm"
+                  placeholder="Minimalno"
+                  className="tactile-border h-14 rounded-sm text-sm font-bold"
                 />
                 <Input
                   type="number"
                   min="0"
                   value={filters.maxPrice}
                   onChange={(event) => onChange({ maxPrice: event.target.value })}
-                  placeholder="Do"
-                  aria-label="Najviša cijena"
-                  className="h-12 rounded-sm text-sm"
+                  placeholder="Maksimalno"
+                  className="tactile-border h-14 rounded-sm text-sm font-bold"
                 />
               </div>
             </div>
 
+            {/* Availability */}
             <fieldset className="space-y-4">
-              <legend className="text-primary/60 text-xs font-bold tracking-widest uppercase">
-                Dostupnost
-              </legend>
+              <legend className="text-label mb-2">Dostupnost Artikla</legend>
               <div className="grid grid-cols-1 gap-3">
                 {STATUSES.map((status) => (
-                  <div key={status.id} className="flex items-center gap-3 rounded-sm border p-3">
+                  <label 
+                    key={status.id} 
+                    className={cn(
+                      "flex items-center gap-4 rounded-sm border p-4 transition-all active:scale-[0.98]",
+                      filters.statuses.includes(status.id) ? "border-accent bg-accent/5" : "border-black/5"
+                    )}
+                  >
                     <Checkbox
                       id={`mob-status-${status.id}`}
-                      className="size-5"
+                      className="size-6 border-black/10"
                       checked={filters.statuses.includes(status.id)}
                       onCheckedChange={() =>
                         onChange({ statuses: toggleValue(filters.statuses, status.id) })
                       }
                     />
-                    <Label htmlFor={`mob-status-${status.id}`} className="text-sm font-bold">
-                      {status.label}
-                    </Label>
-                  </div>
+                    <span className="text-sm font-black tracking-tight">{status.label}</span>
+                  </label>
                 ))}
               </div>
             </fieldset>
 
+            {/* Brands */}
             <fieldset className="space-y-4">
-              <legend className="text-primary/60 text-xs font-bold tracking-widest uppercase">
-                Proizvođač
-              </legend>
-              <div className="grid grid-cols-2 gap-4">
+              <legend className="text-label mb-2">Proizvođač</legend>
+              <div className="grid grid-cols-2 gap-3">
                 {brands.map((brand) => (
-                  <div key={brand} className="flex items-center gap-3 rounded-sm border p-3">
-                    <Checkbox
-                      id={`mob-brand-${brand}`}
-                      className="size-5"
-                      checked={filters.brands.includes(brand)}
-                      onCheckedChange={() =>
-                        onChange({ brands: toggleValue(filters.brands, brand) })
-                      }
-                    />
-                    <Label
-                      htmlFor={`mob-brand-${brand}`}
-                      className="flex min-w-0 flex-1 items-center justify-between gap-2 text-sm font-bold"
-                    >
-                      <span className="truncate">{brand}</span>
-                      <span className="text-muted-foreground text-[10px]">
+                  <label 
+                    key={brand} 
+                    className={cn(
+                      "flex flex-col gap-2 rounded-sm border p-4 transition-all active:scale-[0.98]",
+                      filters.brands.includes(brand) ? "border-accent bg-accent/5" : "border-black/5"
+                    )}
+                  >
+                    <div className="flex items-center justify-between">
+                      <Checkbox
+                        id={`mob-brand-${brand}`}
+                        className="size-5 border-black/10"
+                        checked={filters.brands.includes(brand)}
+                        onCheckedChange={() =>
+                          onChange({ brands: toggleValue(filters.brands, brand) })
+                        }
+                      />
+                      <span className="text-muted-foreground/40 text-[10px] font-black">
                         {brandCounts[brand] ?? 0}
                       </span>
-                    </Label>
-                  </div>
+                    </div>
+                    <span className="truncate text-xs font-black tracking-tight">{brand}</span>
+                  </label>
                 ))}
               </div>
             </fieldset>
 
-            <div className="border-primary/15 bg-primary/5 rounded-sm border p-4">
-              <div className="flex items-start gap-3">
+            {/* Regulated */}
+            <div className="surface-glass border-accent/20 rounded-sm border p-6">
+              <div className="flex items-start gap-4">
                 <Checkbox
                   id="mob-regulated-only"
-                  className="mt-0.5 size-5"
+                  className="mt-1 size-6 border-accent/20"
                   checked={filters.regulatedOnly}
                   onCheckedChange={(checked) => onChange({ regulatedOnly: checked === true })}
                 />
-                <div className="space-y-1.5">
-                  <Label
+                <div className="space-y-2">
+                  <label
                     htmlFor="mob-regulated-only"
-                    className="text-primary flex cursor-pointer items-center gap-2 text-xs font-black tracking-widest uppercase"
+                    className="text-accent flex items-center gap-2 text-[10px] font-black tracking-widest uppercase"
                   >
                     <ShieldAlert className="size-4" aria-hidden="true" />
                     Regulirani artikli
-                  </Label>
-                  <p className="text-muted-foreground/75 text-xs leading-relaxed font-medium">
+                  </label>
+                  <p className="text-muted-foreground/75 text-[11px] leading-relaxed font-medium">
                     Prikaži samo artikle koji zahtijevaju dokumentaciju ({regulatedCount}).
                   </p>
                 </div>
@@ -188,12 +188,19 @@ export function MobileFilters({
           </div>
         </div>
 
-        <div className="bg-background absolute right-0 bottom-0 left-0 flex gap-4 border-t p-4">
-          <Button variant="outline" className="h-14 flex-1 font-bold" onClick={onReset}>
-            Očisti sve
+        {/* Action Bar */}
+        <div className="bg-background absolute right-0 bottom-0 left-0 grid grid-cols-2 gap-4 border-t border-black/5 p-6 backdrop-blur-md">
+          <Button 
+            variant="outline" 
+            className="tactile-border h-14 text-[10px] font-black tracking-widest uppercase" 
+            onClick={onReset}
+          >
+            Resetiraj
           </Button>
           <SheetClose asChild>
-            <Button className="h-14 flex-1 font-bold">Prikaži rezultate</Button>
+            <Button className="h-14 text-[10px] font-black tracking-widest uppercase shadow-premium">
+              Prikaži Rezultate
+            </Button>
           </SheetClose>
         </div>
       </SheetContent>

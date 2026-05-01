@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container"
-import { Section } from "@/components/ui/section"
 import { ShieldCheck, Truck, Headphones, ClipboardCheck } from "lucide-react"
 
 const BENEFITS = [
@@ -30,22 +29,24 @@ const BENEFITS = [
 
 export function TrustBenefits() {
   return (
-    <Section className="bg-foreground text-background py-24 md:py-32">
+    <section className="section-padding bg-foreground text-background">
       <Container>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((item, idx) => (
-            <div key={item.title} className="group relative space-y-6">
+            <div key={item.title} className="group relative space-y-8">
               <div className="flex items-center justify-between">
-                <div className="bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground flex size-14 items-center justify-center rounded-sm transition-colors">
-                  <item.icon className="size-7" />
+                <div className="bg-primary/20 text-primary group-hover:bg-accent group-hover:text-foreground flex size-16 items-center justify-center rounded-full transition-all duration-500">
+                  <item.icon className="size-8" />
                 </div>
-                <span className="text-background/5 text-4xl font-black tracking-tighter italic">
+                <span className="text-background/5 text-5xl font-black tracking-tighter italic">
                   0{idx + 1}
                 </span>
               </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
-                <p className="text-background/60 text-sm leading-relaxed font-medium">
+              
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold tracking-tight uppercase">{item.title}</h3>
+                <div className="bg-accent h-0.5 w-8 transition-all group-hover:w-12" />
+                <p className="text-background/50 text-sm leading-relaxed font-medium">
                   {item.description}
                 </p>
               </div>
@@ -53,6 +54,6 @@ export function TrustBenefits() {
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   )
 }

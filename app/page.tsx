@@ -26,30 +26,32 @@ export default function Home() {
 
       <CategoryMosaic />
 
-      <Section id="new-arrivals" className="bg-secondary/10 border-y">
+      <section id="new-arrivals" className="section-padding bg-secondary/5 border-y">
         <Container>
-          <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <div className="bg-primary size-2 rounded-full" />
-                <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Novo u ponudi
-                </span>
+          <div className="mb-20 flex flex-col justify-between gap-12 md:flex-row md:items-end md:mb-28">
+            <div className="max-w-3xl space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent h-px w-8" />
+                  <span className="text-label">Novo u ponudi</span>
+                </div>
+                <h2 className="text-editorial-headline">
+                  Najnovije iz <br />
+                  <span className="text-muted-foreground/40">našeg kataloga.</span>
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed font-medium">
+                  Istražite najnovije pristigle modele renomiranih svjetskih proizvođača lovačke i
+                  outdoor opreme. Selektirano prema kvaliteti, performansama i pouzdanosti.
+                </p>
               </div>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-                Najnovije iz našeg kataloga
-              </h2>
-              <p className="text-muted-foreground max-w-xl font-medium">
-                Istražite najnovije pristigle modele renomiranih svjetskih proizvođača lovačke i
-                outdoor opreme. Selektirano prema kvaliteti i pouzdanosti.
-              </p>
             </div>
+            
             <Link
               href="/kategorija/sve"
-              className="group text-primary hover:text-primary/80 flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-colors"
+              className="group text-foreground hover:text-accent flex items-center gap-3 text-xs font-black tracking-widest uppercase transition-colors"
             >
-              Vidi sve proizvode{" "}
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              Cijeli katalog
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-2" />
             </Link>
           </div>
 
@@ -64,7 +66,7 @@ export default function Home() {
             ))}
           </div>
         </Container>
-      </Section>
+      </section>
 
       <FeaturedCategory />
 
