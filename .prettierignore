@@ -5,3 +5,9 @@ dist
 test-results
 playwright-report
 tsconfig.tsbuildinfo
+.agent
+.antigravity
+.codex
+.cursor
+.gemini
+.zed

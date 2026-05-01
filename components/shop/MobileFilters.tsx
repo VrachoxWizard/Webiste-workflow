@@ -1,6 +1,6 @@
 "use client"
 
-import { X, SlidersHorizontal } from "lucide-react"
+import { X, SlidersHorizontal, ShieldAlert } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -18,6 +18,8 @@ const STATUSES = [
 interface MobileFiltersProps {
   isOpen: boolean
   brands: string[]
+  brandCounts: Record<string, number>
+  regulatedCount: number
   filters: ProductFilters
   onChange: (filters: Partial<ProductFilters>) => void
   onReset: () => void
@@ -31,11 +33,20 @@ const toggleValue = (values: string[], value: string) => {
 export function MobileFilters({
   isOpen,
   brands,
+  brandCounts,
+  regulatedCount,
   filters,
   onChange,
   onReset,
   onClose,
 }: MobileFiltersProps) {
+  const activeCount =
+    (filters.query ? 1 : 0) +
+    (filters.minPrice || filters.maxPrice ? 1 : 0) +
+    filters.brands.length +
+    filters.statuses.length +
+    (filters.regulatedOnly ? 1 : 0)
+
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent side="bottom" showCloseButton={false} className="h-[90vh] gap-0 p-0 lg:hidden">
@@ -43,6 +54,11 @@ export function MobileFilters({
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="size-4" aria-hidden="true" />
             <SheetTitle className="text-sm font-bold tracking-widest uppercase">Filteri</SheetTitle>
+            {activeCount > 0 && (
+              <span className="bg-primary text-primary-foreground rounded-sm px-2 py-0.5 text-[10px] font-black">
+                {activeCount}
+              </span>
+            )}
           </div>
           <SheetClose asChild>
             <Button variant="ghost" size="icon" aria-label="Zatvori filtere">
@@ -129,15 +145,46 @@ export function MobileFilters({
                       id={`mob-brand-${brand}`}
                       className="size-5"
                       checked={filters.brands.includes(brand)}
-                      onCheckedChange={() => onChange({ brands: toggleValue(filters.brands, brand) })}
+                      onCheckedChange={() =>
+                        onChange({ brands: toggleValue(filters.brands, brand) })
+                      }
                     />
-                    <Label htmlFor={`mob-brand-${brand}`} className="text-sm font-bold">
-                      {brand}
+                    <Label
+                      htmlFor={`mob-brand-${brand}`}
+                      className="flex min-w-0 flex-1 items-center justify-between gap-2 text-sm font-bold"
+                    >
+                      <span className="truncate">{brand}</span>
+                      <span className="text-muted-foreground text-[10px]">
+                        {brandCounts[brand] ?? 0}
+                      </span>
                     </Label>
                   </div>
                 ))}
               </div>
             </fieldset>
+
+            <div className="border-primary/15 bg-primary/5 rounded-sm border p-4">
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="mob-regulated-only"
+                  className="mt-0.5 size-5"
+                  checked={filters.regulatedOnly}
+                  onCheckedChange={(checked) => onChange({ regulatedOnly: checked === true })}
+                />
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor="mob-regulated-only"
+                    className="text-primary flex cursor-pointer items-center gap-2 text-xs font-black tracking-widest uppercase"
+                  >
+                    <ShieldAlert className="size-4" aria-hidden="true" />
+                    Regulirani artikli
+                  </Label>
+                  <p className="text-muted-foreground/75 text-xs leading-relaxed font-medium">
+                    Prikaži samo artikle koji zahtijevaju dokumentaciju ({regulatedCount}).
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ export function ExpertHelpCTA() {
   return (
     <Section className="pb-32">
       <Container>
-        <div className="relative overflow-hidden rounded-sm bg-primary p-10 text-primary-foreground shadow-premium md:p-20">
+        <div className="bg-primary text-primary-foreground shadow-premium relative overflow-hidden rounded-sm p-10 md:p-20">
           {/* Subtle Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div
@@ -23,8 +23,8 @@ export function ExpertHelpCTA() {
 
           <div className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="space-y-6">
-              <div className="h-1 w-12 bg-primary-foreground/30" />
-              <h2 className="text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+              <div className="bg-primary-foreground/30 h-1 w-12" />
+              <h2 className="text-4xl leading-tight font-semibold tracking-tight text-balance md:text-6xl">
                 Trebate stručnu pomoć <br />
                 pri odabiru opreme?
               </h2>
@@ -49,7 +49,7 @@ export function ExpertHelpCTA() {
               <Button
                 size="lg"
                 variant="outline"
-                className="group h-16 w-full border-primary-foreground/40 bg-transparent px-10 text-base font-bold text-primary-foreground transition-all hover:bg-primary-foreground hover:text-primary sm:w-auto"
+                className="group border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary h-16 w-full bg-transparent px-10 text-base font-bold transition-all sm:w-auto"
                 asChild
               >
                 <Link href="tel:+38512345678">

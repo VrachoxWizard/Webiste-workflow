@@ -20,16 +20,16 @@ export function FeaturedCategory() {
               <div className="border-accent w-12 border-t-2 pt-4" />
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <div className="size-2 rounded-full bg-primary" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                  <div className="bg-primary size-2 rounded-full" />
+                  <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
                     Tehnologija i preciznost
                   </span>
                 </div>
-                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+                <h2 className="text-4xl leading-tight font-semibold tracking-tight md:text-5xl">
                   Optike i termalni <br />
                   uređaji
                 </h2>
-                <p className="font-medium leading-relaxed text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed font-medium">
                   Vrhunska dnevna i noćna optika za kristalno jasnu sliku u svim uvjetima. Istražite
                   najnovije termalne uređaje Pulsar i Vortex serije.
                 </p>
@@ -43,9 +43,9 @@ export function FeaturedCategory() {
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <div className="flex items-start gap-4 border-l-2 border-primary pl-4">
-                <Zap className="mt-0.5 size-4 shrink-0 text-primary" />
-                <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
+              <div className="border-primary flex items-start gap-4 border-l-2 pl-4">
+                <Zap className="text-primary mt-0.5 size-4 shrink-0" />
+                <p className="text-muted-foreground text-[11px] font-bold tracking-widest uppercase">
                   Svi uređaji dolaze sa certifikatom o tvorničkoj provjeri i jamstvom.
                 </p>
               </div>
@@ -58,22 +58,22 @@ export function FeaturedCategory() {
             ))}
 
             {/* Visual Callout Card */}
-            <div className="relative flex flex-col justify-center space-y-6 rounded-sm border border-accent/20 bg-background p-8 shadow-premium-hover transition-all hover:border-accent/40 sm:p-10">
+            <div className="border-accent/20 bg-background shadow-premium-hover hover:border-accent/40 relative flex flex-col justify-center space-y-6 rounded-sm border p-8 transition-all sm:p-10">
               <div className="absolute top-0 right-0 h-16 w-16 overflow-hidden">
-                <div className="absolute top-0 right-0 h-0.5 w-12 translate-x-4 translate-y-2 rotate-45 bg-accent" />
+                <div className="bg-accent absolute top-0 right-0 h-0.5 w-12 translate-x-4 translate-y-2 rotate-45" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold italic tracking-tight text-accent">
+                <h3 className="text-accent text-xl font-bold tracking-tight italic">
                   Termalna vizija Gen-2
                 </h3>
-                <p className="text-sm font-medium leading-relaxed text-muted-foreground">
-                  Pulsar Krypton serija postavlja nove standarde u detekciji topline na udaljenostima
-                  do 2300m. Dostupno isključivo uz stručnu prezentaciju.
+                <p className="text-muted-foreground text-sm leading-relaxed font-medium">
+                  Pulsar Krypton serija postavlja nove standarde u detekciji topline na
+                  udaljenostima do 2300m. Dostupno isključivo uz stručnu prezentaciju.
                 </p>
               </div>
               <Link
                 href="/kategorija/termalni-uredaji"
-                className="group inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary transition-colors hover:text-primary/80"
+                className="group text-primary hover:text-primary/80 inline-flex items-center text-xs font-bold tracking-widest uppercase transition-colors"
               >
                 Saznaj više o tehnologiji{" "}
                 <ArrowRight className="ml-2 size-3.5 transition-transform group-hover:translate-x-1" />

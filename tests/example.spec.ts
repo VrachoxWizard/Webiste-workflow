@@ -4,7 +4,7 @@ const routes = [
   ["/", "Oprema za"],
   ["/kategorija/dugo-oruzje", "Dugo oružje"],
   ["/proizvod/1", "Tikka T3x Lite Polyfade"],
-  ["/checkout", "Dovršetak narudžbe"],
+  ["/checkout", "Dovršetak Kupnje"],
   ["/kontakt", "Tu smo za"],
   ["/legal", "Odgovorna i zakonita kupnja"],
 ] as const
@@ -36,10 +36,6 @@ test.describe("storefront smoke", () => {
     await page.waitForTimeout(500)
     await page.getByRole("button", { name: /dodaj vortex venom/i }).click()
     await expect(page.getByLabel(/košarica \(1\)/i)).toBeVisible()
-    await page
-      .getByLabel(/košarica/i)
-      .first()
-      .click()
-    await expect(page.getByRole("dialog").first()).toContainText("Vortex Venom")
+    await expect(page.getByTestId("cart-drawer")).toContainText("Vortex Venom")
   })
 })

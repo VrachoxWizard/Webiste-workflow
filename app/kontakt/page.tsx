@@ -89,6 +89,7 @@ export default function ContactPage() {
                   src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1200"
                   alt="Zagreb lokacija"
                   fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="bg-primary/20 absolute inset-0 mix-blend-multiply" />

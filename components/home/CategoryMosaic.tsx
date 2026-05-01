@@ -26,7 +26,7 @@ const CATEGORIES = [
     description: "Optički uređaji, montaže i dodatna oprema.",
     href: "/kategorija/optike",
     image: "/images/categories/optics.png",
-    size: "medium" as const,
+    size: "wide" as const,
     subcategories: [
       { title: "Dnevne", href: "/kategorija/optike" },
       { title: "Crvene točke", href: "/kategorija/crvene-tocke" },
@@ -71,8 +71,8 @@ export function CategoryMosaic() {
       <Container>
         <div className="mb-12 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <div className="size-2 rounded-full bg-primary" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+            <div className="bg-primary size-2 rounded-full" />
+            <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
               Istražite ponudu
             </span>
           </div>
@@ -81,20 +81,20 @@ export function CategoryMosaic() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2 md:auto-rows-[320px]">
+        <div className="grid grid-cols-1 gap-4 md:auto-rows-[210px] md:grid-cols-6 lg:auto-rows-[230px]">
           {CATEGORIES.map((cat, idx) => (
             <motion.article
               key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: idx * 0.08, duration: 0.5, ease: "easeOut" }}
               className={cn(
-                "group relative min-h-[220px] overflow-hidden rounded-sm border bg-muted/20",
-                cat.size === "large" && "md:col-span-2 md:row-span-2",
-                cat.size === "medium" && "md:col-span-1 md:row-span-1",
-                cat.size === "small" && "md:col-span-1 md:row-span-1",
-                cat.size === "wide" && "md:col-span-2 md:row-span-1"
+                "group bg-muted/20 relative min-h-[220px] overflow-hidden rounded-sm border",
+                cat.size === "large" && "md:col-span-3 md:row-span-3",
+                cat.size === "wide" && "md:col-span-3 md:row-span-1",
+                cat.size === "medium" && "md:col-span-2 md:row-span-1",
+                cat.size === "small" && "md:col-span-1 md:row-span-1"
               )}
             >
               <Link href={cat.href} className="relative block h-full">
@@ -103,9 +103,11 @@ export function CategoryMosaic() {
                   alt=""
                   fill
                   sizes={
-                    cat.size === "large"
+                    cat.size === "large" || cat.size === "wide"
                       ? "(min-width: 768px) 50vw, 100vw"
-                      : "(min-width: 768px) 25vw, 100vw"
+                      : cat.size === "medium"
+                        ? "(min-width: 768px) 33vw, 100vw"
+                        : "(min-width: 768px) 16vw, 100vw"
                   }
                   className="object-cover opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
                 />
@@ -125,7 +127,7 @@ export function CategoryMosaic() {
                     {cat.subcategories.map((sub) => (
                       <span
                         key={sub.title}
-                        className="text-[10px] font-bold uppercase tracking-widest text-white/40 transition-colors group-hover:text-white/70"
+                        className="text-[10px] font-bold tracking-widest text-white/40 uppercase transition-colors group-hover:text-white/70"
                       >
                         {sub.title}
                       </span>

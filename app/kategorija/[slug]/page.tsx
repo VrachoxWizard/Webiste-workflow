@@ -32,6 +32,7 @@ const DEFAULT_FILTERS: ProductFilters = {
   maxPrice: "",
   brands: [],
   statuses: [],
+  regulatedOnly: false,
 }
 
 const CATEGORY_CONTENT: Record<
@@ -73,21 +74,24 @@ const CATEGORY_CONTENT: Record<
   },
   karabini: {
     title: "Lovački Karabini",
-    description: "Pregled karabina s osnovnim tehničkim podacima i statusom dostupnosti. Odaberite pouzdanost za svaki lov.",
+    description:
+      "Pregled karabina s osnovnim tehničkim podacima i statusom dostupnosti. Odaberite pouzdanost za svaki lov.",
     categories: ["Karabini"],
     regulatedNotice:
       "Za kupnju reguliranih artikala potrebna je važeća dokumentacija prije preuzimanja.",
   },
   sacmarice: {
     title: "Sačmarice",
-    description: "Odabrani modeli sačmarica za registrirane kupce. Klasična izrada i moderna rješenja za lov i sport.",
+    description:
+      "Odabrani modeli sačmarica za registrirane kupce. Klasična izrada i moderna rješenja za lov i sport.",
     categories: ["Sačmarice"],
     regulatedNotice:
       "Za kupnju reguliranih artikala potrebna je važeća dokumentacija prije preuzimanja.",
   },
   streljivo: {
     title: "Streljivo",
-    description: "Kvalitetno streljivo za lov i sportsko streljaštvo. Prodaja se vrši isključivo prema važećim zakonskim propisima.",
+    description:
+      "Kvalitetno streljivo za lov i sportsko streljaštvo. Prodaja se vrši isključivo prema važećim zakonskim propisima.",
     categories: ["Streljivo"],
     regulatedNotice:
       "Kupnja streljiva podliježe zakonskim regulativama i provjeri dokumenata prije isporuke.",
@@ -112,7 +116,8 @@ const CATEGORY_CONTENT: Record<
   },
   oprema: {
     title: "Dodatna Oprema",
-    description: "Sve što vam je potrebno za uspješan boravak na otvorenom — od svjetiljki do ruksaka i torbi.",
+    description:
+      "Sve što vam je potrebno za uspješan boravak na otvorenom — od svjetiljki do ruksaka i torbi.",
     categories: ["Svjetiljke", "Ruksaci i torbe"],
   },
 }
@@ -170,6 +175,18 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
     )
   }, [availableProducts])
 
+  const brandCounts = React.useMemo(() => {
+    return availableProducts.reduce<Record<string, number>>((counts, product) => {
+      counts[product.brand] = (counts[product.brand] ?? 0) + 1
+      return counts
+    }, {})
+  }, [availableProducts])
+
+  const regulatedCount = React.useMemo(
+    () => availableProducts.filter((product) => product.isRegulated).length,
+    [availableProducts]
+  )
+
   const products = React.useMemo(() => {
     const filtered = availableProducts.filter((product) => {
       const price = getProductPrice(product)
@@ -178,14 +195,26 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
       const maxPrice = filters.maxPrice ? Number(filters.maxPrice) : Number.POSITIVE_INFINITY
       const matchesQuery =
         !query ||
-        [product.name, product.brand, product.sku, product.category].some((value) =>
-          value.toLowerCase().includes(query)
-        )
+        [
+          product.name,
+          product.brand,
+          product.sku,
+          product.category,
+          product.isRegulated ? "regulirano dokumentacija dozvola" : "slobodna prodaja",
+        ].some((value) => value.toLowerCase().includes(query))
       const matchesBrand = filters.brands.length === 0 || filters.brands.includes(product.brand)
       const matchesStatus =
         filters.statuses.length === 0 || filters.statuses.includes(product.status)
+      const matchesRegulated = !filters.regulatedOnly || product.isRegulated
 
-      return matchesQuery && matchesBrand && matchesStatus && price >= minPrice && price <= maxPrice
+      return (
+        matchesQuery &&
+        matchesBrand &&
+        matchesStatus &&
+        matchesRegulated &&
+        price >= minPrice &&
+        price <= maxPrice
+      )
     })
 
     return filtered.toSorted((a, b) => {
@@ -216,22 +245,22 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-background">
-      <div className="border-b bg-muted/20 pb-16 pt-20 md:pt-32">
+    <main className="bg-background flex min-h-screen flex-col">
+      <div className="bg-muted/20 border-b pt-20 pb-16 md:pt-32">
         <Container>
           <div className="flex flex-col gap-10">
             <nav
-              className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground"
+              className="text-muted-foreground flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase"
               aria-label="Putanja"
             >
-              <Link href="/" className="transition-colors hover:text-primary">
+              <Link href="/" className="hover:text-primary transition-colors">
                 Naslovnica
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/30" aria-hidden="true" />
-              <Link href="/kategorija/sve" className="transition-colors hover:text-primary">
+              <ChevronRight className="text-muted-foreground/30 size-3" aria-hidden="true" />
+              <Link href="/kategorija/sve" className="hover:text-primary transition-colors">
                 Katalog
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/30" aria-hidden="true" />
+              <ChevronRight className="text-muted-foreground/30 size-3" aria-hidden="true" />
               <span className="text-foreground">{category.title}</span>
             </nav>
 
@@ -240,19 +269,19 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                 <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
                   {category.title}
                 </h1>
-                <p className="max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground md:text-xl">
+                <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed font-medium md:text-xl">
                   {category.description}
                 </p>
               </div>
 
               {category.regulatedNotice && (
-                <div className="flex max-w-sm gap-5 rounded-sm border border-primary/20 bg-primary/5 p-6 shadow-sm md:shrink-0">
-                  <AlertCircle className="size-6 shrink-0 text-primary" aria-hidden="true" />
+                <div className="border-primary/20 bg-primary/5 flex max-w-sm gap-5 rounded-sm border p-6 shadow-sm md:shrink-0">
+                  <AlertCircle className="text-primary size-6 shrink-0" aria-hidden="true" />
                   <div className="space-y-2">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-primary">
+                    <p className="text-primary text-[10px] font-black tracking-widest uppercase">
                       Važna napomena
                     </p>
-                    <p className="text-xs font-medium leading-relaxed text-muted-foreground/80">
+                    <p className="text-muted-foreground/80 text-xs leading-relaxed font-medium">
                       {category.regulatedNotice}
                     </p>
                   </div>
@@ -263,25 +292,25 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
         </Container>
       </div>
 
-      <div className="sticky top-[72px] z-30 border-b bg-background/95 py-5 backdrop-blur-md">
+      <div className="bg-background/95 sticky top-[72px] z-30 border-b py-5 backdrop-blur-md">
         <Container>
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-8">
               <button
                 type="button"
                 onClick={() => setIsMobileFiltersOpen(true)}
-                className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest lg:hidden"
+                className="flex items-center gap-2.5 text-xs font-bold tracking-widest uppercase lg:hidden"
               >
                 <SlidersHorizontal className="size-4" aria-hidden="true" /> Filteri
               </button>
-              <div className="hidden items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:flex">
+              <div className="text-muted-foreground hidden items-center gap-2 text-[11px] font-bold tracking-[0.16em] uppercase lg:flex">
                 <span className="text-foreground">{products.length}</span> Pronađena artikla
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3 rounded-sm border bg-background px-4 py-2 shadow-sm">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              <div className="bg-background flex items-center gap-3 rounded-sm border px-4 py-2 shadow-sm">
+                <span className="text-muted-foreground text-[10px] font-bold tracking-widest uppercase">
                   Poredak:
                 </span>
                 <select
@@ -298,14 +327,14 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                   <option value="name-asc">Abecedno: A-Z</option>
                 </select>
               </div>
-              <div className="hidden items-center overflow-hidden rounded-sm border bg-background shadow-sm sm:flex">
+              <div className="bg-background hidden items-center overflow-hidden rounded-sm border shadow-sm sm:flex">
                 <button
                   type="button"
                   aria-label="Mrežni prikaz"
                   aria-pressed={view === "grid"}
                   onClick={() => setView("grid")}
                   className={cn(
-                    "p-2.5 transition-all hover:bg-muted",
+                    "hover:bg-muted p-2.5 transition-all",
                     view === "grid" ? "bg-muted text-primary" : "text-muted-foreground/60"
                   )}
                 >
@@ -317,7 +346,7 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                   aria-pressed={view === "list"}
                   onClick={() => setView("list")}
                   className={cn(
-                    "p-2.5 transition-all hover:bg-muted border-l",
+                    "hover:bg-muted border-l p-2.5 transition-all",
                     view === "list" ? "bg-muted text-primary" : "text-muted-foreground/60"
                   )}
                 >
@@ -328,21 +357,26 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
           </div>
 
           {/* Active Filters Display */}
-          {(filters.brands.length > 0 || filters.statuses.length > 0 || filters.query) && (
+          {(filters.brands.length > 0 ||
+            filters.statuses.length > 0 ||
+            filters.regulatedOnly ||
+            filters.minPrice ||
+            filters.maxPrice ||
+            filters.query) && (
             <div className="mt-5 flex flex-wrap items-center gap-2.5 border-t pt-5">
-              <span className="mr-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40">
+              <span className="text-muted-foreground/40 mr-2 text-[10px] font-bold tracking-[0.2em] uppercase">
                 Aktivno:
               </span>
 
               {filters.query && (
                 <Badge
                   variant="secondary"
-                  className="gap-2 rounded-sm bg-muted/80 py-1.5 pl-3 pr-2 text-[10px] font-bold uppercase tracking-widest hover:bg-muted"
+                  className="bg-muted/80 hover:bg-muted gap-2 rounded-sm py-1.5 pr-2 pl-3 text-[10px] font-bold tracking-widest uppercase"
                 >
                   Pretraga: {filters.query}
                   <button
                     onClick={() => updateFilters({ query: "" })}
-                    className="rounded-sm p-0.5 transition-colors hover:bg-background"
+                    className="hover:bg-background rounded-sm p-0.5 transition-colors"
                     aria-label="Ukloni pretragu"
                   >
                     <X className="size-3" />
@@ -354,12 +388,12 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                 <Badge
                   key={b}
                   variant="secondary"
-                  className="gap-2 rounded-sm bg-muted/80 py-1.5 pl-3 pr-2 text-[10px] font-bold uppercase tracking-widest hover:bg-muted"
+                  className="bg-muted/80 hover:bg-muted gap-2 rounded-sm py-1.5 pr-2 pl-3 text-[10px] font-bold tracking-widest uppercase"
                 >
                   {b}
                   <button
                     onClick={() => updateFilters({ brands: filters.brands.filter((x) => x !== b) })}
-                    className="rounded-sm p-0.5 transition-colors hover:bg-background"
+                    className="hover:bg-background rounded-sm p-0.5 transition-colors"
                     aria-label={`Ukloni filter ${b}`}
                   >
                     <X className="size-3" />
@@ -367,18 +401,34 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                 </Badge>
               ))}
 
+              {(filters.minPrice || filters.maxPrice) && (
+                <Badge
+                  variant="secondary"
+                  className="bg-muted/80 hover:bg-muted gap-2 rounded-sm py-1.5 pr-2 pl-3 text-[10px] font-bold tracking-widest uppercase"
+                >
+                  Cijena: {filters.minPrice || "0"} - {filters.maxPrice || "∞"} EUR
+                  <button
+                    onClick={() => updateFilters({ minPrice: "", maxPrice: "" })}
+                    className="hover:bg-background rounded-sm p-0.5 transition-colors"
+                    aria-label="Ukloni filter cijene"
+                  >
+                    <X className="size-3" />
+                  </button>
+                </Badge>
+              )}
+
               {filters.statuses.map((s) => (
                 <Badge
                   key={s}
                   variant="secondary"
-                  className="gap-2 rounded-sm bg-muted/80 py-1.5 pl-3 pr-2 text-[10px] font-bold uppercase tracking-widest hover:bg-muted"
+                  className="bg-muted/80 hover:bg-muted gap-2 rounded-sm py-1.5 pr-2 pl-3 text-[10px] font-bold tracking-widest uppercase"
                 >
                   {getStatusLabel(s as Product["status"])}
                   <button
                     onClick={() =>
                       updateFilters({ statuses: filters.statuses.filter((x) => x !== s) })
                     }
-                    className="rounded-sm p-0.5 transition-colors hover:bg-background"
+                    className="hover:bg-background rounded-sm p-0.5 transition-colors"
                     aria-label="Ukloni status filter"
                   >
                     <X className="size-3" />
@@ -386,9 +436,25 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                 </Badge>
               ))}
 
+              {filters.regulatedOnly && (
+                <Badge
+                  variant="secondary"
+                  className="bg-primary/10 text-primary hover:bg-primary/15 gap-2 rounded-sm py-1.5 pr-2 pl-3 text-[10px] font-bold tracking-widest uppercase"
+                >
+                  Regulirani artikli
+                  <button
+                    onClick={() => updateFilters({ regulatedOnly: false })}
+                    className="hover:bg-background rounded-sm p-0.5 transition-colors"
+                    aria-label="Ukloni filter reguliranih artikala"
+                  >
+                    <X className="size-3" />
+                  </button>
+                </Badge>
+              )}
+
               <button
                 onClick={resetFilters}
-                className="ml-4 text-[10px] font-bold uppercase tracking-widest text-primary/60 transition-all hover:text-primary hover:underline hover:underline-offset-4"
+                className="text-primary/60 hover:text-primary ml-4 text-[10px] font-bold tracking-widest uppercase transition-all hover:underline hover:underline-offset-4"
               >
                 Očisti sve
               </button>
@@ -402,6 +468,8 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
           <div className="flex gap-16 lg:gap-24">
             <FilterSidebar
               brands={brandOptions}
+              brandCounts={brandCounts}
+              regulatedCount={regulatedCount}
               filters={filters}
               onChange={updateFilters}
               onReset={resetFilters}
@@ -426,18 +494,18 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                   ))}
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center rounded-sm border border-dashed border-border/60 bg-muted/10 px-6 py-32 text-center">
-                  <div className="mb-6 flex size-20 items-center justify-center rounded-full bg-muted/50">
-                    <SearchX className="size-8 text-muted-foreground/30" aria-hidden="true" />
+                <div className="border-border/60 bg-muted/10 flex flex-col items-center justify-center rounded-sm border border-dashed px-6 py-32 text-center">
+                  <div className="bg-muted/50 mb-6 flex size-20 items-center justify-center rounded-full">
+                    <SearchX className="text-muted-foreground/30 size-8" aria-hidden="true" />
                   </div>
                   <h2 className="text-2xl font-bold tracking-tight">Nema rezultata</h2>
-                  <p className="mt-3 max-w-md text-base font-medium text-muted-foreground">
+                  <p className="text-muted-foreground mt-3 max-w-md text-base font-medium">
                     Ne možemo pronaći proizvode koji odgovaraju vašim kriterijima. Pokušajte
                     promijeniti filtere ili očistiti pretragu za bolji prikaz.
                   </p>
                   <Button
                     variant="outline"
-                    className="mt-10 h-12 rounded-sm px-8 text-xs font-bold uppercase tracking-widest shadow-sm"
+                    className="mt-10 h-12 rounded-sm px-8 text-xs font-bold tracking-widest uppercase shadow-sm"
                     onClick={resetFilters}
                   >
                     Očisti sve filtere
@@ -447,7 +515,7 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
 
               {/* Pagination */}
               <div className="flex flex-col items-center justify-between gap-6 border-t pt-12 sm:flex-row">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground/60">
+                <p className="text-muted-foreground/60 text-[11px] font-bold tracking-widest uppercase">
                   {products.length > 0
                     ? `Prikazano ${resultStart}-${resultEnd} od ${products.length}`
                     : `Ukupno 0 artikala`}
@@ -468,7 +536,7 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
                     >
                       Prethodna
                     </Button>
-                    <div className="flex items-center gap-1 mx-2">
+                    <div className="mx-2 flex items-center gap-1">
                       {Array.from({ length: totalPages }, (_, index) => index + 1).map(
                         (pageNumber) => (
                           <Button
@@ -516,6 +584,8 @@ function CategoryBrowser({ slug, queryParam }: { slug: string; queryParam: strin
         isOpen={isMobileFiltersOpen}
         filters={filters}
         brands={brandOptions}
+        brandCounts={brandCounts}
+        regulatedCount={regulatedCount}
         onChange={updateFilters}
         onReset={resetFilters}
         onClose={() => setIsMobileFiltersOpen(false)}

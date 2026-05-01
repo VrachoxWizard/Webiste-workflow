@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { Product } from "@/types/product"
+import { toast } from "sonner"
 
 interface CartItem extends Product {
   quantity: number
@@ -29,6 +30,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         return prev.map((i) => (i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i))
       }
       return [...prev, { ...product, quantity: 1 }]
+    })
+
+    window.dispatchEvent(new CustomEvent("cart:open"))
+    toast.success("Dodano u košaricu", {
+      description: product.name,
     })
   }
 

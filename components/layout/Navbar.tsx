@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Search, User, ShoppingBag, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { NAVIGATION_DATA } from "@/config/navigation"
 import { MegaMenu } from "./MegaMenu"
 import { MobileDrawer } from "./MobileDrawer"
@@ -17,6 +16,12 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isCartOpen, setIsCartOpen] = React.useState(false)
   const { itemCount } = useCart()
+
+  React.useEffect(() => {
+    const openCart = () => setIsCartOpen(true)
+    window.addEventListener("cart:open", openCart)
+    return () => window.removeEventListener("cart:open", openCart)
+  }, [])
 
   return (
     <Container className="flex items-center justify-between">
@@ -43,11 +48,11 @@ export function Navbar() {
       <button
         type="button"
         onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
-        className="flex w-full max-w-sm items-center gap-3 rounded-sm border border-border/60 bg-muted/30 px-3 py-2 text-muted-foreground transition-all hover:border-primary/40 hover:bg-background hover:shadow-sm xl:flex hidden"
+        className="border-border/60 bg-muted/30 text-muted-foreground hover:border-primary/40 hover:bg-background flex hidden w-full max-w-sm items-center gap-3 rounded-sm border px-3 py-2 transition-all hover:shadow-sm xl:flex"
       >
         <Search className="size-4" aria-hidden="true" />
         <span className="text-sm font-medium">Pretražite katalog...</span>
-        <kbd className="ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100">
+        <kbd className="bg-muted ml-auto inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
           <span className="text-xs">⌘</span>K
         </kbd>
       </button>
@@ -58,7 +63,7 @@ export function Navbar() {
           <div key={item.title} className="group relative">
             <Link
               href={item.href}
-              className="flex items-center gap-1 rounded-sm px-4 py-2.5 text-[13px] font-bold tracking-tight transition-colors hover:bg-muted/50 hover:text-primary"
+              className="hover:bg-muted/50 hover:text-primary flex items-center gap-1 rounded-sm px-4 py-2.5 text-[13px] font-bold tracking-tight transition-colors"
             >
               {item.title}
               <span className="bg-primary size-1 origin-center scale-0 rounded-full transition-transform group-hover:scale-100" />
@@ -68,7 +73,7 @@ export function Navbar() {
         ))}
         <Link
           href="/kategorija/akcija"
-          className="ml-1 rounded-sm px-4 py-2.5 text-[13px] font-black tracking-tight text-destructive transition-colors hover:bg-destructive/5"
+          className="text-destructive hover:bg-destructive/5 ml-1 rounded-sm px-4 py-2.5 text-[13px] font-black tracking-tight transition-colors"
         >
           Akcija
         </Link>
@@ -79,13 +84,19 @@ export function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="size-10 rounded-full sm:flex xl:hidden hidden"
+          className="hidden size-10 rounded-full sm:flex xl:hidden"
           aria-label="Pretraži proizvode"
           onClick={() => document.dispatchEvent(new CustomEvent("toggle-command-menu"))}
         >
           <Search className="size-5" />
         </Button>
-        <Button variant="ghost" size="icon" className="size-10 rounded-full" aria-label="Korisnički račun" asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="size-10 rounded-full"
+          aria-label="Korisnički račun"
+          asChild
+        >
           <Link href="/kontakt">
             <User className="size-5" />
           </Link>
@@ -99,7 +110,7 @@ export function Navbar() {
         >
           <ShoppingBag className="size-5" />
           {itemCount > 0 && (
-            <span className="absolute top-1 right-1 flex size-4.5 items-center justify-center rounded-full bg-primary text-[10px] font-black text-primary-foreground shadow-premium-hover transition-transform group-hover:scale-110">
+            <span className="bg-primary text-primary-foreground shadow-premium-hover absolute top-1 right-1 flex size-4.5 items-center justify-center rounded-full text-[10px] font-black transition-transform group-hover:scale-110">
               {itemCount}
             </span>
           )}

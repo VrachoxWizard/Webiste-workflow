@@ -26,27 +26,27 @@ export default function Home() {
 
       <CategoryMosaic />
 
-      <Section id="new-arrivals" className="border-y bg-secondary/10">
+      <Section id="new-arrivals" className="bg-secondary/10 border-y">
         <Container>
           <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="size-2 rounded-full bg-primary" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                <div className="bg-primary size-2 rounded-full" />
+                <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
                   Novo u ponudi
                 </span>
               </div>
               <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
                 Najnovije iz našeg kataloga
               </h2>
-              <p className="max-w-xl font-medium text-muted-foreground">
+              <p className="text-muted-foreground max-w-xl font-medium">
                 Istražite najnovije pristigle modele renomiranih svjetskih proizvođača lovačke i
                 outdoor opreme. Selektirano prema kvaliteti i pouzdanosti.
               </p>
             </div>
             <Link
               href="/kategorija/sve"
-              className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary transition-colors hover:text-primary/80"
+              className="group text-primary hover:text-primary/80 flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-colors"
             >
               Vidi sve proizvode{" "}
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

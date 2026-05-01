@@ -10,21 +10,18 @@ const TRUST_ITEMS = [
 
 export function TrustStrip() {
   return (
-    <div className="border-b bg-muted/30">
+    <div className="bg-muted/30 border-b">
       <Container>
         <div className="grid grid-cols-2 gap-4 py-6 md:grid-cols-4 md:gap-8">
-          {TRUST_ITEMS.map((item, idx) => (
+          {TRUST_ITEMS.map((item) => (
             <div
               key={item.label}
-              className="flex items-center gap-3 border-primary/0 md:border-l md:border-primary/10 md:pl-6 md:first:border-l-0 md:first:pl-0"
+              className="border-primary/0 md:border-primary/10 flex items-center gap-3 md:border-l md:pl-6 md:first:border-l-0 md:first:pl-0"
             >
-              <item.icon
-                className="size-5 shrink-0 text-primary"
-                aria-hidden="true"
-              />
+              <item.icon className="text-primary size-5 shrink-0" aria-hidden="true" />
               <div className="space-y-0.5">
-                <p className="text-xs font-bold leading-tight text-foreground">{item.label}</p>
-                <p className="text-[10px] font-medium text-muted-foreground">{item.sub}</p>
+                <p className="text-foreground text-xs leading-tight font-bold">{item.label}</p>
+                <p className="text-muted-foreground text-[10px] font-medium">{item.sub}</p>
               </div>
             </div>
           ))}

@@ -4,4 +4,5 @@ export interface ProductFilters {
   maxPrice: string
   brands: string[]
   statuses: string[]
+  regulatedOnly: boolean
 }

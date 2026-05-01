@@ -30,22 +30,22 @@ const BENEFITS = [
 
 export function TrustBenefits() {
   return (
-    <Section className="bg-foreground py-24 text-background md:py-32">
+    <Section className="bg-foreground text-background py-24 md:py-32">
       <Container>
         <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((item, idx) => (
             <div key={item.title} className="group relative space-y-6">
               <div className="flex items-center justify-between">
-                <div className="flex size-14 items-center justify-center rounded-sm bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <div className="bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground flex size-14 items-center justify-center rounded-sm transition-colors">
                   <item.icon className="size-7" />
                 </div>
-                <span className="text-4xl font-black italic tracking-tighter text-background/5">
+                <span className="text-background/5 text-4xl font-black tracking-tighter italic">
                   0{idx + 1}
                 </span>
               </div>
               <div className="space-y-3">
                 <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
-                <p className="text-sm font-medium leading-relaxed text-background/60">
+                <p className="text-background/60 text-sm leading-relaxed font-medium">
                   {item.description}
                 </p>
               </div>

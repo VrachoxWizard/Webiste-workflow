@@ -42,6 +42,9 @@
   --radius-lg: 0.125rem;
 
   --shadow-premium: 0 8px 30px -4px rgba(0, 0, 0, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  --shadow-premium-hover:
+    0 18px 50px -18px rgba(30, 38, 28, 0.28), 0 8px 18px -12px rgba(30, 38, 28, 0.16);
+  --shadow-premium-top: 0 -16px 36px -24px rgba(30, 38, 28, 0.35);
 }
 
 :root {
@@ -127,6 +130,17 @@
   h5,
   h6 {
     @apply font-heading tracking-tight text-balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
